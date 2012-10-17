@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='C:\ProgramData\Windows App Certification Kit\results.xsl'?>
+<REPORT OVERALL_RESULT="PASS" VERSION="2.0.9200" TOOLSET_ARCHITECTURE="X64" SecureBoot="FALSE" APP_TYPE="WindowsStore" PUBLISHER_DISPLAY_NAME="Reagan" OSVERSION="6.2.9200.0" OS="Microsoft Windows 8 Enterprise" PER_USER_APPLICATION="" PARTIAL_RUN="FALSE" LCID="1042" VALIDATION_TYPE="CommandLine" ReportGenerationTime="2012-09-24 오후 4:50:24" ID="aa6f0eff8ba848ce7c13e919237cf3e7">
+  <REQUIREMENTS>
+    <REQUIREMENT NUMBER="1" TITLE="Clean reversible install test" RATIONALE="A clean, reversible, installation allows users to successfully manage (deploy, and remove) applications on their system." />
+    <REQUIREMENT NUMBER="2" TITLE="Install to the correct folders test" RATIONALE="Windows provides specific locations in the file system to store programs and software components, shared application data, and application data specific to a user." />
+    <REQUIREMENT NUMBER="3" TITLE="Digitally signed file test" RATIONALE="An Authenticode digital signature allows users to be sure that the software is genuine. It also allows detection if a file has been tampered with e.g. infected by a virus." />
+    <REQUIREMENT NUMBER="4" TITLE="Support x64 Windows test" RATIONALE="To maintain compatibility with 64-bit versions of Windows, it is necessary that applications should natively support 64-bit or at minimum 32-bit Windows based applications to run seamlessly on 64-bit." />
+    <REQUIREMENT NUMBER="5" TITLE="OS version checking test" RATIONALE="Applications must not perform version checks for equality (== 5.1). If you need a specific feature, check whether the feature is available. If you need Windows XP, check for Windows XP or later (&gt;= 5.1), This way, your detection code will continue to work on future versions of Windows. Driver installers and uninstall modules should never check the OS version." />
+    <REQUIREMENT NUMBER="6" TITLE="User account control (UAC) test" RATIONALE="Most applications do not require administrator privileges at run time, and should be just fine running as a standard-user. Windows applications must have a manifest (embedded or external) to define its execution level that tells OS the privileges needed to run the application." />
+    <REQUIREMENT NUMBER="7" TITLE="Adhere to system restart manager messages" RATIONALE="In a critical shutdown, applications that return FALSE to WM_QUERYENDSESSION will be sent WM_ENDSESSION and closed, while those that time out in response to WM_QUERYENDSESSION will be terminated." />
+    <REQUIREMENT NUMBER="8" TITLE="Safe mode test" RATIONALE="By default, most drivers and services that did not come preinstalled with Windows are not started in Safe Mode. They should remain disabled unless they are needed for basic operations of the system or for diagnostic and recovery purposes." />
+    <REQUIREMENT NUMBER="9" TITLE="Multiuser session test" RATIONALE="Windows users should be able to run concurrent sessions without conflict or disruption.  Applications must ensure that when running in multiple sessions either locally or remotely, the normal functionality of the application should not be impacted. Application settings and data files should not be persisted across users. A user’s privacy and preferences should be isolated to the user’s session." />
+    <REQUIREMENT NUMBER="10" TITLE="Crashes and hangs test" RATIONALE="Application failures such as crashes and hangs are a major disruption to users and cause frustration. Eliminating such failures improves application stability and reliability, and overall, provides users with a better application experience.">
+      <TEST INDEX="47" NAME="App launch tests" DESCRIPTION="App launch tests." EXECUTIONTIME="00h:00m:22s.16ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="21" NAME="Crashes and hangs" DESCRIPTION="Do not crash or hang during the testing process." EXECUTIONTIME="00h:00m:04s.15ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="11" TITLE="Compatibility and resiliency test" RATIONALE="When Windows detects that an application has operated in an incompatible manner, it applies a compatibility fix that causes the application to behave correctly, ensuring a positive user experience. Applications should not rely on this behavior since it is only provided to allow legacy applications to work correctly on Windows." />
+    <REQUIREMENT NUMBER="12" TITLE="App manifest compliance test" RATIONALE="The package manifest was missing one or more required attributes.">
+      <TEST INDEX="31" NAME="App manifest" DESCRIPTION="App manifest must include valid entries for all required fields." EXECUTIONTIME="00h:00m:02s.54ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="13" TITLE="Windows security best practices test" RATIONALE="An application should not change the default Windows security settings." />
+    <REQUIREMENT NUMBER="14" TITLE="Windows security features test" RATIONALE="Applications must opt-into Windows security features.">
+      <TEST INDEX="33" NAME="Binary analyzer" DESCRIPTION="Analysis of security features enabled on binaries" EXECUTIONTIME="00h:00m:01s.52ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="15" TITLE="Supported API test" RATIONALE="The application should only refer to the APIs allowed by the Windows SDK for Windows Store Apps.">
+      <TEST INDEX="38" NAME="Supported APIs" DESCRIPTION="Windows Store App must only use supported platform APIs." EXECUTIONTIME="00h:00m:02s.50ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="17" TITLE="Performance test" RATIONALE="The application should have a fast and responsive launch and suspend experience while consuming a reasonable amount of system resources (CPU, File IO, Memory etc.) to enable fast switching and multitasking between previously unopened applications.">
+      <TEST INDEX="50" NAME="Bytecode generation" DESCRIPTION="Byte code generation should be able to complete successfully for packages containing an HTML5 Windows Store app." EXECUTIONTIME="00h:00m:01s.44ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="43" NAME="Performance launch" DESCRIPTION="Application should have a responsive launch time with reasonable CPU, File IO and Memory usage" EXECUTIONTIME="00h:01m:25s.30ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="44" NAME="Performance suspend" DESCRIPTION="Application should have a responsive suspend with reasonable CPU and File IO usage" EXECUTIONTIME="00h:01m:24s.04ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="19" TITLE="App manifest resources test" RATIONALE="The Appx Package Manifest should have valid resources defined in the resources.pri file, as per the Appx Packaging Specification and Appx Manifest Schema.">
+      <TEST INDEX="45" NAME="App resources validation" DESCRIPTION="The package should have valid resources defined in the resources.pri file." EXECUTIONTIME="00h:00m:00s.66ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="20" TITLE="Debug configuration test" RATIONALE="The App should not install any debug binaries.">
+      <TEST INDEX="46" NAME="Debug configuration" DESCRIPTION="The App should not install any debug binaries." EXECUTIONTIME="00h:00m:02s.25ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="21" TITLE="File encoding" RATIONALE="Packages containing an HTML5 Windows Store app must have correct file encoding.">
+      <TEST INDEX="49" NAME="UTF-8 file encoding" DESCRIPTION="Packages containing an HTML5 Windows Store app must have correct file encoding." EXECUTIONTIME="00h:00m:01s.38ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="22" TITLE="Direct3D feature level support" RATIONALE="Applications must render content on Direct3D feature level 9.1 hardware.">
+      <TEST INDEX="51" NAME="Direct3D feature level support" DESCRIPTION="Applications must render content on Direct3D feature level 9.1 hardware." EXECUTIONTIME="00h:00m:00s.80ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="23" TITLE="App Capabilities test" RATIONALE="Packages declaring special-use capabilities will have to provide justifications during the onboarding process.">
+      <TEST INDEX="52" NAME="Special Use Capabilities" DESCRIPTION="Packages declaring special-use capabilities will have to provide justifications during the onboarding process." EXECUTIONTIME="00h:00m:01s.40ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="24" TITLE="Windows Runtime metadata validation" RATIONALE="Metadata needs to be conformant and consistent across all generation sources.">
+      <TEST INDEX="56" NAME="ExclusiveTo attribute test" DESCRIPTION="A class must not implement an interface that is marked ExclusiveTo another class." EXECUTIONTIME="00h:00m:01s.12ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="57" NAME="Type location test" DESCRIPTION="Types must be defined in the metadata file with the longest matching namespace." EXECUTIONTIME="00h:00m:00s.66ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="55" NAME="Type name case-sensitivity test" DESCRIPTION="Namespace and type names must not vary only by casing." EXECUTIONTIME="00h:00m:00s.64ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="54" NAME="Type name correctness test" DESCRIPTION="Only system types can be in the Windows namespace and no types can be in the global namespace." EXECUTIONTIME="00h:00m:00s.65ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="58" NAME="General metadata correctness test" DESCRIPTION="Metadata files must meet various requirements in order to be valid and correct." EXECUTIONTIME="00h:00m:01s.10ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="53" NAME="Properties test" DESCRIPTION="Write-only and indexer properties may not be used. Corresponding getter and setter methods must match in type." EXECUTIONTIME="00h:00m:00s.65ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+  </REQUIREMENTS>
+  <APPLICATIONS>
+    <Installed_Programs>
+      <Program Name="574326b2-caad-4541-9987-63923a99b0ad" Type="Application" Source="AppxPackage" Publisher="CN=Reagan" Version="1.0.0.4" Language="1033" OnSystemDrive="true" RootDirPath="C:\Program Files\WindowsApps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g" PathEvidenceId="0x1cb6" RNP="0x1" DNP="0xd" EvidenceId="0x1cb6" Id="0000a19bd03c94b4d44f383c02e73bf5ddab00000904">
+        <Indicators>
+          <DirectoryIndicators>
+            <Directory Name="574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g" RNP="0x9" DNP="0xb" UniqueId="0x1cb7" Id="00008f4ebd5607d87310f4aa9effb307e910bc4fb20d" />
+            <Directory Name="itemdetail" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\itemdetail" RNP="0x9" DNP="0xb" UniqueId="0x1cc7" Id="0000876ea1abd821cc6c422d7df5d4d6203f744ca6ea" />
+            <Directory Name="groupeditems" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\groupeditems" RNP="0x9" DNP="0xb" UniqueId="0x1cc4" Id="00002759cc03e8ee5112bc439c75792087b754787de9" />
+            <Directory Name="js" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\js" RNP="0x9" DNP="0xb" UniqueId="0x1cbd" Id="0000ed830a2cad918e620bb3cae846c3985ea8ddae26" />
+            <Directory Name="pages" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages" RNP="0x9" DNP="0xb" UniqueId="0x1cc3" Id="000019ff601290dc13568ff4c70ea07fd47a73f13ab3" />
+          </DirectoryIndicators>
+          <PackageManifestIndicator>
+            <PackageManifest PackageFullName="574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g" />
+            <Identity Name="574326b2-caad-4541-9987-63923a99b0ad" Version="1.0.0.4" Publisher="CN=Reagan" ProcessorArchitecture="neutral" />
+            <Dependencies>
+              <PackageDependency Name="Microsoft.WinJS.1.0" MinVersion="1.0.8514.0" />
+            </Dependencies>
+            <Properties>
+              <DisplayName>클라우드 만화책 1탄 : 구름 속으로의 산책</DisplayName>
+              <PublisherDisplayName>Reagan</PublisherDisplayName>
+              <Logo>images\storelogo.png</Logo>
+            </Properties>
+            <Resources>
+              <Resource Language="KO-KR" />
+            </Resources>
+            <Prerequisites>
+              <OSMinVersion>6.2.1</OSMinVersion>
+              <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+            </Prerequisites>
+            <Capabilities>
+              <Capability Name="internetClient" />
+            </Capabilities>
+          </PackageManifestIndicator>
+        </Indicators>
+        <StaticProperties>
+          <Files Id="0000bb238ef733a5feb075560b2401bde7a98250b4a5">
+            <File Name="groupedItems.html" Id="0000d9b06cca3e0ecd4a27eba18fd444a00f243c5827" ShortName="GROUPE~1.HTM" Size="0x78a" BinaryType="UNKNOWN" Created="09/24/2012 07:46:32" Modified="09/24/2012 07:46:32" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\groupeditems" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\groupeditems\groupeditems.html" LongPathHash="00008579454cc43fee426b4b874c37f046cfd5ce0435" UniqueId="0x1cc5" />
+            <File Name="itemDetail.js" Id="0000f6978529081b5084600f65453fb134f59f80ce1d" ShortName="ITEMDE~1.JS" Size="0x4e5" BinaryType="UNKNOWN" Created="09/24/2012 07:46:32" Modified="09/24/2012 07:46:32" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\itemdetail" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\itemdetail\itemdetail.js" LongPathHash="0000c9069bbdbd1fc43ca1775c312f65f27aefd7c2cd" UniqueId="0x1cc9" />
+            <File Name="default.html" Id="0000df601f04bf24b589b705d3d585b0bc6ce3a22001" ShortName="DEFAUL~1.HTM" Size="0x3f8" BinaryType="UNKNOWN" Created="09/24/2012 07:46:32" Modified="09/24/2012 07:46:32" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\default.html" LongPathHash="000060766cde784c9c16358e41706e083d24ef2d5744" UniqueId="0x1cb8" />
+            <File Name="itemDetail.html" Id="00004339da49266c216bef2b0735dbc2a8124724ebd5" ShortName="ITEMDE~1.HTM" Size="0x54b" BinaryType="UNKNOWN" Created="09/24/2012 07:46:32" Modified="09/24/2012 07:46:32" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\itemdetail" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\itemdetail\itemdetail.html" LongPathHash="0000514a1ccebb3b7b197930544988deb1a482499239" UniqueId="0x1cc8" />
+            <File Name="groupedItems.js" Id="0000ccc1a7a67bba15865b9d136a43a1da09710f59dc" ShortName="GROUPE~1.JS" Size="0x1097" BinaryType="UNKNOWN" Created="09/24/2012 07:46:32" Modified="09/24/2012 07:46:32" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\groupeditems" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\pages\groupeditems\groupeditems.js" LongPathHash="0000fc8ef1f087fb7c3a2d56c5c36c422c49ad04fbfc" UniqueId="0x1cc6" />
+            <File Name="default.js" Id="00005842fd5b3f299bdfa2a2d43f3653010b23d92473" Size="0x796" BinaryType="UNKNOWN" Created="09/24/2012 07:46:32" Modified="09/24/2012 07:46:32" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\js\default.js" LongPathHash="0000d271c99254b0102ac4679e32a250ad2e76745b4c" UniqueId="0x1cbf" />
+            <File Name="navigator.js" Id="0000b80c7b3c05d35dc583eb23a3bfe26e75eca8feff" ShortName="NAVIGA~1.JS" Size="0x197f" BinaryType="UNKNOWN" Created="09/24/2012 07:46:32" Modified="09/24/2012 07:46:32" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\js\navigator.js" LongPathHash="0000f01b7477d143e65467e1e534ec24e040c512224b" UniqueId="0x1cc0" />
+            <File Name="data.js" Id="0000355af2422487f1cabf5c0fa1e30684ec0edb8e20" Size="0xe2b" BinaryType="UNKNOWN" Created="09/24/2012 07:46:32" Modified="09/24/2012 07:46:32" Path="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g\js\data.js" LongPathHash="00006ebb5a21703bbe978fd7281c022b7ee120a04ec4" UniqueId="0x1cbe" />
+          </Files>
+        </StaticProperties>
+      </Program>
+    </Installed_Programs>
+  </APPLICATIONS>
+  <DEPENDENCY_INFORMATION>
+    <AitStaticAnalysis ProgramId="0000a19bd03c94b4d44f383c02e73bf5ddab00000904" AnalysisVersion="1.54" DictionaryVersion="1.6" Type="Package" Id="574326b2-caad-4541-9987-63923a99b0ad_1.0.0.4_neutral__fpnfpm97zjr4g">
+      <AitFile ErrorCode="0" Name="data.js" Id="0000355af2422487f1cabf5c0fa1e30684ec0edb8e20">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Binding.List" />
+          <AitFeature Name="WinJS.Namespace.define" />
+          <AitFeature Name="Windows.ApplicationModel.Package.current.installedLocation" />
+          <AitFeature Name="Windows.Storage.FileProperties.ThumbnailMode.picturesView" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="itemDetail.html" Id="00004339da49266c216bef2b0735dbc2a8124724ebd5">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+          <AitFeature Name="WinJS.Binding.Template" />
+          <AitFeature Name="WinJS.UI.AppBar" />
+          <AitFeature Name="WinJS.UI.AppBarCommand" />
+          <AitFeature Name="WinJS.UI.FlipView" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="default.js" Id="00005842fd5b3f299bdfa2a2d43f3653010b23d92473">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Application" />
+          <AitFeature Name="WinJS.Binding.optimizeBindingReferences" />
+          <AitFeature Name="WinJS.Navigation" />
+          <AitFeature Name="WinJS.UI.processAll" />
+          <AitFeature Name="Windows.ApplicationModel.Activation" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="navigator.js" Id="0000b80c7b3c05d35dc583eb23a3bfe26e75eca8feff">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Class.define" />
+          <AitFeature Name="WinJS.Namespace.define" />
+          <AitFeature Name="WinJS.Navigation" />
+          <AitFeature Name="WinJS.Promise" />
+          <AitFeature Name="WinJS.Promise.as" />
+          <AitFeature Name="WinJS.Promise.timeout" />
+          <AitFeature Name="WinJS.UI.Animation.enterPage" />
+          <AitFeature Name="WinJS.UI.Pages.render" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="groupedItems.js" Id="0000ccc1a7a67bba15865b9d136a43a1da09710f59dc">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Navigation" />
+          <AitFeature Name="WinJS.UI" />
+          <AitFeature Name="WinJS.UI.ListView.prototype" />
+          <AitFeature Name="WinJS.Utilities.Key.g" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationViewState" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="groupedItems.html" Id="0000d9b06cca3e0ecd4a27eba18fd444a00f243c5827">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+          <AitFeature Name="WinJS.Binding.Template" />
+          <AitFeature Name="WinJS.UI.ListView" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="default.html" Id="0000df601f04bf24b589b705d3d585b0bc6ce3a22001">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+          <AitFeature Name="WinJS.UI.AppBar" />
+          <AitFeature Name="WinJS.UI.AppBarCommand" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="itemDetail.js" Id="0000f6978529081b5084600f65453fb134f59f80ce1d">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Navigation.navigate" />
+          <AitFeature Name="WinJS.UI.Pages.define" />
+        </AitCategory>
+      </AitFile>
+    </AitStaticAnalysis>
+  </DEPENDENCY_INFORMATION>
+</REPORT>

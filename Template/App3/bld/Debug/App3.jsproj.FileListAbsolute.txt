@@ -1,0 +1,52 @@
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bin\Debug\resources.pri
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bin\Debug\AppxManifest.xml
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bin\Debug\App3.build.appxrecipe
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\priconfig.xml.intermediate
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\layout.resfiles.intermediate
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\resources.resfiles.intermediate
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\pri.resfiles.intermediate
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\priconfig.xml
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\layout.resfiles
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\resources.resfiles
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\pri.resfiles
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\LanguageQualifiers.txt
+C:\Users\Reagan\Documents\Visual Studio 2012\Projects\App3\App3\bld\Debug\ProjectArchitectures.txt
+C:\Users\rghwang\Documents\App3\App3\App3\bin\Debug\resources.pri
+C:\Users\rghwang\Documents\App3\App3\App3\bin\Debug\AppxManifest.xml
+C:\Users\rghwang\Documents\App3\App3\App3\bin\Debug\App3.build.appxrecipe
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\priconfig.xml.intermediate
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\layout.resfiles.intermediate
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\resources.resfiles.intermediate
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\pri.resfiles.intermediate
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\priconfig.xml
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\layout.resfiles
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\resources.resfiles
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\pri.resfiles
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\LanguageQualifiers.txt
+C:\Users\rghwang\Documents\App3\App3\App3\bld\Debug\ProjectArchitectures.txt
+K:\App3\App3\bin\Debug\resources.pri
+K:\App3\App3\bin\Debug\AppxManifest.xml
+K:\App3\App3\bin\Debug\App3.build.appxrecipe
+K:\App3\App3\bld\Debug\priconfig.xml.intermediate
+K:\App3\App3\bld\Debug\layout.resfiles.intermediate
+K:\App3\App3\bld\Debug\resources.resfiles.intermediate
+K:\App3\App3\bld\Debug\pri.resfiles.intermediate
+K:\App3\App3\bld\Debug\priconfig.xml
+K:\App3\App3\bld\Debug\layout.resfiles
+K:\App3\App3\bld\Debug\resources.resfiles
+K:\App3\App3\bld\Debug\pri.resfiles
+K:\App3\App3\bld\Debug\LanguageQualifiers.txt
+K:\App3\App3\bld\Debug\ProjectArchitectures.txt
+C:\Users\rghwang\Documents\App3\App3\bin\Debug\resources.pri
+C:\Users\rghwang\Documents\App3\App3\bin\Debug\AppxManifest.xml
+C:\Users\rghwang\Documents\App3\App3\bin\Debug\App3.build.appxrecipe
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\priconfig.xml.intermediate
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\layout.resfiles.intermediate
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\resources.resfiles.intermediate
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\pri.resfiles.intermediate
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\priconfig.xml
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\layout.resfiles
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\resources.resfiles
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\pri.resfiles
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\LanguageQualifiers.txt
+C:\Users\rghwang\Documents\App3\App3\bld\Debug\ProjectArchitectures.txt
