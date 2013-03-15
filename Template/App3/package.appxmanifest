@@ -19,6 +19,21 @@
         <DefaultTile ShowName="allLogos" ShortName="클라우드로 다시 태어나다" />
         <SplashScreen Image="images\splashscreen.png" BackgroundColor="#000000" />
       </VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="image">
+            <Logo>images\logo.png</Logo>
+            <EditFlags OpenIsSafe="true" />
+            <SupportedFileTypes>
+              <FileType>.jpg</FileType>
+              <FileType>.png</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
+  <Capabilities>
+    <Capability Name="picturesLibrary" />
+  </Capabilities>
 </Package>

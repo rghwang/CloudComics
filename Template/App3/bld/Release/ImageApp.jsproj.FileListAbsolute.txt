@@ -50,3 +50,16 @@ C:\Users\rghwang\Documents\2012-10-04 Template Apps\Image App\Template\App3\bld\
 C:\Users\rghwang\Documents\2012-10-04 Template Apps\Image App\Template\App3\bld\Release\pri.resfiles
 C:\Users\rghwang\Documents\2012-10-04 Template Apps\Image App\Template\App3\bld\Release\LanguageQualifiers.txt
 C:\Users\rghwang\Documents\2012-10-04 Template Apps\Image App\Template\App3\bld\Release\ProjectArchitectures.txt
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bin\Release\resources.pri
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bin\Release\AppxManifest.xml
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bin\Release\ImageApp.build.appxrecipe
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\priconfig.xml.intermediate
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\layout.resfiles.intermediate
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\resources.resfiles.intermediate
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\pri.resfiles.intermediate
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\priconfig.xml
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\layout.resfiles
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\resources.resfiles
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\pri.resfiles
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\LanguageQualifiers.txt
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\ProjectArchitectures.txt

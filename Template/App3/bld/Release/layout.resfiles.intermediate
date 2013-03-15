@@ -1,7 +1,4 @@
 css\default.css
-data\클라우드 만화책 2탄\catoon_001.png
-data\클라우드 만화책 2탄\catoon_002.png
-data\클라우드 만화책 2탄\catoon_003.png
 default.html
 images\logo.png
 images\smalllogo.png
@@ -10,6 +7,7 @@ images\storelogo.png
 js\data.js
 js\default.js
 js\navigator.js
+lolst.png
 pages\groupedItems\groupedItems.css
 pages\groupedItems\groupedItems.html
 pages\groupedItems\groupedItems.js

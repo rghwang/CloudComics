@@ -1,1 +1,1 @@
-C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\ImageApp.jsproj;neutral
+C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\ImageApp.jsproj;neutral

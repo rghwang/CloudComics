@@ -9,51 +9,82 @@
 
     // TODO: 데이터를 실제 데이터로 바꿉니다.
     // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
-    var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
+    var folder = Windows.Storage.KnownFolders.picturesLibrary;
     var count = 0;
     var countFolder = 0;
     var total = 0;
+    var item;
 
-    installDirectory.getFolderAsync("data").done(function (dataFolder) { // get data folder
-        dataFolder.getFoldersAsync().done(function (folders) { // get sub folders from data folder
-            folders.forEach(function (folder) {
-                countFolder++;
-                folder.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (folderThumbnail) { // get thumnails of the folders
-                    folder.getFilesAsync().done(function (files) {
-                        total += files.length;
-                        files.forEach(function (file) {
-                            file.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
-                                count++;
-                                var item = {
-                                    group: {
-                                        key: folder.name,
-                                        title: folder.name,
-                                        thumbnail: URL.createObjectURL(folderThumbnail)
-                                    },
-                                    title: file.name,
-                                    image: URL.createObjectURL(file),
-                                    file: file,
-                                    thumbnail: URL.createObjectURL(thumbnail)
-                                }
-                                list.push(item);
-                                if (countFolder >= folders.length && count >= total) {
-                                    list.sort(function (f, s) {
-                                        if (f == s) return 0;
-                                        else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title) ) 
-                                            return 1;
-                                        else return -1;
-                                    });
-                                    WinJS.Navigation.navigate("/pages/itemDetail/itemDetail.html");
-                                }
-                            });
+    folder.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (folderThumbnail) { // get thumnails of the folders
+        folder.getFilesAsync().done(function (files) {
+            total += files.length;
+            files.forEach(function (file) {
+                file.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
+                    count++;
+                    if (file.fileType.toLowerCase() == ".jpg" || file.fileType.toLowerCase() == ".png") {
+                        item = {
+                            group: {
+                                key: folder.name,
+                                title: folder.name,
+                            },
+                            title: file.name,
+                            image: URL.createObjectURL(file),
+                            file: file,
+                            thumbnail: URL.createObjectURL(thumbnail)
+                        };
+                        list.push(item);
+                    }
+                    if (count >= total) {
+                        list.sort(function (f, s) {
+                            if (f == s) return 0;
+                            else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
+                                return 1;
+                            else return -1;
                         });
-                    });
+                        WinJS.Navigation.navigate("/pages/itemDetail/itemDetail.html");
+                    }
                 });
-            }); // end of folders.forEach
-        });// end of dataFolders.forEach
-
-
+            });
+        });
     });
+    //startDirectory.getFoldersAsync().done(function (folders) { // get sub folders from data folder
+    //    folders.forEach(function (folder) {
+    //        countFolder++;
+    //        folder.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (folderThumbnail) { // get thumnails of the folders
+    //            folder.getFilesAsync().done(function (files) {
+    //                total += files.length;
+    //                files.forEach(function (file) {
+    //                    file.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
+    //                        count++;
+    //                        var item = {
+    //                            group: {
+    //                                key: folder.name,
+    //                                title: folder.name,
+    //                                thumbnail: URL.createObjectURL(folderThumbnail)
+    //                            },
+    //                            title: file.name,
+    //                            image: URL.createObjectURL(file),
+    //                            file: file,
+    //                            thumbnail: URL.createObjectURL(thumbnail)
+    //                        }
+    //                        list.push(item);
+    //                        if (countFolder >= folders.length && count >= total) {
+    //                            list.sort(function (f, s) {
+    //                                if (f == s) return 0;
+    //                                else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title) ) 
+    //                                    return 1;
+    //                                else return -1;
+    //                            });
+    //                            WinJS.Navigation.navigate("/pages/itemDetail/itemDetail.html");
+    //                        }
+    //                    });
+    //                });
+    //            });
+    //        });
+    //    }); // end of folders.forEach
+
+
+    //});
     WinJS.Namespace.define("Data", {
         items: groupedItems,
         groups: groupedItems.groups,

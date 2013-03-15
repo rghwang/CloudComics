@@ -30,6 +30,11 @@
                     return nav.navigate(Application.navigator.home);
                 }
             }));
+        } else if (args.detail.kind == activation.ActivationKind.file) {
+            if (args.detail.files.size > 0) {
+                // TODO: 파일로부터 실행되는 경우에 이미지를 보여주는 부분 구현할 것.
+                new Windows.UI.Popups.MessageDialog(args.detail.files[0].name).showAsync();
+            }
         }
     });
 
