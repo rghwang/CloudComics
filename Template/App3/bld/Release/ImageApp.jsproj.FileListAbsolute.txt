@@ -63,3 +63,16 @@ C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\resour
 C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\pri.resfiles
 C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\LanguageQualifiers.txt
 C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bld\Release\ProjectArchitectures.txt
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bin\Release\resources.pri
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bin\Release\AppxManifest.xml
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bin\Release\ImageApp.build.appxrecipe
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\priconfig.xml.intermediate
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\layout.resfiles.intermediate
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\resources.resfiles.intermediate
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\pri.resfiles.intermediate
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\priconfig.xml
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\layout.resfiles
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\resources.resfiles
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\pri.resfiles
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\LanguageQualifiers.txt
+C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\ProjectArchitectures.txt

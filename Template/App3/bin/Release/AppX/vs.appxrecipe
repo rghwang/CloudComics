@@ -5,7 +5,7 @@
     <WindowsUser>rghwang</WindowsUser>
     <SolutionConfiguration>Release|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>08968A4F50B0DC7C965EB5AC68FFC58445976C7C80FF25AACE3C0FAFCEEF19AE</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>8045492992A136558D069FCDF4BC8D6E323A1015F47E09F51BE1225B8967ED7F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>37110UXFactory.2_1.0.0.8_neutral__5kf09x396saqr</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>37110UXFactory.2_5kf09x396saqr!App</RegisteredUserModeAppID>
     <RegisteredPackageID>37110UXFactory.2</RegisteredPackageID>
@@ -13,96 +13,96 @@
     <RegisteredVersion>1.0.0.8</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bin\Release\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bin\Release\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-03-13T02:12:18.151</Modified>
+      <Modified>2013-03-18T06:00:27.204</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\css\default.css">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2012-09-24T05:56:26.351</Modified>
+      <Modified>2013-03-18T04:46:29.096</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\pages\loading\loading.css">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\pages\loading\loading.css">
       <PackagePath>pages\loading\loading.css</PackagePath>
-      <Modified>2012-10-04T05:00:40.946</Modified>
+      <Modified>2013-03-18T04:46:31.008</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\pages\itemDetail\itemDetail.css">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\pages\itemDetail\itemDetail.css">
       <PackagePath>pages\itemDetail\itemDetail.css</PackagePath>
-      <Modified>2012-09-26T11:13:13.605</Modified>
+      <Modified>2013-03-18T04:46:30.999</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\pages\groupedItems\groupedItems.css">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\pages\groupedItems\groupedItems.css">
       <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
-      <Modified>2012-09-20T10:16:47.119</Modified>
+      <Modified>2013-03-18T04:46:30.973</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\lolst.png">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\images\Logo.scale-100.png">
+      <PackagePath>images\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-03-18T06:02:21.923</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\images\smalllogo.scale-100.png">
+      <PackagePath>images\smalllogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-03-18T06:00:09.008</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\images\splashscreen.scale-100.png">
+      <PackagePath>images\splashscreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-03-18T05:47:35.813</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\images\storelogo.scale-100.png">
+      <PackagePath>images\storelogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-03-18T05:59:58.586</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\lolst.png">
       <PackagePath>lolst.png</PackagePath>
-      <Modified>2013-03-11T06:22:50.285</Modified>
+      <Modified>2013-03-18T05:10:29.747</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\images\logo.png">
-      <PackagePath>images\logo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-26T11:21:42.860</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\images\smalllogo.png">
-      <PackagePath>images\smalllogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-26T11:22:08.874</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\images\splashscreen.png">
-      <PackagePath>images\splashscreen.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-26T11:19:00.523</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\images\storelogo.png">
-      <PackagePath>images\storelogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-26T11:21:57.025</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\pages\loading\loading.html">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\pages\loading\loading.html">
       <PackagePath>pages\loading\loading.html</PackagePath>
-      <Modified>2012-10-04T05:01:17.106</Modified>
+      <Modified>2013-03-18T04:46:31.017</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\pages\itemDetail\itemDetail.html">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\pages\itemDetail\itemDetail.html">
       <PackagePath>pages\itemDetail\itemDetail.html</PackagePath>
-      <Modified>2013-03-13T08:59:14.571</Modified>
+      <Modified>2013-03-18T05:10:29.747</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\pages\groupedItems\groupedItems.html">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\pages\groupedItems\groupedItems.html">
       <PackagePath>pages\groupedItems\groupedItems.html</PackagePath>
-      <Modified>2012-09-20T10:12:19.930</Modified>
+      <Modified>2013-03-18T04:46:30.974</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\default.html">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2012-10-04T04:59:54.154</Modified>
+      <Modified>2013-03-18T04:46:30.954</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\pages\loading\loading.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\pages\loading\loading.js">
       <PackagePath>pages\loading\loading.js</PackagePath>
-      <Modified>2012-10-04T05:00:40.759</Modified>
+      <Modified>2013-03-18T04:46:31.034</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\js\data.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\js\data.js">
       <PackagePath>js\data.js</PackagePath>
-      <Modified>2013-03-13T02:08:16.630</Modified>
+      <Modified>2013-03-18T05:10:29.731</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\js\default.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2013-03-12T08:19:51.464</Modified>
+      <Modified>2013-03-18T05:10:29.731</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\js\navigator.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
-      <Modified>2012-09-12T10:29:04.217</Modified>
+      <Modified>2013-03-18T04:46:30.971</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\pages\itemDetail\itemDetail.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\pages\itemDetail\itemDetail.js">
       <PackagePath>pages\itemDetail\itemDetail.js</PackagePath>
-      <Modified>2012-10-04T04:52:48.281</Modified>
+      <Modified>2013-03-18T04:46:31.004</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\pages\groupedItems\groupedItems.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2012-09-20T10:06:41.944</Modified>
+      <Modified>2013-03-18T04:46:30.978</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\My Codes\w8templates\w8t_image\Template\App3\bin\Release\resources.pri">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bin\Release\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-03-13T02:12:18.011</Modified>
+      <Modified>2013-03-18T06:00:26.945</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

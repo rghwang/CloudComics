@@ -15,9 +15,9 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="클라우드 만화책 2탄" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="마이크로소프트와 함께하는 &quot;클라우드 만화책 2탄 : 클라우드로 다시 태어나다&quot;입니다." ForegroundText="light" BackgroundColor="#000000">
-        <DefaultTile ShowName="allLogos" ShortName="클라우드로 다시 태어나다" />
-        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#000000" />
+      <VisualElements DisplayName="PhotoViewer" Logo="images\Logo.png" SmallLogo="images\smalllogo.png" Description="Image Viewer" ForegroundText="light" BackgroundColor="#FF0000">
+        <DefaultTile ShowName="allLogos" ShortName="PhotoViewer" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#FF0000" />
       </VisualElements>
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">
