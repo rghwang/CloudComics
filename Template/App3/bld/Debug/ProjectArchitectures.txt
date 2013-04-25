@@ -1,1 +1,1 @@
-C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\ImageApp.jsproj;neutral
+C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\ImageApp.jsproj;neutral

@@ -1,132 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>KRRGHWANG09</Machine>
+    <Machine>RGHWANG_DELL</Machine>
     <WindowsUser>rghwang</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>B8BD380DB166BEB50F2660F414DA06C338C64B4167C1A52B69072FD8BFD91B8D</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>574326b2-caad-4541-9987-63923a99b0ad_1.0.0.2_neutral__fpnfpm97zjr4g</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>574326b2-caad-4541-9987-63923a99b0ad_fpnfpm97zjr4g!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>574326b2-caad-4541-9987-63923a99b0ad</RegisteredPackageID>
-    <RegisteredPackagePublisher>CN=Reagan</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.2</RegisteredVersion>
+    <RegisteredManifestChecksum>BC2E2D5F3B497720919D652571B89062B9352AFFD28125150AFC21CC7FDC1634</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>37110UXFactory.2_1.0.0.8_neutral__5kf09x396saqr</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>37110UXFactory.2_5kf09x396saqr!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>37110UXFactory.2</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=51E88703-C551-47A3-AAF0-D0DE66B090BF</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.8</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-24T07:36:57.299</Modified>
+      <Modified>2013-04-25T08:30:54.200</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\css\default.css">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2012-09-24T05:56:26.351</Modified>
+      <Modified>2013-04-25T07:28:23.103</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\pages\itemDetail\itemDetail.css">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.css">
       <PackagePath>pages\itemDetail\itemDetail.css</PackagePath>
-      <Modified>2012-09-12T10:52:37.272</Modified>
+      <Modified>2013-04-25T07:28:24.342</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\pages\groupedItems\groupedItems.css">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.css">
       <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
-      <Modified>2012-09-20T10:16:47.119</Modified>
+      <Modified>2013-04-25T07:28:24.339</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_001.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_001.png</PackagePath>
-      <Modified>2012-09-13T04:25:49.560</Modified>
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\images\Logo.scale-100.png">
+      <PackagePath>images\Logo.scale-100.png</PackagePath>
+      <Modified>2013-04-25T07:32:33.016</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_002.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_002.png</PackagePath>
-      <Modified>2012-09-13T04:25:49.649</Modified>
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\images\smalllogo.scale-100.png">
+      <PackagePath>images\smalllogo.scale-100.png</PackagePath>
+      <Modified>2013-04-25T07:32:33.016</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_003.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_003.png</PackagePath>
-      <Modified>2012-09-13T04:25:49.833</Modified>
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\images\splashscreen.scale-100.png">
+      <PackagePath>images\splashscreen.scale-100.png</PackagePath>
+      <Modified>2013-04-25T07:32:33.022</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_004.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_004.png</PackagePath>
-      <Modified>2012-09-13T04:25:49.912</Modified>
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\images\storelogo.scale-100.png">
+      <PackagePath>images\storelogo.scale-100.png</PackagePath>
+      <Modified>2013-04-25T07:32:33.022</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_005.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_005.png</PackagePath>
-      <Modified>2012-09-13T04:25:50.049</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_006.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_006.png</PackagePath>
-      <Modified>2012-09-13T04:25:50.187</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_007.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_007.png</PackagePath>
-      <Modified>2012-09-13T04:25:50.334</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_008.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_008.png</PackagePath>
-      <Modified>2012-09-13T04:25:50.476</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_009.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_009.png</PackagePath>
-      <Modified>2012-09-13T04:25:50.638</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\data\Cloudbook\구름속으로여행_010.png">
-      <PackagePath>data\Cloudbook\구름속으로여행_010.png</PackagePath>
-      <Modified>2012-09-13T04:25:50.769</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\images\logo.png">
-      <PackagePath>images\logo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-20T10:19:04.906</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\images\smalllogo.png">
-      <PackagePath>images\smalllogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-20T10:20:02.229</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\images\splashscreen.png">
-      <PackagePath>images\splashscreen.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-20T10:21:51.520</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\images\storelogo.png">
-      <PackagePath>images\storelogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-20T10:19:48.679</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\js\data.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\js\data.js">
       <PackagePath>js\data.js</PackagePath>
-      <Modified>2012-09-09T10:20:32.000</Modified>
+      <Modified>2013-04-25T08:52:08.605</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\js\default.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2012-09-08T07:46:04.000</Modified>
+      <Modified>2013-04-25T07:32:33.031</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\js\navigator.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
-      <Modified>2012-09-12T10:29:04.217</Modified>
+      <Modified>2013-04-25T07:28:24.336</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\pages\itemDetail\itemDetail.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.js">
       <PackagePath>pages\itemDetail\itemDetail.js</PackagePath>
-      <Modified>2012-09-12T10:53:24.988</Modified>
+      <Modified>2013-04-25T08:44:17.366</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\pages\groupedItems\groupedItems.js">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2012-09-20T10:06:41.944</Modified>
+      <Modified>2013-04-25T08:32:48.620</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\pages\itemDetail\itemDetail.html">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.html">
       <PackagePath>pages\itemDetail\itemDetail.html</PackagePath>
-      <Modified>2012-09-12T10:56:11.238</Modified>
+      <Modified>2013-04-25T08:44:51.535</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\pages\groupedItems\groupedItems.html">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.html">
       <PackagePath>pages\groupedItems\groupedItems.html</PackagePath>
-      <Modified>2012-09-20T10:12:19.930</Modified>
+      <Modified>2013-04-25T08:45:00.593</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\default.html">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2012-09-24T07:24:04.482</Modified>
+      <Modified>2013-04-25T08:50:57.356</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\Documents\2012-09-20 Template Apps\2012-09-24 Image App\App3\App3\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-09-24T07:36:57.237</Modified>
+      <Modified>2013-04-25T08:30:54.012</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

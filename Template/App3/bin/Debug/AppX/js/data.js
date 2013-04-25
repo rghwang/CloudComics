@@ -6,47 +6,90 @@
         function groupKeySelector(item) { return item.group.key; },
         function groupDataSelector(item) { return item.group; }
     );
+    var folder;
 
-    // TODO: 데이터를 실제 데이터로 바꿉니다.
-    // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
-    var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
-    var count = 0;
-    installDirectory.getFolderAsync("data").done(function (dataFolder) {
-        dataFolder.getFoldersAsync().done(function (folders) {
-            folders.forEach(function (folder) {
-                folder.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (folderThumbnail) {
-                    folder.getFilesAsync().done(function (files) {
-                        files.forEach(function (file) {
-                            file.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
-                                var item = {
-                                    group: {
-                                        key: folder.name,
-                                        title: folder.name,
-                                        thumbnail: URL.createObjectURL(folderThumbnail)
-                                    },
-                                    title: file.name,
-                                    image: URL.createObjectURL(file),
-                                    file: file,
-                                    thumbnail: URL.createObjectURL(thumbnail)
-                                }
-                                list.push(item);
-                            });
-                        });
-                    });
-                });
-            }); // end of folders.forEach
-        });// end of dataFolders.forEach
+    setFolder(Windows.Storage.KnownFolders.picturesLibrary);
 
-
-    });
     WinJS.Namespace.define("Data", {
         items: groupedItems,
         groups: groupedItems.groups,
         getItemReference: getItemReference,
         getItemsFromGroup: getItemsFromGroup,
         resolveGroupReference: resolveGroupReference,
-        resolveItemReference: resolveItemReference
+        resolveItemReference: resolveItemReference,
+        goUp:goUp
     });
+    function goUp() {
+    }
+    function setFolder(target) {
+
+        // TODO: 데이터를 실제 데이터로 바꿉니다.
+        // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
+        folder = target;
+        var count = 0;
+        var total = 0;
+        var item;
+
+        folder.getFoldersAsync().done(function (folders) {
+            total = folders.length;
+            folders.forEach(function (subfolder) {
+                subfolder.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
+                    count++;
+                    item = {
+                        group: {
+                            key: folder.name + "_folders",
+                            title: folder.name,
+                        },
+                        title: subfolder.name,
+                        folder: subfolder,
+                        thumbnail: URL.createObjectURL(thumbnail)
+                    };
+                    list.push(item);
+                    if (count >= total) {
+                        list.sort(function (f, s) {
+                            if (f == s) return 0;
+                            else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
+                                return 1;
+                            else return -1;
+                        });
+                    }
+                });
+            });
+        });
+
+        total = count = 0;
+        folder.getFilesAsync().done(function (files) {
+            total = files.length;
+            files.forEach(function (file) {
+                file.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
+                    count++;
+                    if (file.fileType.toLowerCase() == ".jpg" || file.fileType.toLowerCase() == ".png") {
+                        item = {
+                            group: {
+                                key: folder.name + "files",
+                                title: folder.name,
+                            },
+                            title: file.name,
+                            image: URL.createObjectURL(file),
+                            file: file,
+                            thumbnail: URL.createObjectURL(thumbnail)
+                        };
+                        list.push(item);
+                    }
+                    if (count >= total) {
+                        list.sort(function (f, s) {
+                            if (f == s) return 0;
+                            else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
+                                return 1;
+                            else return -1;
+                        });
+                    }
+                });
+            });
+
+        });
+
+    }
 
     // 그룹 키와 항목 제목을 손쉽게 serialize할 수 있는 고유 참조로 사용하여
     // 항목에 대한 참조를 가져옵니다.

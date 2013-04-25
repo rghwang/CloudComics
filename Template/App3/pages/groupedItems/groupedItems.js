@@ -34,8 +34,10 @@
 
             this._initializeLayout(listView, appView.value);
             listView.element.focus();
-        },
 
+            document.querySelector(".pagetitle").innerText = "Pictures";
+        },
+         
         // 이 함수는 viewState 변경 내용에 응답하여 페이지 레이아웃을 업데이트합니다.
         updateLayout: function (element, viewState, lastViewState) {
             /// <param name="element" domElement="true" />

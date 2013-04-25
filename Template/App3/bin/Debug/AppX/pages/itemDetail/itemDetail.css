@@ -3,6 +3,8 @@
     height: 100%;
     overflow: auto;
     -ms-content-zooming: zoom;
+    display:-ms-flexbox;
+    -ms-flex-align:center;
 }
 
     .item-container .item-image {

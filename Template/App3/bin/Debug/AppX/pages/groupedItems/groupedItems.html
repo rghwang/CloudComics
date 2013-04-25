@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <title>groupedItemsPage</title>
 
@@ -33,12 +33,15 @@
         <header aria-label="Header content" role="banner">
             <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             <h1 class="titlearea win-type-ellipsis">
-                <span class="pagetitle">전체 보기</span>
+                <span class="pagetitle"></span>
             </h1>
         </header>
         <section aria-label="Main content" role="main">
             <div class="groupeditemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div>
         </section>
+    </div>
+    <div id="appbar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement:'top'}">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'up', label:'Up', icon:'', section:'selection'}" type="button"></button>
     </div>
 </body>
 </html>
