@@ -34,8 +34,14 @@
 
             this._initializeLayout(listView, appView.value);
             listView.element.focus();
-
-            document.querySelector(".pagetitle").innerText = "Pictures";
+            
+            
+            this.updatePageTitle();
+            var _this = this;
+            document.getElementById("up").addEventListener("click", function () {
+                Data.goUp();
+                _this.updatePageTitle();
+            });
         },
          
         // 이 함수는 viewState 변경 내용에 응답하여 페이지 레이아웃을 업데이트합니다.
@@ -54,7 +60,9 @@
                 }
             }
         },
-
+        updatePageTitle: function () {
+            document.querySelector(".pagetitle").innerText = Data.getPath();
+        },
         // 이 함수는 ListView를 새 레이아웃으로 업데이트합니다.
         _initializeLayout: function (listView, viewState) {
             /// <param name="listView" value="WinJS.UI.ListView.prototype" />
@@ -77,8 +85,15 @@
                 this.navigateToGroup(group.key);
             } else {
                 // 페이지가 맞춰지지 않은 경우 사용자가 항목을 호출했습니다.
+                
                 var item = Data.items.getAt(args.detail.itemIndex);
-                nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
+                if (item.folder !== undefined) {
+                    Data.setFolder(item.folder);
+                    this.updatePageTitle();
+                }
+                else {
+                    nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
+                }
             }
         }
     });

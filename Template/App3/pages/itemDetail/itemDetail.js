@@ -12,10 +12,11 @@
             //element.querySelector(".content").focus();
 
             var flipView = element.querySelector("#imageFlipView").winControl;
-             
-            flipView.itemDataSource = Data.items.dataSource;
+            var items = Data.getItemsFromGroup(Data.resolveGroupReference("files"));
+
+            flipView.itemDataSource = items.dataSource;
             flipView.itemTemplate = itemTemplate;
-            flipView.currentPage = Data.items.indexOf(item);
+            flipView.currentPage = items.indexOf(item);
             
             document.getElementById("cmd").addEventListener("click", function () {
                 WinJS.Navigation.navigate("/pages/groupedItems/groupedItems.html");

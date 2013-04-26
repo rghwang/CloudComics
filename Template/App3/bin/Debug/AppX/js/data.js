@@ -7,9 +7,6 @@
         function groupDataSelector(item) { return item.group; }
     );
     var folder;
-
-    setFolder(Windows.Storage.KnownFolders.picturesLibrary);
-
     WinJS.Namespace.define("Data", {
         items: groupedItems,
         groups: groupedItems.groups,
@@ -17,15 +14,35 @@
         getItemsFromGroup: getItemsFromGroup,
         resolveGroupReference: resolveGroupReference,
         resolveItemReference: resolveItemReference,
-        goUp:goUp
+        setFolder:setFolder,
+        goUp: goUp,
+        getPath: getPath,
     });
-    function goUp() {
+    function getPath() {
+        var path;
+        if (folder.path === "") {
+            var filepath = getItemsFromGroup(resolveGroupReference("files")).getAt(0).file.path;
+            path = filepath.substring(0, filepath.lastIndexOf("\\"));
+        } else {
+            path = folder.path;
+        }
+        return path;
     }
-    function setFolder(target) {
-
+    function goUp() {
+        var str = folder.path;
+        var path = str.substring(0, str.lastIndexOf("\\"));
+        Windows.Storage.StorageFolder.getFolderFromPathAsync(path).then(function (f) {
+            setFolder(f);
+        });
+    }
+    function resetData() {
+        list.forEach(function () { list.shift() });
+    }
+    function setFolder(storageFolder) {
+        resetData();
         // TODO: 데이터를 실제 데이터로 바꿉니다.
         // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
-        folder = target;
+        folder = storageFolder;
         var count = 0;
         var total = 0;
         var item;
@@ -37,8 +54,9 @@
                     count++;
                     item = {
                         group: {
-                            key: folder.name + "_folders",
-                            title: folder.name,
+                            key: "_folders",
+                            title: "Folders",
+                            folder: folder
                         },
                         title: subfolder.name,
                         folder: subfolder,
@@ -66,8 +84,9 @@
                     if (file.fileType.toLowerCase() == ".jpg" || file.fileType.toLowerCase() == ".png") {
                         item = {
                             group: {
-                                key: folder.name + "files",
-                                title: folder.name,
+                                key: "files",
+                                title: "Files",
+                                folder: folder
                             },
                             title: file.name,
                             image: URL.createObjectURL(file),

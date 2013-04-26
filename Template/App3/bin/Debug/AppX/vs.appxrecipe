@@ -5,7 +5,7 @@
     <WindowsUser>rghwang</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>BC2E2D5F3B497720919D652571B89062B9352AFFD28125150AFC21CC7FDC1634</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>374A6A284844BE7596B868A59C79F6CFBE0EA6D7A2F7177C22D8E83B2F422105</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>37110UXFactory.2_1.0.0.8_neutral__5kf09x396saqr</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>37110UXFactory.2_5kf09x396saqr!App</RegisteredUserModeAppID>
     <RegisteredPackageID>37110UXFactory.2</RegisteredPackageID>
@@ -16,7 +16,7 @@
     <AppXManifest Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-04-25T08:30:54.200</Modified>
+      <Modified>2013-04-26T05:50:25.852</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -30,7 +30,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.css">
       <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
-      <Modified>2013-04-25T07:28:24.339</Modified>
+      <Modified>2013-04-26T01:27:20.464</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\images\Logo.scale-100.png">
       <PackagePath>images\Logo.scale-100.png</PackagePath>
@@ -50,11 +50,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\js\data.js">
       <PackagePath>js\data.js</PackagePath>
-      <Modified>2013-04-25T08:52:08.605</Modified>
+      <Modified>2013-04-26T05:38:54.456</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2013-04-25T07:32:33.031</Modified>
+      <Modified>2013-04-26T05:58:29.310</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
@@ -62,11 +62,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.js">
       <PackagePath>pages\itemDetail\itemDetail.js</PackagePath>
-      <Modified>2013-04-25T08:44:17.366</Modified>
+      <Modified>2013-04-26T02:18:44.849</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2013-04-25T08:32:48.620</Modified>
+      <Modified>2013-04-26T02:33:13.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.html">
       <PackagePath>pages\itemDetail\itemDetail.html</PackagePath>
@@ -82,7 +82,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-04-25T08:30:54.012</Modified>
+      <Modified>2013-04-26T05:50:25.783</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -18,24 +18,32 @@
                 // TODO: 이 응용 프로그램은 일시 중단되었다가 다시 활성화되었습니다.
                 // 여기서 응용 프로그램 상태를 복원하십시오.
             }
+            Data.setFolder(Windows.Storage.KnownFolders.picturesLibrary);
 
-            if (app.sessionState.history) {
-                nav.history = app.sessionState.history;
-            }
-            args.setPromise(WinJS.UI.processAll().then(function () {
-                if (nav.location) {
-                    nav.history.current.initialPlaceholder = true;
-                    return nav.navigate(nav.location, nav.state);
-                } else {
-                    return nav.navigate(Application.navigator.home);
-                }
-            }));
         } else if (args.detail.kind == activation.ActivationKind.file) {
             if (args.detail.files.size > 0) {
                 // TODO: 파일로부터 실행되는 경우에 이미지를 보여주는 부분 구현할 것.
-                new Windows.UI.Popups.MessageDialog(args.detail.files[0].name).showAsync();
+                var file = args.detail.files[0];
+                var path = file.path;
+                path = path.substring(0, path.lastIndexOf("\\"));
+                
+                Windows.Storage.StorageFolder.getFolderFromPathAsync(path).then(function (f) {
+                    Data.setFolder(f);
+                });
             }
         }
+        // TODO: picturesLibrary가 아닌 경우에 오류 남.
+        if (app.sessionState.history) {
+            nav.history = app.sessionState.history;
+        }
+        args.setPromise(WinJS.UI.processAll().then(function () {
+            if (nav.location) {
+                nav.history.current.initialPlaceholder = true;
+                return nav.navigate(nav.location, nav.state);
+            } else {
+                return nav.navigate(Application.navigator.home);
+            }
+        }));
     });
 
     app.oncheckpoint = function (args) {

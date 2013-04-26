@@ -9,7 +9,7 @@
   -->
   <Identity Name="37110UXFactory.2" Version="1.0.0.8" Publisher="CN=51E88703-C551-47A3-AAF0-D0DE66B090BF" ProcessorArchitecture="neutral" />
   <Properties>
-    <DisplayName>클라우드 만화책 2탄</DisplayName>
+    <DisplayName>PhotoViewer</DisplayName>
     <PublisherDisplayName>UXFactory</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
@@ -22,7 +22,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="PhotoViewer" Logo="images\Logo.png" SmallLogo="images\smalllogo.png" Description="Image Viewer" ForegroundText="light" BackgroundColor="#FF0000">
+      <VisualElements DisplayName="PhotoViewer" Logo="images\Logo.png" SmallLogo="images\smalllogo.png" Description="PhotoViewer" ForegroundText="light" BackgroundColor="#FF0000">
         <DefaultTile ShowName="allLogos" ShortName="PhotoViewer" />
         <SplashScreen Image="images\splashscreen.png" BackgroundColor="#FF0000" />
       </VisualElements>
@@ -34,6 +34,7 @@
             <SupportedFileTypes>
               <FileType>.jpg</FileType>
               <FileType>.png</FileType>
+              <FileType>.jpeg</FileType>
             </SupportedFileTypes>
           </FileTypeAssociation>
         </Extension>
@@ -41,6 +42,7 @@
     </Application>
   </Applications>
   <Capabilities>
+    <Capability Name="removableStorage" />
     <Capability Name="picturesLibrary" />
   </Capabilities>
   <Dependencies>
