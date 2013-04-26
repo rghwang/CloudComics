@@ -1,6 +1,7 @@
 ﻿(function () {
     "use strict";
 
+    var PATH_SELECTION = "My Selection";
     var list = new WinJS.Binding.List();
     var groupedItems = list.createGrouped(
         function groupKeySelector(item) { return item.group.key; },
@@ -14,19 +15,43 @@
         getItemsFromGroup: getItemsFromGroup,
         resolveGroupReference: resolveGroupReference,
         resolveItemReference: resolveItemReference,
-        setFolder:setFolder,
+        setFolder: setFolder,
+        addItems: addItems,
         goUp: goUp,
         getPath: getPath,
     });
-    function getPath() {
-        var path;
-        if (folder.path === "") {
-            var filepath = getItemsFromGroup(resolveGroupReference("files")).getAt(0).file.path;
-            path = filepath.substring(0, filepath.lastIndexOf("\\"));
-        } else {
-            path = folder.path;
+    var currentPath = [];
+
+    function addPath(dirName, path) {
+        var found = false;
+        for (var i in currentPath) {
+            if (currentPath[i].path === path) {
+                found = true;
+                currentPath.splice(i+1);
+                return false;
+            }
         }
-        return path;
+        if (!found) {
+            currentPath.push({
+                name: dirName,
+                path: path
+            });
+        }
+    }
+    function getPath() {
+        var path= "";
+        for (var i = 0; i < currentPath.length; i++) {
+            path += currentPath[i].name + "\\";
+        }
+        return path.substr(0,path.length-1);
+        //var path;
+        //if (folder.path === "") {
+        //    var filepath = getItemsFromGroup(resolveGroupReference("files")).getAt(0).file.path;
+        //    path = filepath.substring(0, filepath.lastIndexOf("\\"));
+        //} else {
+        //    path = folder.path;
+        //}
+        //return path;
     }
     function goUp() {
         var str = folder.path;
@@ -38,76 +63,71 @@
     function resetData() {
         list.forEach(function () { list.shift() });
     }
-    function setFolder(storageFolder) {
-        resetData();
-        // TODO: 데이터를 실제 데이터로 바꿉니다.
-        // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
-        folder = storageFolder;
+    function getParentFolderFromPath(pathString) {
+        return pathString.substring(0, pathString.lastIndexOf("\\"));
+    }
+    function addItems(storageObjects) {
         var count = 0;
         var total = 0;
         var item;
 
-        folder.getFoldersAsync().done(function (folders) {
-            total = folders.length;
-            folders.forEach(function (subfolder) {
-                subfolder.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
-                    count++;
+        if (folder === undefined) {
+            addPath(PATH_SELECTION, "");
+        }
+
+        total = storageObjects.length;
+        storageObjects.forEach(function (o) {
+            o.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
+                count++;
+
+                if (o.displayType.indexOf("folder") !== -1) {
                     item = {
                         group: {
                             key: "_folders",
                             title: "Folders",
                             folder: folder
                         },
-                        title: subfolder.name,
-                        folder: subfolder,
+                        title: o.name,
+                        folder: o,
                         thumbnail: URL.createObjectURL(thumbnail)
                     };
                     list.push(item);
-                    if (count >= total) {
-                        list.sort(function (f, s) {
-                            if (f == s) return 0;
-                            else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
-                                return 1;
-                            else return -1;
-                        });
-                    }
-                });
-            });
-        });
-
-        total = count = 0;
-        folder.getFilesAsync().done(function (files) {
-            total = files.length;
-            files.forEach(function (file) {
-                file.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
-                    count++;
-                    if (file.fileType.toLowerCase() == ".jpg" || file.fileType.toLowerCase() == ".png") {
+                } else {
+                    if (o.fileType.toLowerCase() == ".jpg" || o.fileType.toLowerCase() == ".png" || o.fileType.toLowerCase() == ".jpeg") {
                         item = {
                             group: {
                                 key: "files",
                                 title: "Files",
                                 folder: folder
                             },
-                            title: file.name,
-                            image: URL.createObjectURL(file),
-                            file: file,
+                            title: o.name,
+                            image: URL.createObjectURL(o),
+                            file: o,
                             thumbnail: URL.createObjectURL(thumbnail)
                         };
                         list.push(item);
                     }
-                    if (count >= total) {
-                        list.sort(function (f, s) {
-                            if (f == s) return 0;
-                            else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
-                                return 1;
-                            else return -1;
-                        });
-                    }
-                });
+                }
+                if (count >= total) {
+                    list.sort(function (f, s) {
+                        if (f == s) return 0;
+                        else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
+                            return 1;
+                        else return -1;
+                    });
+                }
             });
-
         });
+    }
+    function setFolder(storageFolder) {
+        resetData();
 
+        addPath(storageFolder.name, storageFolder.path);
+        // TODO: 데이터를 실제 데이터로 바꿉니다.
+        // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
+        folder = storageFolder;
+
+        folder.getItemsAsync().done(addItems);
     }
 
     // 그룹 키와 항목 제목을 손쉽게 serialize할 수 있는 고유 참조로 사용하여

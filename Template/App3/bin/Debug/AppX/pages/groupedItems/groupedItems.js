@@ -16,6 +16,11 @@
         // 이 함수는 사용자가 이 페이지로 이동할 때마다 호출되어
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
         ready: function (element, options) {
+            if (options && options.files) {
+                Data.addItems(options.files);
+            } else {
+                options && options.folder ? Data.setFolder(options.folder) : Data.setFolder(Windows.Storage.KnownFolders.picturesLibrary);
+            }
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
             listView.itemTemplate = element.querySelector(".itemtemplate");
@@ -37,11 +42,11 @@
             
             
             this.updatePageTitle();
-            var _this = this;
-            document.getElementById("up").addEventListener("click", function () {
-                Data.goUp();
-                _this.updatePageTitle();
-            });
+            //var _this = this;
+            //document.getElementById("up").addEventListener("click", function () {
+            //    Data.goUp();
+            //    _this.updatePageTitle();
+            //});
         },
          
         // 이 함수는 viewState 변경 내용에 응답하여 페이지 레이아웃을 업데이트합니다.
@@ -87,9 +92,12 @@
                 // 페이지가 맞춰지지 않은 경우 사용자가 항목을 호출했습니다.
                 
                 var item = Data.items.getAt(args.detail.itemIndex);
+
+                // 폴더를 선택한 경우
                 if (item.folder !== undefined) {
-                    Data.setFolder(item.folder);
-                    this.updatePageTitle();
+                    nav.navigate("/pages/groupedItems/groupedItems.html", {folder: item.folder});
+                    //Data.setFolder(item.folder);
+                    //this.updatePageTitle();
                 }
                 else {
                     nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
