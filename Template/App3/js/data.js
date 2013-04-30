@@ -8,6 +8,7 @@
         function groupDataSelector(item) { return item.group; }
     );
     var folder;
+    var events = {};
     WinJS.Namespace.define("Data", {
         items: groupedItems,
         groups: groupedItems.groups,
@@ -16,9 +17,9 @@
         resolveGroupReference: resolveGroupReference,
         resolveItemReference: resolveItemReference,
         setFolder: setFolder,
-        goUp: goUp,
         getPath: getPath,
-        dbg:dbg,
+        dbg: dbg,
+        events: events,
     });
     var currentPath = [];
     function dbg(msg) {
@@ -41,12 +42,15 @@
             });
         }
     }
-    function getPath() {
-        var path= "";
+    function getPath(isAbsolute) {
+        if (isAbsolute) {
+            return folder.path;
+        }
+        var path = "";
         for (var i = 0; i < currentPath.length; i++) {
             path += currentPath[i].name + "\\";
         }
-        return path.substr(0,path.length-1);
+        return path.substr(0, path.length - 1);
         //var path;
         //if (folder.path === "") {
         //    var filepath = getItemsFromGroup(resolveGroupReference("files")).getAt(0).file.path;
@@ -56,14 +60,8 @@
         //}
         //return path;
     }
-    function goUp() {
-        var str = folder.path;
-        var path = str.substring(0, str.lastIndexOf("\\"));
-        Windows.Storage.StorageFolder.getFolderFromPathAsync(path).then(function (f) {
-            setFolder(f);
-        });
-    }
-    function resetData() {
+    function resetData(isLaunched) {
+        if(isLaunched) currentPath = [];
         list.forEach(function () { list.shift() });
     }
     function getParentFolderFromPath(pathString) {
@@ -94,6 +92,7 @@
                         },
                         key: o.name,
                         title: o.name,
+                        path: o.path,
                         folder: o,
                         thumbnail: URL.createObjectURL(thumbnail)
                     };
@@ -108,6 +107,7 @@
                             },
                             key: o.name,
                             title: o.name,
+                            path: o.path,
                             image: URL.createObjectURL(o),
                             file: o,
                             thumbnail: URL.createObjectURL(thumbnail)
@@ -127,13 +127,12 @@
         });
     }
     function setFolder(storageFolder) {
-        resetData();
-        
         if (storageFolder.length >= 1) {
+            resetData(true);
             addPath(PATH_SELECTION, "");
             addItems(storageFolder);
         } else {
-
+            resetData();
             addPath(storageFolder.name, storageFolder.path);
             // TODO: 데이터를 실제 데이터로 바꿉니다.
             // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.

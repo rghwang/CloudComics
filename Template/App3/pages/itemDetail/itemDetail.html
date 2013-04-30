@@ -26,11 +26,16 @@
         data-win-control="WinJS.UI.FlipView"
         data-win-options="{  }">
     </div>
-    <div id="appbar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement:'top'}">
+    <div id="appbar" data-win-control="WinJS.UI.AppBar" data-win-options="{layout:'custom', placement:'top'}">
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmd', label:'Back', icon:'back', section:'selection'}" type="button"></button>
+
+        <div id="path" class="appbar_filename">File Path</div>
+
+        <button class="appbar_right" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'select', label:'Select', icon:'openlocal'}" type="button"></button>
+        <button class="appbar_right" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'copy', label:'Copy Path', icon:'copy'}" type="button"></button>
     </div>
-    <div id="Div1" data-win-control="WinJS.UI.AppBar" data-win-options="{placement:'bottom'}">
-        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'del', label:'Delete', icon:'delete'}" type="button"></button>
+    <div id="appbar_bottom" data-win-control="WinJS.UI.AppBar" data-win-options="{layout:'custom', placement:'bottom'}">
+        <button class="appbar_del" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'del', label:'Delete', icon:'delete'}" type="button"></button>
     </div>
 </body>
 </html>

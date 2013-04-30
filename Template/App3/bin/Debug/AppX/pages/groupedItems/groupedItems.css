@@ -86,6 +86,21 @@
                 width: 220px;
             }
 
+.appbar_filename {
+    font-size: x-large;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+
+.appbar_del {
+    float: right;
+}
+
+.appbar_right {
+    float: right;
+}
+
 @media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
     .groupeditemspage .groupeditemslist .item .item-image {
         position: absolute;

@@ -26,6 +26,8 @@
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
 
+            document.querySelector(".appbar_filename").innerText = Data.getPath(true);
+
             // 기본 모드에 있지 않을 때 현재 그룹으로 이동할 바로 가기 키(ctrl + alt + g)를
             // 설정합니다.
             listView.addEventListener("keydown", function (e) {

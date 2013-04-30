@@ -40,8 +40,14 @@
                 //Windows.Storage.StorageFolder.getFolderFromPathAsync(path).then(function (f) {
                 //    Data.setFolder(f);
                 //});
+
                 args.setPromise(WinJS.UI.processAll().then(function () {
-                    return nav.navigate(Application.navigator.home, { files: args.detail.files });
+                    nav.history = {};
+                    if (args.detail.files.length > 1) {
+                        return nav.navigate(Application.navigator.home, { files: args.detail.files });
+                    } else {
+                        return nav.navigate("/pages/itemDetail/itemDetail.html", { files: args.detail.files });
+                    }
                 }));
             }
         }
