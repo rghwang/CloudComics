@@ -37,3 +37,16 @@ C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\bld\Debug\resources.
 C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\bld\Debug\pri.resfiles
 C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\bld\Debug\LanguageQualifiers.txt
 C:\Users\rghwang\Documents\GitHub\CloudComics\Template\App3\bld\Debug\ProjectArchitectures.txt
+E:\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri
+E:\GitHub\CloudComics\Template\App3\bin\Debug\AppxManifest.xml
+E:\GitHub\CloudComics\Template\App3\bin\Debug\ImageApp.build.appxrecipe
+E:\GitHub\CloudComics\Template\App3\bld\Debug\priconfig.xml.intermediate
+E:\GitHub\CloudComics\Template\App3\bld\Debug\layout.resfiles.intermediate
+E:\GitHub\CloudComics\Template\App3\bld\Debug\resources.resfiles.intermediate
+E:\GitHub\CloudComics\Template\App3\bld\Debug\pri.resfiles.intermediate
+E:\GitHub\CloudComics\Template\App3\bld\Debug\priconfig.xml
+E:\GitHub\CloudComics\Template\App3\bld\Debug\layout.resfiles
+E:\GitHub\CloudComics\Template\App3\bld\Debug\resources.resfiles
+E:\GitHub\CloudComics\Template\App3\bld\Debug\pri.resfiles
+E:\GitHub\CloudComics\Template\App3\bld\Debug\LanguageQualifiers.txt
+E:\GitHub\CloudComics\Template\App3\bld\Debug\ProjectArchitectures.txt
