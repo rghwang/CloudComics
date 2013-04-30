@@ -7,13 +7,9 @@ images\storelogo.scale-100.png
 js\data.js
 js\default.js
 js\navigator.js
-lolst.png
 pages\groupedItems\groupedItems.css
 pages\groupedItems\groupedItems.html
 pages\groupedItems\groupedItems.js
 pages\itemDetail\itemDetail.css
 pages\itemDetail\itemDetail.html
 pages\itemDetail\itemDetail.js
-pages\loading\loading.css
-pages\loading\loading.html
-pages\loading\loading.js

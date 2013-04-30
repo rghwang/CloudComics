@@ -1,1 +1,1 @@
-C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\ImageApp.jsproj;neutral
+E:\GitHub\CloudComics\Template\App3\ImageApp.jsproj;neutral

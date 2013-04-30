@@ -76,3 +76,16 @@ C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3
 C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\pri.resfiles
 C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\LanguageQualifiers.txt
 C:\Users\rghwang\Documents\Visual Studio 2012\Projects\CloudComics\Template\App3\bld\Release\ProjectArchitectures.txt
+E:\GitHub\CloudComics\Template\App3\bin\Release\resources.pri
+E:\GitHub\CloudComics\Template\App3\bin\Release\AppxManifest.xml
+E:\GitHub\CloudComics\Template\App3\bin\Release\ImageApp.build.appxrecipe
+E:\GitHub\CloudComics\Template\App3\bld\Release\priconfig.xml.intermediate
+E:\GitHub\CloudComics\Template\App3\bld\Release\layout.resfiles.intermediate
+E:\GitHub\CloudComics\Template\App3\bld\Release\resources.resfiles.intermediate
+E:\GitHub\CloudComics\Template\App3\bld\Release\pri.resfiles.intermediate
+E:\GitHub\CloudComics\Template\App3\bld\Release\priconfig.xml
+E:\GitHub\CloudComics\Template\App3\bld\Release\layout.resfiles
+E:\GitHub\CloudComics\Template\App3\bld\Release\resources.resfiles
+E:\GitHub\CloudComics\Template\App3\bld\Release\pri.resfiles
+E:\GitHub\CloudComics\Template\App3\bld\Release\LanguageQualifiers.txt
+E:\GitHub\CloudComics\Template\App3\bld\Release\ProjectArchitectures.txt

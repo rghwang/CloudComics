@@ -17,7 +17,7 @@
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
         ready: function (element, options) {
             if (options && options.files) {
-                Data.addItems(options.files);
+                Data.setFolder(options.files);
             } else {
                 options && options.folder ? Data.setFolder(options.folder) : Data.setFolder(Windows.Storage.KnownFolders.picturesLibrary);
             }
@@ -39,8 +39,8 @@
 
             this._initializeLayout(listView, appView.value);
             listView.element.focus();
-            
-            
+
+
             this.updatePageTitle();
             //var _this = this;
             //document.getElementById("up").addEventListener("click", function () {
@@ -48,7 +48,7 @@
             //    _this.updatePageTitle();
             //});
         },
-         
+
         // 이 함수는 viewState 변경 내용에 응답하여 페이지 레이아웃을 업데이트합니다.
         updateLayout: function (element, viewState, lastViewState) {
             /// <param name="element" domElement="true" />
@@ -73,29 +73,46 @@
             /// <param name="listView" value="WinJS.UI.ListView.prototype" />
 
             if (viewState === appViewState.snapped) {
-                listView.itemDataSource = Data.groups.dataSource;
-                listView.groupDataSource = null;
+                //listView.itemDataSource = Data.groups.dataSource;
+                //listView.groupDataSource = null;
+                listView.itemDataSource = Data.items.dataSource;
+                listView.groupDataSource = Data.groups.dataSource;
                 listView.layout = new ui.ListLayout();
             } else {
                 listView.itemDataSource = Data.items.dataSource;
                 listView.groupDataSource = Data.groups.dataSource;
+
                 listView.layout = new ui.GridLayout({ groupHeaderPosition: "top" });
+
             }
         },
 
         _itemInvoked: function (args) {
             if (appView.value === appViewState.snapped) {
                 // 페이지가 맞춰진 경우 사용자가 그룹을 호출했습니다.
-                var group = Data.groups.getAt(args.detail.itemIndex);
-                this.navigateToGroup(group.key);
-            } else {
-                // 페이지가 맞춰지지 않은 경우 사용자가 항목을 호출했습니다.
-                
+                //var group = Data.groups.getAt(args.detail.itemIndex);
+                //this.navigateToGroup(group.key);
+
                 var item = Data.items.getAt(args.detail.itemIndex);
 
                 // 폴더를 선택한 경우
                 if (item.folder !== undefined) {
-                    nav.navigate("/pages/groupedItems/groupedItems.html", {folder: item.folder});
+                    nav.navigate("/pages/groupedItems/groupedItems.html", { folder: item.folder });
+                    //Data.setFolder(item.folder);
+                    //this.updatePageTitle();
+                }
+                else {
+                    nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
+                }
+
+            } else {
+                // 페이지가 맞춰지지 않은 경우 사용자가 항목을 호출했습니다.
+
+                var item = Data.items.getAt(args.detail.itemIndex);
+
+                // 폴더를 선택한 경우
+                if (item.folder !== undefined) {
+                    nav.navigate("/pages/groupedItems/groupedItems.html", { folder: item.folder });
                     //Data.setFolder(item.folder);
                     //this.updatePageTitle();
                 }

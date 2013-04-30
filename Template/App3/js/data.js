@@ -16,18 +16,21 @@
         resolveGroupReference: resolveGroupReference,
         resolveItemReference: resolveItemReference,
         setFolder: setFolder,
-        addItems: addItems,
         goUp: goUp,
         getPath: getPath,
+        dbg:dbg,
     });
     var currentPath = [];
+    function dbg(msg) {
+        new Windows.UI.Popups.MessageDialog(msg).showAsync();
 
+    }
     function addPath(dirName, path) {
         var found = false;
-        for (var i in currentPath) {
+        for (var i = 0 ; i < currentPath.length; i++) {
             if (currentPath[i].path === path) {
                 found = true;
-                currentPath.splice(i+1);
+                currentPath.splice(i + 1);
                 return false;
             }
         }
@@ -72,7 +75,7 @@
         var item;
 
         if (folder === undefined) {
-            addPath(PATH_SELECTION, "");
+            folder = {};
         }
 
         total = storageObjects.length;
@@ -123,13 +126,19 @@
     }
     function setFolder(storageFolder) {
         resetData();
+        
+        if (storageFolder.length >= 1) {
+            addPath(PATH_SELECTION, "");
+            addItems(storageFolder);
+        } else {
 
-        addPath(storageFolder.name, storageFolder.path);
-        // TODO: 데이터를 실제 데이터로 바꿉니다.
-        // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
-        folder = storageFolder;
+            addPath(storageFolder.name, storageFolder.path);
+            // TODO: 데이터를 실제 데이터로 바꿉니다.
+            // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
+            folder = storageFolder;
 
-        folder.getItemsAsync().done(addItems);
+            folder.getItemsAsync().done(addItems);
+        }
     }
 
     // 그룹 키와 항목 제목을 손쉽게 serialize할 수 있는 고유 참조로 사용하여
