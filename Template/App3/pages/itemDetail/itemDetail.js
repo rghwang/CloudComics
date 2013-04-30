@@ -19,7 +19,7 @@
             flipView.currentPage = items.indexOf(item);
             
             document.getElementById("cmd").addEventListener("click", function () {
-                WinJS.Navigation.navigate("/pages/groupedItems/groupedItems.html");
+                WinJS.Navigation.back();
             });
         }
     });
