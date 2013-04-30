@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="itemTemplate" data-win-control="WinJS.Binding.Template">
-        <div id="zoomElement" class="item-container" >
+        <div id="zoomElement" class="item-container">
             <img class="item-image" src="#" data-win-bind="src: image" />
         </div>
     </div>
@@ -28,6 +28,9 @@
     </div>
     <div id="appbar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement:'top'}">
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmd', label:'Back', icon:'back', section:'selection'}" type="button"></button>
+    </div>
+    <div id="Div1" data-win-control="WinJS.UI.AppBar" data-win-options="{placement:'bottom'}">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'del', label:'Delete', icon:'delete'}" type="button"></button>
     </div>
 </body>
 </html>

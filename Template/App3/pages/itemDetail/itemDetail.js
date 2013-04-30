@@ -21,6 +21,23 @@
             document.getElementById("cmd").addEventListener("click", function () {
                 WinJS.Navigation.back();
             });
+            document.getElementById("del").addEventListener("click", function () {
+                item.file.deleteAsync().then(function () {
+                    if (items.length > 1) {
+                        Data.items.splice(Data.items.indexOf(item), 1);
+                        flipView.itemDataSource = Data.getItemsFromGroup(Data.resolveGroupReference("files")).dataSource;
+
+                        document.getElementById("del").disabled = true;
+                        flipView.onpagecompleted = function () {
+                            item = items.getAt(flipView.currentPage);
+                            document.getElementById("del").disabled = false;
+                        }
+                    }else{
+                        WinJS.Navigation.back();
+                        return false;
+                    }
+                });
+            });
         }
     });
 })();

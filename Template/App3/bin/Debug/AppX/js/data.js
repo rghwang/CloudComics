@@ -92,6 +92,7 @@
                             title: "Folders",
                             folder: folder
                         },
+                        key: o.name,
                         title: o.name,
                         folder: o,
                         thumbnail: URL.createObjectURL(thumbnail)
@@ -105,6 +106,7 @@
                                 title: "Files",
                                 folder: folder
                             },
+                            key: o.name,
                             title: o.name,
                             image: URL.createObjectURL(o),
                             file: o,
