@@ -80,7 +80,9 @@
             o.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
                 count++;
 
-                if (o.displayType.indexOf("folder") !== -1) {
+
+                // 아이템이 폴더인 경우
+                if (o.isOfType(Windows.Storage.StorageItemTypes.folder)) {
                     item = {
                         group: {
                             key: "_folders",
