@@ -23,7 +23,7 @@
             flipView.currentPage = items.indexOf(item);
             flipView.onpageselected = function () {
                 item = items.getAt(flipView.currentPage);
-                document.querySelector(".appbar_filename").innerText = item.file.path;
+                document.querySelector(".appbar_filename").innerText = item.storageItem.path;
                 document.getElementById("copy").disabled = false;
             }
             flipView.onpagecompleted = function () {
@@ -34,7 +34,7 @@
                 WinJS.Navigation.back();
             });
             document.getElementById("del").addEventListener("click", function () {
-                item.file.deleteAsync().then(function () {
+                item.storageItem.deleteAsync().then(function () {
                     if (items.length > 1) {
                         Data.items.splice(Data.items.indexOf(item), 1);
                         flipView.itemDataSource = Data.getItemsFromGroup(Data.resolveGroupReference("files")).dataSource;
@@ -50,7 +50,7 @@
             document.getElementById("copy").addEventListener("click", function () {
                 var dp = new Windows.ApplicationModel.DataTransfer.DataPackage();
                 dp.requestedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.copy;
-                var txt = item.file.path.substring(0, item.file.path.lastIndexOf("\\"));
+                var txt = item.storageItem.path.substring(0, item.storageItem.path.lastIndexOf("\\"));
                 dp.setText(txt);
                 Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dp);
                 document.getElementById("copy").disabled = true;
@@ -59,6 +59,15 @@
                 }
             });
             document.getElementById("select").addEventListener("click", function () {
+                // Verify that we are currently not snapped, or that we can unsnap to open the picker
+                var currentState = Windows.UI.ViewManagement.ApplicationView.value;
+                if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&
+                    !Windows.UI.ViewManagement.ApplicationView.tryUnsnap()) {
+                    // Fail silently if we can't unsnap
+                    return;
+                }
+
+
                 // Create the picker object and set options
                 var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
                 openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;

@@ -16,7 +16,7 @@
     <AppXManifest Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-04-30T07:55:07.109</Modified>
+      <Modified>2013-05-01T08:54:51.196</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -50,7 +50,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\data.js">
       <PackagePath>js\data.js</PackagePath>
-      <Modified>2013-04-30T16:04:14.452</Modified>
+      <Modified>2013-05-01T10:26:40.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\default.js">
       <PackagePath>js\default.js</PackagePath>
@@ -62,11 +62,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.js">
       <PackagePath>pages\itemDetail\itemDetail.js</PackagePath>
-      <Modified>2013-04-30T15:38:01.812</Modified>
+      <Modified>2013-05-01T10:17:18.867</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2013-04-30T15:51:36.449</Modified>
+      <Modified>2013-05-01T10:16:59.039</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.html">
       <PackagePath>pages\itemDetail\itemDetail.html</PackagePath>
@@ -74,7 +74,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.html">
       <PackagePath>pages\groupedItems\groupedItems.html</PackagePath>
-      <Modified>2013-04-30T15:39:39.878</Modified>
+      <Modified>2013-05-01T09:32:18.682</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\default.html">
       <PackagePath>default.html</PackagePath>

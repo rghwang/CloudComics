@@ -44,7 +44,8 @@
     }
     function getPath(isAbsolute) {
         if (isAbsolute) {
-            return folder.path;
+            if (folder.path === "") return folder.name;
+            else return folder.path;
         }
         var path = "";
         for (var i = 0; i < currentPath.length; i++) {
@@ -61,7 +62,7 @@
         //return path;
     }
     function resetData(isLaunched) {
-        if(isLaunched) currentPath = [];
+        if (isLaunched) currentPath = [];
         list.forEach(function () { list.shift() });
     }
     function getParentFolderFromPath(pathString) {
@@ -71,10 +72,6 @@
         var count = 0;
         var total = 0;
         var item;
-
-        if (folder === undefined) {
-            folder = {};
-        }
 
         total = storageObjects.length;
         storageObjects.forEach(function (o) {
@@ -93,7 +90,7 @@
                         key: o.name,
                         title: o.name,
                         path: o.path,
-                        folder: o,
+                        storageItem: o,
                         thumbnail: URL.createObjectURL(thumbnail)
                     };
                     list.push(item);
@@ -109,7 +106,7 @@
                             title: o.name,
                             path: o.path,
                             image: URL.createObjectURL(o),
-                            file: o,
+                            storageItem: o,
                             thumbnail: URL.createObjectURL(thumbnail)
                         };
                         list.push(item);
@@ -131,6 +128,13 @@
             resetData(true);
             addPath(PATH_SELECTION, "");
             addItems(storageFolder);
+
+            var path = storageFolder[0].path.substring(0, storageFolder[0].path.lastIndexOf("\\"));
+            var name = path.substring(0, path.lastIndexOf("\\"));
+            folder = {
+                path: path,
+                name: name
+            };
         } else {
             resetData();
             addPath(storageFolder.name, storageFolder.path);
