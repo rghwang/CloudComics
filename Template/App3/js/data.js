@@ -13,7 +13,7 @@
     var folder;
     var events = {};
     var options = {
-        folderList : new WinJS.Binding.List(),
+        folderList: new WinJS.Binding.List(),
     };
 
     WinJS.Namespace.define("Data", {
@@ -77,7 +77,6 @@
         return pathString.substring(0, pathString.lastIndexOf("\\"));
     }
     function addItems(storageObjects) {
-
         storageObjects.forEach(function (o) {
 
             var item;
@@ -115,23 +114,38 @@
                     list.push(item);
                 }
             }
-            o.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
-                item.thumbnail = URL.createObjectURL(thumbnail);
-                if (events.onitemmutated) events.onitemmutated(item);
+        });
+        if (list.length > 0) {
+            list.sort(function (f, s) {
+                if (f == s) return 0;
+                else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
+                    return 1;
+                else return -1;
             });
-            Data.events.onitemmutated = function (item) {
-                var q = ".item-image[alt=\"" + item.title + "\"]";
-                var e = document.querySelector(q)
-                if (e) e.src = item.thumbnail;
-            };
+            getNextThumbnail();
+        }
+    }
+    var thumbnailCount = 0;
+    function getNextThumbnail() {
+        var item = list.getAt(thumbnailCount++);
 
+        item.storageItem.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
+            if (thumbnail) {
+                item.thumbnail = URL.createObjectURL(thumbnail);
+                
+                //var q = ".item-image[alt=\"" + item.title + "\"]";
+                //var e = document.querySelector(q)
+                //if (e) e.src = item.thumbnail;
+
+                // crash when too many getThumbnailAsync in a short time(>160)
+                if (thumbnailCount < list.length ) {
+                    getNextThumbnail();
+                } else {
+                    thumbnailCount = 0;
+                }
+            }
         });
-        list.sort(function (f, s) {
-            if (f == s) return 0;
-            else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
-                return 1;
-            else return -1;
-        });
+
     }
     function setFolder(storageFolder) {
         if (storageFolder.length >= 1) {
