@@ -1,5 +1,6 @@
 css\default.css
 default.html
+images\loading.png
 images\Logo.scale-100.png
 images\smalllogo.scale-100.png
 images\splashscreen.scale-100.png
@@ -13,3 +14,6 @@ pages\groupedItems\groupedItems.js
 pages\itemDetail\itemDetail.css
 pages\itemDetail\itemDetail.html
 pages\itemDetail\itemDetail.js
+pages\options\options.css
+pages\options\options.html
+pages\options\options.js

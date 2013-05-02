@@ -9,6 +9,30 @@
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;
 
+
+    function onPrivacyCommand(e) {
+        var uri = Windows.Foundation.Uri("http://uxfactory.tistory.com/3");
+        Windows.System.Launcher.launchUriAsync(uri).then(
+            function (success) {
+                if (success) {
+
+                } else {
+
+                }
+            }
+        );
+    }
+    function onOptionsCommand(e) {
+        WinJS.Navigation.navigate("/pages/options/options.html", {});
+    }
+    function onCommandsRequested(e) {
+        var optionsCommand = new Windows.UI.ApplicationSettings.SettingsCommand("option", "Options", onOptionsCommand);
+        e.request.applicationCommands.append(optionsCommand);
+
+        var privacyCommand = new Windows.UI.ApplicationSettings.SettingsCommand("privacy", "Privacy Policy", onPrivacyCommand);
+        e.request.applicationCommands.append(privacyCommand);
+    }
+
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -17,7 +41,12 @@
             } else {
                 // TODO: 이 응용 프로그램은 일시 중단되었다가 다시 활성화되었습니다.
                 // 여기서 응용 프로그램 상태를 복원하십시오.
-            }          
+            }
+
+            // Setting Pane
+            var settingsPane = Windows.UI.ApplicationSettings.SettingsPane.getForCurrentView();
+            settingsPane.addEventListener("commandsrequested", onCommandsRequested);
+
             //if (app.sessionState.history) {
             //    nav.history = app.sessionState.history;
             //}

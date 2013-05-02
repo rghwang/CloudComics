@@ -7,8 +7,15 @@
         function groupKeySelector(item) { return item.group.key; },
         function groupDataSelector(item) { return item.group; }
     );
+    //list.onitemmutated = function (e) {
+    //    e;
+    //}
     var folder;
     var events = {};
+    var options = {
+        folderList : new WinJS.Binding.List(),
+    };
+
     WinJS.Namespace.define("Data", {
         items: groupedItems,
         groups: groupedItems.groups,
@@ -20,6 +27,7 @@
         getPath: getPath,
         dbg: dbg,
         events: events,
+        options: options,
     });
     var currentPath = [];
     function dbg(msg) {
@@ -69,58 +77,60 @@
         return pathString.substring(0, pathString.lastIndexOf("\\"));
     }
     function addItems(storageObjects) {
-        var count = 0;
-        var total = 0;
-        var item;
 
-        total = storageObjects.length;
         storageObjects.forEach(function (o) {
-            o.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
-                count++;
 
+            var item;
 
-                // 아이템이 폴더인 경우
-                if (o.isOfType(Windows.Storage.StorageItemTypes.folder)) {
+            // 아이템이 폴더인 경우
+            if (o.isOfType(Windows.Storage.StorageItemTypes.folder)) {
+                item = {
+                    group: {
+                        key: "_folders",
+                        title: "Folders",
+                        folder: folder
+                    },
+                    key: o.name,
+                    title: o.name,
+                    path: o.path,
+                    storageItem: o,
+                    thumbnail: "/images/loading.png",
+                };
+                list.push(item);
+            } else {
+                if (o.fileType.toLowerCase() == ".jpg" || o.fileType.toLowerCase() == ".png" || o.fileType.toLowerCase() == ".jpeg") {
                     item = {
                         group: {
-                            key: "_folders",
-                            title: "Folders",
+                            key: "files",
+                            title: "Files",
                             folder: folder
                         },
                         key: o.name,
                         title: o.name,
                         path: o.path,
+                        image: URL.createObjectURL(o),
                         storageItem: o,
-                        thumbnail: URL.createObjectURL(thumbnail)
+                        thumbnail: "/images/loading.png",
                     };
                     list.push(item);
-                } else {
-                    if (o.fileType.toLowerCase() == ".jpg" || o.fileType.toLowerCase() == ".png" || o.fileType.toLowerCase() == ".jpeg") {
-                        item = {
-                            group: {
-                                key: "files",
-                                title: "Files",
-                                folder: folder
-                            },
-                            key: o.name,
-                            title: o.name,
-                            path: o.path,
-                            image: URL.createObjectURL(o),
-                            storageItem: o,
-                            thumbnail: URL.createObjectURL(thumbnail)
-                        };
-                        list.push(item);
-                    }
                 }
-                if (count >= total) {
-                    list.sort(function (f, s) {
-                        if (f == s) return 0;
-                        else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
-                            return 1;
-                        else return -1;
-                    });
-                }
+            }
+            o.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
+                item.thumbnail = URL.createObjectURL(thumbnail);
+                if (events.onitemmutated) events.onitemmutated(item);
             });
+            Data.events.onitemmutated = function (item) {
+                var q = ".item-image[alt=\"" + item.title + "\"]";
+                var e = document.querySelector(q)
+                if (e) e.src = item.thumbnail;
+            };
+
+        });
+        list.sort(function (f, s) {
+            if (f == s) return 0;
+            else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
+                return 1;
+            else return -1;
         });
     }
     function setFolder(storageFolder) {
