@@ -8,6 +8,7 @@
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;
+    var hasSettingPane = false;
 
 
     function onPrivacyCommand(e) {
@@ -32,8 +33,24 @@
         var privacyCommand = new Windows.UI.ApplicationSettings.SettingsCommand("privacy", "Privacy Policy", onPrivacyCommand);
         e.request.applicationCommands.append(privacyCommand);
     }
-
+    function navigateToPath(folderPath, fileName) { // filename은 특정 이미지를 바로 보여주기 원할 경우
+        Windows.Storage.StorageFolder.getFolderFromPathAsync(folderPath).done(function (f) {
+            if (f && Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.checkAccess(f)) {
+                return nav.navigate(Application.navigator.home, { folder: f, item: ["files", fileName], resetPath: true });
+            }
+        });
+    }
+    WinJS.Namespace.define("SelectView", {
+        navigateToPath: navigateToPath,
+    });
     app.addEventListener("activated", function (args) {
+        // Setting Pane
+        if (!hasSettingPane) {
+            var settingsPane = Windows.UI.ApplicationSettings.SettingsPane.getForCurrentView();
+            settingsPane.addEventListener("commandsrequested", onCommandsRequested);
+            hasSettingPane = true;
+        }
+
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
                 // TODO: 이 응용 프로그램은 새로 시작되었습니다. 여기서
@@ -42,11 +59,6 @@
                 // TODO: 이 응용 프로그램은 일시 중단되었다가 다시 활성화되었습니다.
                 // 여기서 응용 프로그램 상태를 복원하십시오.
             }
-
-            // Setting Pane
-            var settingsPane = Windows.UI.ApplicationSettings.SettingsPane.getForCurrentView();
-            settingsPane.addEventListener("commandsrequested", onCommandsRequested);
-
             //if (app.sessionState.history) {
             //    nav.history = app.sessionState.history;
             //}
@@ -55,32 +67,38 @@
                     nav.history.current.initialPlaceholder = true;
                     return nav.navigate(nav.location, nav.state);
                 } else {
-                    return nav.navigate(Application.navigator.home);
+                    // 앱 실행 시 진입점
+                    // TODO: 중단에서 활성화 될 때 테스트 및 처리
+                    return nav.navigate(Application.navigator.home, { resetPath: true });
                 }
             }));
         } else if (args.detail.kind == activation.ActivationKind.file) {
             if (args.detail.files.size > 0) {
-
-                //// TODO: 파일로부터 실행되는 경우에 이미지를 보여주는 부분 구현할 것.
-                //var file = args.detail.files[0];
-                //var path = file.path;
-                //path = path.substring(0, path.lastIndexOf("\\"));
-                
-                //Windows.Storage.StorageFolder.getFolderFromPathAsync(path).then(function (f) {
-                //    Data.setFolder(f);
-                //});
-
                 args.setPromise(WinJS.UI.processAll().then(function () {
                     nav.history = {};
-                    if (args.detail.files.length > 1) {
-                        return nav.navigate(Application.navigator.home, { files: args.detail.files });
-                    } else {
-                        return nav.navigate("/pages/itemDetail/itemDetail.html", { files: args.detail.files });
-                    }
+
+                    if (args.detail.files.length === 1) {
+                        var folderPath = args.detail.files[0].path.substring(0, args.detail.files[0].path.lastIndexOf("\\"));
+
+                        // BUG: 등록된 폴더가 아닌 경우 에러남(Access Failed)
+                        // TODO: FAL에서 getFoldersAync를 이용해서 허용된 폴더 리스트를 가져온 후, folderpath에서 각각의 path를 검색해서 일치하는 문자열이 있을 경우에 액세스 가능하다고 판단하여 폴더를 가져옴.
+                        var found = false;
+
+                        if (Data.checkAccess(folderPath)) {
+                            // 파일을 하나만 선택했을 시 진입점
+                            navigateToPath(folderPath, args.detail.files[0].name);
+                        } else {
+                            var parentFolder = folderPath.substring(0, folderPath.indexOf("\\") + 1);
+                            var msg = [
+                                "To view other images in the same folder, you should pick and add a parent folder to the accessible folders. In this case, " + parentFolder + " is recommended."
+                                , "Add \"" + parentFolder + "\" to Accessble Folders"
+                            ];
+                            nav.navigate("/pages/options/options.html", { folderPath: folderPath, fileName: args.detail.files[0].name, msg:msg });
+                        }
+                    } else return nav.navigate(Application.navigator.home, { files: args.detail.files, resetPath: true }); // 파일을 여러개 선택했을 시의 진입점
                 }));
             }
         }
-        // TODO: picturesLibrary가 아닌 경우에 오류 남.
 
     });
 

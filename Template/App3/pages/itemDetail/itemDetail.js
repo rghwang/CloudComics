@@ -5,6 +5,7 @@
         // 이 함수는 사용자가 이 페이지로 이동할 때마다 호출되어
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
         ready: function (element, options) {
+            // 파일 한개 선택해서 들어올 때에 대한 처리(old version)
             if (options && options.files) {
                 Data.setFolder(options.files);
                 document.getElementById("cmd").style.visibility = "hidden";

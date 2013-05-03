@@ -18,6 +18,7 @@
 }
 
 .option-label {
+    margin-top:20px;
 	margin-bottom:10px;
 }
 
@@ -25,6 +26,9 @@
 	margin-bottom:10px;
 }
 
-.item-title {
+.option-title {
 	font-size:x-large;
+}
+#OK {
+    visibility: hidden;
 }

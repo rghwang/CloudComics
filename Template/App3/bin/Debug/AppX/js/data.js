@@ -13,9 +13,20 @@
     var folder;
     var events = {};
     var options = {
-        folderList: new WinJS.Binding.List(),
+        accessList: new WinJS.Binding.List(),
     };
 
+    var s = Windows.Storage.ApplicationData.current.localSettings.values["accessList"];
+
+    if (s === undefined) s = "";
+    else {
+        var a = s.split("|");
+        var b;
+        for (var i = 0; i < a.length; i++) {
+            b = a[i].split("?");
+            options.accessList.push({ title: b[0], token: b[1] });
+        }
+    }
     WinJS.Namespace.define("Data", {
         items: groupedItems,
         groups: groupedItems.groups,
@@ -27,12 +38,94 @@
         getPath: getPath,
         dbg: dbg,
         events: events,
-        options: options,
+        resetPath: resetPath,
+        getAccessList: getAccessList,
+        addAccessList: addAccessList,
+        removeAccessList: removeAccessList,
+        clearAccessList: clearAccessList,
+        checkAccess: checkAccess,
     });
     var currentPath = [];
     function dbg(msg) {
         new Windows.UI.Popups.MessageDialog(msg).showAsync();
+    }
+    function clearAccessList() {
+        Windows.Storage.ApplicationData.current.localSettings.values.remove("accessList");
+        Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.clear();
+        while (options.accessList.length > 0) options.accessList.pop();
+    }
 
+    function getAccessList() {
+        return options.accessList;
+    }
+    function addAccessList(folder) {
+        var found = false;
+        options.accessList.map(function (o) {
+            if (o.title == folder.path) {
+                found = true;
+                return;
+            }
+        });
+
+        if (!found) {
+            var token = Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.add(folder);
+            options.accessList.push({
+                title: folder.path,
+                token: token,
+            });
+            saveAccessList();
+        }
+    }
+    function removeAccessList(indices) {
+        var offset = 0; // indices = [1,3,5] 이렇게 들어왔을 때, 1=>2=>3 순서로 지움. 예) list = [0,1,2,3,4,5] => [0,2,3,4,5] => [0,2,4,5] => [0,2,4]
+        for (var i = 0; i < indices.length; i++) {
+            Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.remove(options.accessList.getAt(indices[i - offset]).token);
+            options.accessList.splice(indices[i - offset], 1);
+            offset++;
+        }
+        saveAccessList();
+    }
+    function saveAccessList() {
+        var str = "";
+        options.accessList.map(function (e) {
+            str += e.title + "?" + e.token + "|";
+        });
+        if (str === "") Windows.Storage.ApplicationData.current.localSettings.values.remove("accessList");
+        else Windows.Storage.ApplicationData.current.localSettings.values["accessList"] = str.substr(0, str.length - 1);
+    }
+    function checkAccess(folderPath) {
+        var found = false;
+        for (var i = 0; i < options.accessList.length; i++) {
+            if (folderPath.indexOf(options.accessList.getAt(i).title) !== -1 ) {
+                found = true;
+                break;
+            }
+        }
+        return found;
+    }
+    function setFolder(storageFolder) {
+        if (storageFolder.length >= 1) { // 선택한 파일이 있는 경우
+            resetData();
+            var folderPath = storageFolder[0].path.substring(0, storageFolder[0].path.lastIndexOf("\\"));
+
+            addPath(PATH_SELECTION, "");
+            addItems(storageFolder);
+
+            var folderName = folderPath.substring(0, folderPath.lastIndexOf("\\"));
+            folder = {
+                path: folderPath,
+                name: folderName
+            };
+
+        } else { // 폴더를 지정해서 여는 경우
+            resetData();
+            addPath(storageFolder.name, storageFolder.path);
+            // TODO: 데이터를 실제 데이터로 바꿉니다.
+            // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
+            folder = storageFolder;
+
+            folder.getItemsAsync().done(addItems);
+        }
     }
     function addPath(dirName, path) {
         var found = false;
@@ -69,9 +162,11 @@
         //}
         //return path;
     }
-    function resetData(isLaunched) {
-        if (isLaunched) currentPath = [];
+    function resetData() {
         list.forEach(function () { list.shift() });
+    }
+    function resetPath() {
+        currentPath = [];
     }
     function getParentFolderFromPath(pathString) {
         return pathString.substring(0, pathString.lastIndexOf("\\"));
@@ -128,15 +223,18 @@
     var thumbnailCount = 0;
     function getNextThumbnail() {
         var item = list.getAt(thumbnailCount++);
+
         item.storageItem.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
             if (thumbnail) {
                 item.thumbnail = URL.createObjectURL(thumbnail);
-                //var q = ".item-image[alt=\"" + item.title + "\"]";
-                //var e = document.querySelector(q)
-                //if (e) e.src = item.thumbnail;
 
-                // crash if the thumbnailCount is too big(>160)
+                var query = ".item-image[alt=\"" + item.title + "\"]";
+                var img = document.querySelector(query)
+                if (img) img.src = item.thumbnail;
+
+                // crash when too many getThumbnailAsync in a short time(>160)
                 if (thumbnailCount < list.length) {
+                    if (thumbnail > 100) return;
                     getNextThumbnail();
                 } else {
                     thumbnailCount = 0;
@@ -144,28 +242,6 @@
             }
         });
 
-    }
-    function setFolder(storageFolder) {
-        if (storageFolder.length >= 1) {
-            resetData(true);
-            addPath(PATH_SELECTION, "");
-            addItems(storageFolder);
-
-            var path = storageFolder[0].path.substring(0, storageFolder[0].path.lastIndexOf("\\"));
-            var name = path.substring(0, path.lastIndexOf("\\"));
-            folder = {
-                path: path,
-                name: name
-            };
-        } else {
-            resetData();
-            addPath(storageFolder.name, storageFolder.path);
-            // TODO: 데이터를 실제 데이터로 바꿉니다.
-            // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
-            folder = storageFolder;
-
-            folder.getItemsAsync().done(addItems);
-        }
     }
 
     // 그룹 키와 항목 제목을 손쉽게 serialize할 수 있는 고유 참조로 사용하여

@@ -16,7 +16,7 @@
 <body>
     <div id="folderListTemplate" data-win-control="WinJS.Binding.Template">
         <div class="item-template">
-            <h4 class="item-title" data-win-bind="innerText : title"></h4>
+            <h4 class="option-title" data-win-bind="innerText : title"></h4>
         </div>
     </div>
     <div class="options fragment">
@@ -27,12 +27,17 @@
             </h1>
         </header>
         <section class="optionmain" aria-label="Main content" role="main">
-			<h2 class="option-label">Accessilble Folders</h2>
-            <h4 class="option-desc">Allowed folders that SelectView can view image files.</h4>
+            <h2 class="option-label">Accessilble Folders</h2>
+            <h4 class="option-desc">Allow SelectView app to view image files in these folders. For Windows 8 File Access, you should pick the folders to allow.</h4>
             <div class="folder-list" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'multi', swipeBehavior: 'none', tapBehavior: 'toggleSelect' }"></div>
             <button id="add" type="button">Add</button>
             <button id="remove" type="button" disabled>Remove</button>
-
+            <button id="clear" type="button">Clear</button>
+            <div id="OK">
+                <h2 class="option-label">Ready to view</h2>
+                <h4 class="option-desc" id="OK_msg"></h4>
+                <button id="OK_btn" type="button">View the images</button>
+            </div>
         </section>
     </div>
 </body>

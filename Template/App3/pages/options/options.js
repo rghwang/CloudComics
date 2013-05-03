@@ -2,18 +2,32 @@
 // http://go.microsoft.com/fwlink/?LinkId=232511
 (function () {
     "use strict";
+    var showOK = false;
 
     WinJS.UI.Pages.define("/pages/options/options.html", {
         // 이 함수는 사용자가 이 페이지로 이동할 때마다 호출되어
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
         ready: function (element, options) {
             // TODO: 페이지를 초기화합니다.
+            if (options && options.folderPath) showOK = true;
+            else showOK = false;
+
 
             var listView = element.querySelector(".folder-list").winControl;
-            listView.itemDataSource = Data.options.folderList.dataSource;
+            listView.itemDataSource = Data.getAccessList().dataSource;
             listView.itemTemplate = document.getElementById("folderListTemplate");
             listView.layout = new WinJS.UI.ListLayout();
 
+            listView.onselectionchanged = function () {
+                if (listView.selection.count() > 0) document.getElementById("remove").removeAttribute("disabled");
+                else document.getElementById("remove").setAttribute("disabled");
+            }
+            document.getElementById("remove").addEventListener("click", function () {
+                Data.removeAccessList(listView.selection.getIndices());
+            });
+            document.getElementById("clear").addEventListener("click", function () {
+                Data.clearAccessList();
+            });
             document.getElementById("add").addEventListener("click", function () {
                 // Verify that we are currently not snapped, or that we can unsnap to open the picker
                 var currentState = Windows.UI.ViewManagement.ApplicationView.value;
@@ -34,19 +48,24 @@
                     if (folder) {
                         // Application now has read/write access to all contents in the picked folder (including sub-folder contents)
                         // Cache folder so the contents can be accessed at a later time
-                        Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.addOrReplace("PickedFolderToken", folder);
-                        Data.options.folderList.push({
-                            title:folder.path
-                        });
+                        Data.addAccessList(folder);
+                        if (options && options.folderPath && options.folderPath.indexOf(folder.path) !== -1) {
+                            document.getElementById("OK").style.visibility = "visible";
+                            document.getElementById("OK_msg").innerText = "Okay, SelectView app can view images in \"" + options.folderPath +"\".";
+                            document.getElementById("OK_btn").addEventListener("click", function () {
+                                WinJS.Navigation.history = {};
+                                SelectView.navigateToPath(options.folderPath, options.fileName);
+                            });
+                        }
                     } else {
                         // The picker was dismissed with no selected file
                         WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
                     }
                 });
             });
-            document.getElementById("remove", function () {
-
-            });
+            if (options && options.msg) {
+                new Windows.UI.Popups.MessageDialog(options.msg[0], options.msg[1]).showAsync();
+            }
         },
 
         unload: function () {

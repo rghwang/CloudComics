@@ -9,24 +9,31 @@
     ui.Pages.define("/pages/groupedItems/groupedItems.html", {
         // groupHeaderPage로 이동합니다. groupHeaders에서 호출되었습니다.
         // 바로 가기 키 및 iteminvoked에서 호출되었습니다.
+
         navigateToGroup: function (key) {
             nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(Data.getItemsFromGroup(Data.resolveGroupReference(key)).getItem(0).data) });
         },
-
+        
         // 이 함수는 사용자가 이 페이지로 이동할 때마다 호출되어
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
         ready: function (element, options) {
-            if (options && options.files) {
-                Data.setFolder(options.files);
-            } else {
-                options && options.folder ? Data.setFolder(options.folder) : Data.setFolder(Windows.Storage.KnownFolders.picturesLibrary);
-            }
+            var param;
+            if (options) {
+                if (options.files) { // 파일을 선택해서 실행한 경우
+                    param = options.files;
+                } else if( options.folder ) { // 앱을 직접 실행하거나, 앱 실행 중에 폴더로 진입하는 경우
+                    param = options.folder;
+                }
+
+                if (options.resetPath) Data.resetPath();
+            } 
+            if( param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
+            Data.setFolder(param);
+
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
-
-
 
             document.querySelector(".appbar_filename").innerText = Data.getPath(true);
 
@@ -51,6 +58,12 @@
             //    Data.goUp();
             //    _this.updatePageTitle();
             //});
+
+            if (options && options.item) {
+                var temp = nav.history.current.state.item;
+                nav.history.current.state.item = false;
+                return nav.navigate("/pages/itemDetail/itemDetail.html", { item: temp });
+            }
 
             document.getElementById("del").disabled = true;
             listView.onselectionchanged = function () {
@@ -99,7 +112,7 @@
                 // Open the picker for the user to pick a file
                 openPicker.pickMultipleFilesAsync().then(function (files) {
                     if (files.size > 0) {
-                        WinJS.Navigation.navigate(Application.navigator.home, { files: files });
+                        WinJS.Navigation.navigate(Application.navigator.home, { files: files , resetPath:true});
                     } else {
                         // The picker was dismissed with no selected file
                         WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
