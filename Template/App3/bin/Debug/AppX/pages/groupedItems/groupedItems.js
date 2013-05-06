@@ -17,6 +17,8 @@
         // 이 함수는 사용자가 이 페이지로 이동할 때마다 호출되어
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
         ready: function (element, options) {
+            var listView = loadListViewControl();
+            /*
             var param;
             if (options) {
                 if (options.files) { // 파일을 선택해서 실행한 경우
@@ -34,9 +36,9 @@
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
-
             document.querySelector(".appbar_filename").innerText = Data.getPath(true);
-
+            
+            */
             // 기본 모드에 있지 않을 때 현재 그룹으로 이동할 바로 가기 키(ctrl + alt + g)를
             // 설정합니다.
             listView.addEventListener("keydown", function (e) {
@@ -149,12 +151,12 @@
             if (viewState === appViewState.snapped) {
                 //listView.itemDataSource = Data.groups.dataSource;
                 //listView.groupDataSource = null;
-                listView.itemDataSource = Data.items.dataSource;
-                listView.groupDataSource = Data.groups.dataSource;
+                //listView.itemDataSource = Data.items.dataSource;
+                //listView.groupDataSource = Data.groups.dataSource;
                 listView.layout = new ui.ListLayout();
             } else {
-                listView.itemDataSource = Data.items.dataSource;
-                listView.groupDataSource = Data.groups.dataSource;
+                //listView.itemDataSource = Data.items.dataSource;
+                //listView.groupDataSource = Data.groups.dataSource;
 
                 listView.layout = new ui.GridLayout({ groupHeaderPosition: "top" });
 
@@ -183,4 +185,60 @@
             }
         }
     });
+    function loadListViewControl() {
+        // Build datasource from the pictures library
+        var library = Windows.Storage.KnownFolders.picturesLibrary;
+        var queryOptions = new Windows.Storage.Search.QueryOptions;
+        queryOptions.folderDepth = Windows.Storage.Search.FolderDepth.shallow;
+        queryOptions.indexerOption = Windows.Storage.Search.IndexerOption.useIndexerWhenAvailable;
+
+        var fileQuery = library.createFileQueryWithOptions(queryOptions);
+        var dataSourceOptions = {
+            mode: Windows.Storage.FileProperties.ThumbnailMode.picturesView,
+            requestedThumbnailSize: 190,
+            thumbnailOptions: Windows.Storage.FileProperties.ThumbnailOptions.none
+        };
+
+        var dataSource = new WinJS.UI.StorageDataSource(fileQuery, dataSourceOptions);
+        // An equivalent datasource can be created with all the default options above by simply calling
+        // var dataSource = new WinJS.UI.StorageDataSource("Pictures");
+
+        var container = document.getElementById("listviewDiv");
+        var listViewOptions = {
+            itemDataSource: dataSource,
+            itemTemplate: storageRenderer,
+            layout: new WinJS.UI.GridLayout(),
+            selectionMode: "single"
+        };
+
+        var listViewControl = new WinJS.UI.ListView(container, listViewOptions);
+        return listViewControl;
+    };
+
+    function storageRenderer(itemPromise, element) {
+        var img, itemStatus;
+        if (element === null) {
+            // dom is not recycled, so create inital structure
+            element = document.createElement("div");
+            element.className = "FileTemplate";
+            element.appendChild(document.createElement("img"));
+        }
+        img = element.querySelector("img");
+        img.style.opacity = 0;
+
+        return {
+            // returns the placeholder
+            element: element,
+            // and a promise that will complete when the item is fully rendered
+            renderComplete: itemPromise.then(function (item) {
+                // now do cheap work (none here, so we return item ready)
+                return item.ready;
+            }).then(function (item) {
+                // wait until item.ready before doing expensive work
+                return WinJS.UI.StorageDataSource.loadThumbnail(item, img).then(function (image) {
+                    // perform any operation that requires the thumbnail to be available
+                });
+            })
+        };
+    }
 })();
