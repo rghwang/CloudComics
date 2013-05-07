@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>NYRG_PC</Machine>
-    <WindowsUser>NYRG</WindowsUser>
+    <Machine>KRRGHWANG0426</Machine>
+    <WindowsUser>rghwang</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>CDBE0CEAECF44F6ADE2498D23706A7F19159DC66E438E7AAFB94F031C22A3E40</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>EB0EB6900FCC3B8A538483A3589BF2784A330A599FEE0F1AA5C8A0C912BCD69F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>37110UXFactory.SelectView_1.0.0.9_neutral__5kf09x396saqr</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>37110UXFactory.SelectView_5kf09x396saqr!App</RegisteredUserModeAppID>
     <RegisteredPackageID>37110UXFactory.SelectView</RegisteredPackageID>
@@ -13,96 +13,96 @@
     <RegisteredVersion>1.0.0.9</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\GitHub\CloudComics\Template\App3\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-06T12:20:52.372</Modified>
+      <Modified>2013-05-07T05:43:29.071</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\css\default.css">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2013-05-06T12:16:07.098</Modified>
+      <Modified>2013-04-29T07:08:49.581</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\css\listviewTemplates.css">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\css\listviewTemplates.css">
       <PackagePath>css\listviewTemplates.css</PackagePath>
-      <Modified>2013-05-06T12:33:49.439</Modified>
+      <Modified>2013-05-07T05:53:15.018</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\pages\options\options.css">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\options\options.css">
       <PackagePath>pages\options\options.css</PackagePath>
-      <Modified>2013-05-06T12:17:42.062</Modified>
+      <Modified>2013-05-03T08:18:35.624</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.css">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.css">
       <PackagePath>pages\itemDetail\itemDetail.css</PackagePath>
-      <Modified>2013-05-06T12:17:42.062</Modified>
+      <Modified>2013-04-30T15:11:13.959</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.css">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.css">
       <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
-      <Modified>2013-05-06T12:17:42.047</Modified>
+      <Modified>2013-04-30T15:40:12.598</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\images\loading.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\loading.png">
       <PackagePath>images\loading.png</PackagePath>
-      <Modified>2013-05-06T12:17:42.047</Modified>
+      <Modified>2013-05-01T11:25:36.395</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\images\Logo.scale-100.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\Logo.scale-100.png">
       <PackagePath>images\Logo.scale-100.png</PackagePath>
-      <Modified>2013-05-06T12:17:42.047</Modified>
+      <Modified>2013-04-29T07:27:25.011</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\images\smalllogo.scale-100.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\smalllogo.scale-100.png">
       <PackagePath>images\smalllogo.scale-100.png</PackagePath>
-      <Modified>2013-05-06T12:17:42.047</Modified>
+      <Modified>2013-04-29T07:27:25.011</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\images\splashscreen.scale-100.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\splashscreen.scale-100.png">
       <PackagePath>images\splashscreen.scale-100.png</PackagePath>
-      <Modified>2013-05-06T12:17:42.047</Modified>
+      <Modified>2013-04-30T07:17:58.266</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\images\storelogo.scale-100.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\storelogo.scale-100.png">
       <PackagePath>images\storelogo.scale-100.png</PackagePath>
-      <Modified>2013-05-06T12:17:42.047</Modified>
+      <Modified>2013-04-29T07:27:25.011</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\pages\options\options.html">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\options\options.html">
       <PackagePath>pages\options\options.html</PackagePath>
-      <Modified>2013-05-06T12:17:42.062</Modified>
+      <Modified>2013-05-03T08:16:03.905</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.html">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.html">
       <PackagePath>pages\itemDetail\itemDetail.html</PackagePath>
-      <Modified>2013-05-06T12:17:42.062</Modified>
+      <Modified>2013-05-01T12:25:02.705</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.html">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.html">
       <PackagePath>pages\groupedItems\groupedItems.html</PackagePath>
-      <Modified>2013-05-06T12:30:54.898</Modified>
+      <Modified>2013-05-07T05:53:15.010</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\default.html">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2013-05-06T12:17:42.047</Modified>
+      <Modified>2013-05-03T04:10:06.424</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\pages\options\options.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\options\options.js">
       <PackagePath>pages\options\options.js</PackagePath>
-      <Modified>2013-05-06T12:17:42.062</Modified>
+      <Modified>2013-05-03T08:28:16.680</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\js\data.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\data.js">
       <PackagePath>js\data.js</PackagePath>
-      <Modified>2013-05-06T12:17:42.047</Modified>
+      <Modified>2013-05-07T08:58:14.894</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\js\default.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2013-05-06T12:17:42.047</Modified>
+      <Modified>2013-05-03T08:26:18.996</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\js\navigator.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
-      <Modified>2013-05-06T12:16:07.456</Modified>
+      <Modified>2013-04-29T07:08:50.048</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.js">
       <PackagePath>pages\itemDetail\itemDetail.js</PackagePath>
-      <Modified>2013-05-06T12:17:42.062</Modified>
+      <Modified>2013-05-03T04:06:02.687</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2013-05-06T12:22:59.876</Modified>
+      <Modified>2013-05-07T08:59:20.766</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-05-06T12:20:52.340</Modified>
+      <Modified>2013-05-07T02:08:54.442</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

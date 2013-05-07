@@ -16,6 +16,9 @@
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\css\default.css">
       <PackagePath>css\default.css</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\css\listviewTemplates.css">
+      <PackagePath>css\listviewTemplates.css</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\options\options.css">
       <PackagePath>pages\options\options.css</PackagePath>
     </AppxPackagedFile>

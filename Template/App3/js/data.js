@@ -17,6 +17,7 @@
     };
 
     var s = Windows.Storage.ApplicationData.current.localSettings.values["accessList"];
+    var dataSource;
 
     if (s === undefined) s = "";
     else {
@@ -44,6 +45,7 @@
         removeAccessList: removeAccessList,
         clearAccessList: clearAccessList,
         checkAccess: checkAccess,
+        dataSource: dataSource,
     });
     var currentPath = [];
     function dbg(msg) {
@@ -104,6 +106,22 @@
         return found;
     }
     function setFolder(storageFolder) {
+
+        var queryOptions = new Windows.Storage.Search.QueryOptions;
+        queryOptions.folderDepth = Windows.Storage.Search.FolderDepth.shallow;
+        queryOptions.indexerOption = Windows.Storage.Search.IndexerOption.useIndexerWhenAvailable;
+
+        var fileQuery = storageFolder.createItemQueryWithOptions(queryOptions);
+        var dataSourceOptions = {
+            mode: Windows.Storage.FileProperties.ThumbnailMode.picturesView,
+            requestedThumbnailSize: 190,
+            thumbnailOptions: Windows.Storage.FileProperties.ThumbnailOptions.none
+        };
+
+        Data.dataSource = new WinJS.UI.StorageDataSource(fileQuery, dataSourceOptions);
+
+        /*
+
         if (storageFolder.length >= 1) { // 선택한 파일이 있는 경우
             resetData();
             var folderPath = storageFolder[0].path.substring(0, storageFolder[0].path.lastIndexOf("\\"));
@@ -126,6 +144,7 @@
 
             folder.getItemsAsync().done(addItems);
         }
+        */
     }
     function addPath(dirName, path) {
         var found = false;

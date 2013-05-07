@@ -5,6 +5,8 @@
     var appViewState = Windows.UI.ViewManagement.ApplicationViewState;
     var nav = WinJS.Navigation;
     var ui = WinJS.UI;
+    var currentFolder;
+    var dataSource;
 
     ui.Pages.define("/pages/groupedItems/groupedItems.html", {
         // groupHeaderPage로 이동합니다. groupHeaders에서 호출되었습니다.
@@ -86,7 +88,7 @@
             document.getElementById("copy").addEventListener("click", function () {
                 var dp = new Windows.ApplicationModel.DataTransfer.DataPackage();
                 dp.requestedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.copy;
-                var txt = Data.getPath(true);
+                var txt = getPath();
                 dp.setText(txt);
                 Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dp);
                 document.getElementById("copy").disabled = true;
@@ -142,7 +144,7 @@
             }
         },
         updatePageTitle: function () {
-            document.querySelector(".pagetitle").innerText = Data.getPath();
+            document.querySelector(".pagetitle").innerText = getPath();
         },
         // 이 함수는 ListView를 새 레이아웃으로 업데이트합니다.
         _initializeLayout: function (listView, viewState) {
@@ -162,59 +164,29 @@
 
             }
         },
-
-        _itemInvoked: function (args) {
-            if (appView.value === appViewState.snapped) {
-                // 페이지가 맞춰진 경우 사용자가 그룹을 호출했습니다.
-                //var group = Data.groups.getAt(args.detail.itemIndex);
-                //this.navigateToGroup(group.key);
-
-
-            } else {
-                // 페이지가 맞춰지지 않은 경우 사용자가 항목을 호출했습니다.
-            }
-
-            var item = Data.items.getAt(args.detail.itemIndex);
-
-            // 폴더를 선택한 경우
-            if (item.storageItem.isOfType(Windows.Storage.StorageItemTypes.folder)) {
-                nav.navigate("/pages/groupedItems/groupedItems.html", { folder: item.storageItem });
-            }
-            else {
-                nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
-            }
-        }
     });
     function loadListViewControl() {
         // Build datasource from the pictures library
         var library = Windows.Storage.KnownFolders.picturesLibrary;
-        var queryOptions = new Windows.Storage.Search.QueryOptions;
-        queryOptions.folderDepth = Windows.Storage.Search.FolderDepth.shallow;
-        queryOptions.indexerOption = Windows.Storage.Search.IndexerOption.useIndexerWhenAvailable;
-
-        var fileQuery = library.createFileQueryWithOptions(queryOptions);
-        var dataSourceOptions = {
-            mode: Windows.Storage.FileProperties.ThumbnailMode.picturesView,
-            requestedThumbnailSize: 190,
-            thumbnailOptions: Windows.Storage.FileProperties.ThumbnailOptions.none
-        };
-
-        var dataSource = new WinJS.UI.StorageDataSource(fileQuery, dataSourceOptions);
+        Data.setFolder(library);
         // An equivalent datasource can be created with all the default options above by simply calling
         // var dataSource = new WinJS.UI.StorageDataSource("Pictures");
 
         var container = document.getElementById("listviewDiv");
         var listViewOptions = {
-            itemDataSource: dataSource,
+            itemDataSource: Data.dataSource,
             itemTemplate: storageRenderer,
+            oniteminvoked : _itemInvoked,
             layout: new WinJS.UI.GridLayout(),
             selectionMode: "single"
         };
 
+        currentFolder = library;
+        document.querySelector(".appbar_filename").innerText = getPath();
+
         var listViewControl = new WinJS.UI.ListView(container, listViewOptions);
         return listViewControl;
     };
-
     function storageRenderer(itemPromise, element) {
         var img, itemStatus;
         if (element === null) {
@@ -240,5 +212,36 @@
                 });
             })
         };
+    }
+    function _itemInvoked(args) {
+        if (appView.value === appViewState.snapped) {
+            // 페이지가 맞춰진 경우 사용자가 그룹을 호출했습니다.
+            //var group = Data.groups.getAt(args.detail.itemIndex);
+            //this.navigateToGroup(group.key);
+
+
+        } else {
+            // 페이지가 맞춰지지 않은 경우 사용자가 항목을 호출했습니다.
+        }
+
+        Data.dataSource.itemFromIndex(args.detail.itemIndex).done(function (item) {
+
+            // 폴더를 선택한 경우
+            if (item.data.isOfType(Windows.Storage.StorageItemTypes.folder)) {
+                nav.navigate("/pages/groupedItems/groupedItems.html", { folder: item.storageItem });
+            }
+            else {
+                nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
+            }
+        });
+    }
+    function getPath() {
+        var path;
+        if (currentFolder.path == "") {
+            path = "Pictures";
+        } else {
+            path =  currentFolder.path;
+        }
+        return path;
     }
 })();
