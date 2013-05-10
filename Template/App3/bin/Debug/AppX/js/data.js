@@ -123,7 +123,7 @@
         var fileTypeFilter = [".jpg", ".jpeg", ".png"];
         var queryOptions = new Windows.Storage.Search.QueryOptions(Windows.Storage.Search.CommonFileQuery.defaultQuery, fileTypeFilter);
         queryOptions.folderDepth = Windows.Storage.Search.FolderDepth.shallow;
-        queryOptions.indexerOption = Windows.Storage.Search.IndexerOption.onlyUseIndexer;
+        queryOptions.indexerOption = Windows.Storage.Search.IndexerOption.useIndexerWhenAvailable;
         queryOptions.sortOrder.clear();
         // Order items by type so folders come first
         queryOptions.sortOrder.append({ ascendingOrder: false, propertyName: "System.IsFolder" });
@@ -145,9 +145,6 @@
             Data.foldersTotal = n;
         });
 
-        folder.getItemsAsync().done(function (items) {
-            Data.items = items;
-        });
     }
     function addPath(dirName, path) {
         var found = false;

@@ -32,7 +32,6 @@
             }
             if (param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
 
-            var ff = param.isOfType(Windows.Storage.StorageItemTypes.folder);
             Data.setFolder(param);
 
             // 지정한 파일이 있는 경우
