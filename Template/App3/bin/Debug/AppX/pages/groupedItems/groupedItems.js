@@ -32,6 +32,7 @@
             }
             if (param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
 
+            var ff = param.isOfType(Windows.Storage.StorageItemTypes.folder);
             Data.setFolder(param);
 
             // 지정한 파일이 있는 경우
@@ -152,14 +153,14 @@
         // Build datasource from the pictures library
         var container = document.getElementById("listviewDiv");
         var listViewOptions = {
-            itemDataSource: Data.filesDataSource,
+            itemDataSource: Data.itemsDataSource,
             itemTemplate: storageRenderer,
             oniteminvoked : _itemInvoked,
             layout: new WinJS.UI.GridLayout(),
             selectionMode: "multi"
         };
 
-        document.querySelector(".appbar_filename").innerText = Data.getPath();
+        document.querySelector(".appbar_filename").innerText = Data.getPath(true);
 
         var listViewControl = new WinJS.UI.ListView(container, listViewOptions);
         return listViewControl;

@@ -92,7 +92,7 @@
     function loadFlipViewControl() {
         var container = document.getElementById("flipviewDiv");
         var flipViewOptions = {
-            itemDataSource: Data.filesDataSource,
+            itemDataSource: Data.foldersDataSource,
             itemTemplate: storageRenderer,
         };
 

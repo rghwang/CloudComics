@@ -32,6 +32,7 @@
         checkAccess: checkAccess,
         itemsDataSource: null,
         filesDataSource: null,
+        foldersDataSource: null,
         foldersTotal: 0,
         items: null,
         getItemFromFile: getItemFromFile,
@@ -118,10 +119,11 @@
         //}
         folder = storageFolder;
         addPath(storageFolder.name, storageFolder.path);
+
         var fileTypeFilter = [".jpg", ".jpeg", ".png"];
         var queryOptions = new Windows.Storage.Search.QueryOptions(Windows.Storage.Search.CommonFileQuery.defaultQuery, fileTypeFilter);
         queryOptions.folderDepth = Windows.Storage.Search.FolderDepth.shallow;
-        queryOptions.indexerOption = Windows.Storage.Search.IndexerOption.useIndexerWhenAvailable;
+        queryOptions.indexerOption = Windows.Storage.Search.IndexerOption.onlyUseIndexer;
         queryOptions.sortOrder.clear();
         // Order items by type so folders come first
         queryOptions.sortOrder.append({ ascendingOrder: false, propertyName: "System.IsFolder" });

@@ -32,6 +32,7 @@
         checkAccess: checkAccess,
         itemsDataSource: null,
         filesDataSource: null,
+        foldersDataSource: null,
         foldersTotal: 0,
         items: null,
         getItemFromFile: getItemFromFile,
@@ -118,6 +119,7 @@
         //}
         folder = storageFolder;
         addPath(storageFolder.name, storageFolder.path);
+
         var fileTypeFilter = [".jpg", ".jpeg", ".png"];
         var queryOptions = new Windows.Storage.Search.QueryOptions(Windows.Storage.Search.CommonFileQuery.defaultQuery, fileTypeFilter);
         queryOptions.folderDepth = Windows.Storage.Search.FolderDepth.shallow;
@@ -143,9 +145,6 @@
             Data.foldersTotal = n;
         });
 
-        folder.getItemsAsync().done(function (items) {
-            Data.items = items;
-        });
     }
     function addPath(dirName, path) {
         var found = false;

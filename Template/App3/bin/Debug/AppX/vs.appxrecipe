@@ -5,7 +5,7 @@
     <WindowsUser>rghwang</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>EB0EB6900FCC3B8A538483A3589BF2784A330A599FEE0F1AA5C8A0C912BCD69F</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>3350AA3E951FC0DE84045620CC5C2B069BB40818074DB6754012095731A4C984</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>37110UXFactory.SelectView_1.0.0.9_neutral__5kf09x396saqr</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>37110UXFactory.SelectView_5kf09x396saqr!App</RegisteredUserModeAppID>
     <RegisteredPackageID>37110UXFactory.SelectView</RegisteredPackageID>
@@ -16,7 +16,7 @@
     <AppXManifest Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-07T05:43:29.071</Modified>
+      <Modified>2013-05-10T07:21:13.498</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -86,11 +86,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\data.js">
       <PackagePath>js\data.js</PackagePath>
-      <Modified>2013-05-10T06:32:09.411</Modified>
+      <Modified>2013-05-10T08:03:24.059</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2013-05-10T05:18:46.383</Modified>
+      <Modified>2013-05-10T07:59:13.596</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
@@ -98,11 +98,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.js">
       <PackagePath>pages\itemDetail\itemDetail.js</PackagePath>
-      <Modified>2013-05-10T05:59:05.183</Modified>
+      <Modified>2013-05-10T07:40:20.356</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2013-05-10T06:43:57.133</Modified>
+      <Modified>2013-05-10T07:55:54.993</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

@@ -36,7 +36,7 @@
     // option.js 에서 사용
     function navigateToPath(folderPath, fileName) {
         Windows.Storage.StorageFolder.getFolderFromPathAsync(folderPath).done(function (f) {
-        if (f && Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.checkAccess(f)) { // 실제 futureAccessList에 있는지 여부 2차 체크
+            if (f && Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.checkAccess(f)) { // 실제 futureAccessList에 있는지 여부 2차 체크
             return nav.navigate(Application.navigator.home, { folder: f, file: fileName, resetPath: true });
         }
     });
@@ -67,6 +67,15 @@
                 } else {
                     // 앱 실행 시 진입점
                     // TODO: 중단에서 활성화 될 때 테스트 및 처리
+
+                    
+                    // TEST: 폴더 지정해서 로딩하는 것 테스트
+                    //App.navigateToPath("E:\\My Pictures\\2013-03-29 Images", "");
+
+                    //Windows.Storage.KnownFolders.picturesLibrary.getFolderAsync("2013-03-29 Images").done(function (f) {
+                    //    return nav.navigate(Application.navigator.home, { folder:f, resetPath: true });
+                    //});
+
                     return nav.navigate(Application.navigator.home, { resetPath: true });
                 }
             }));
@@ -84,7 +93,7 @@
                         var found = false;
 
                         if (Data.checkAccess(folderPath)) { // 저장된 AccessList에서 1차 체크
-                            App.navigateToPath(folderPath, args.detail.files[0]);
+                            App.navigateToPath(folderPath, args.detail.files[0].name);
                         } else {
                             // 권한이 없을 시
                             var parentFolder = folderPath.substring(0, folderPath.indexOf("\\") + 1);
