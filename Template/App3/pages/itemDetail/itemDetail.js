@@ -15,8 +15,9 @@
             else return;
             
             var flipView = loadFlipViewControl();
-            var listBinding = Data.filesDataSource.createListBinding();
 
+
+            // INFO: groupedItems 에서는 폴더를 포함한 itemsDataSource를 쓰지만, itemDetail에서는 filesDataSourc를 쓰기 때문에 FlipView의 인덱스 값을 구할 때 폴더만큼 빼주어야 함
             flipView.currentPage = item.index - Data.foldersTotal;
 
             flipView.onpageselected = function () {

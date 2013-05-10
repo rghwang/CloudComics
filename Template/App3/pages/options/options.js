@@ -54,7 +54,7 @@
                             document.getElementById("OK_msg").innerText = "Okay, SelectView app can view images in \"" + options.folderPath +"\".";
                             document.getElementById("OK_btn").addEventListener("click", function () {
                                 WinJS.Navigation.history = {};
-                                SelectView.navigateToPath(options.folderPath, options.fileName);
+                                App.navigateToPath(options.folderPath, options.fileName);
                             });
                         }
                     } else {

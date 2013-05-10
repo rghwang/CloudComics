@@ -7,7 +7,7 @@
     var options = {
         accessList: new WinJS.Binding.List(),
     };
-    
+
     // 로컬 저장소의 accessList를 가져옴
     var s = Windows.Storage.ApplicationData.current.localSettings.values["accessList"];
     if (s === undefined) s = "";
@@ -32,7 +32,9 @@
         checkAccess: checkAccess,
         itemsDataSource: null,
         filesDataSource: null,
-        foldersTotal:0,
+        foldersTotal: 0,
+        items: null,
+        getItemFromFile: getItemFromFile,
     });
     var currentPath = [];
     function dbg(msg) {
@@ -85,7 +87,7 @@
     function checkAccess(folderPath) {
         var found = false;
         for (var i = 0; i < options.accessList.length; i++) {
-            if (folderPath.indexOf(options.accessList.getAt(i).title) !== -1 ) {
+            if (folderPath.indexOf(options.accessList.getAt(i).title) !== -1) {
                 found = true;
                 break;
             }
@@ -93,6 +95,28 @@
         return found;
     }
     function setFolder(storageFolder) {
+
+        //if (storageFolder.length >= 1) { // 선택한 파일이 있는 경우
+        //    var folderPath = storageFolder[0].path.substring(0, storageFolder[0].path.lastIndexOf("\\"));
+
+        //    addPath(PATH_SELECTION, "");
+        //    addItems(storageFolder);
+
+        //    var folderName = folderPath.substring(0, folderPath.lastIndexOf("\\"));
+        //    folder = {
+        //        path: folderPath,
+        //        name: folderName
+        //    };
+
+        //} else { // 폴더를 지정해서 여는 경우
+        //    addPath(storageFolder.name, storageFolder.path);
+        //    // TODO: 데이터를 실제 데이터로 바꿉니다.
+        //    // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
+        //    folder = storageFolder;
+
+        //    folder.getItemsAsync().done(addItems);
+        //}
+        folder = storageFolder;
         addPath(storageFolder.name, storageFolder.path);
         var fileTypeFilter = [".jpg", ".jpeg", ".png"];
         var queryOptions = new Windows.Storage.Search.QueryOptions(Windows.Storage.Search.CommonFileQuery.defaultQuery, fileTypeFilter);
@@ -105,7 +129,7 @@
 
         var itemQuery = storageFolder.createItemQueryWithOptions(queryOptions);
         var fileQuery = storageFolder.createFileQueryWithOptions(queryOptions);
-        var folderQuery = storageFolder.createFolderQueryWithOptions(queryOptions);
+        var folderQuery = storageFolder.createFolderQuery();
         var dataSourceOptions = {
             mode: Windows.Storage.FileProperties.ThumbnailMode.picturesView,
             requestedThumbnailSize: 190,
@@ -115,36 +139,13 @@
         Data.itemsDataSource = new WinJS.UI.StorageDataSource(itemQuery, dataSourceOptions);
         Data.filesDataSource = new WinJS.UI.StorageDataSource(fileQuery, dataSourceOptions);
         Data.foldersDataSource = new WinJS.UI.StorageDataSource(folderQuery, dataSourceOptions);
-
         Data.foldersDataSource.getCount().done(function (n) {
             Data.foldersTotal = n;
         });
 
-        /*
-
-        if (storageFolder.length >= 1) { // 선택한 파일이 있는 경우
-            resetData();
-            var folderPath = storageFolder[0].path.substring(0, storageFolder[0].path.lastIndexOf("\\"));
-
-            addPath(PATH_SELECTION, "");
-            addItems(storageFolder);
-
-            var folderName = folderPath.substring(0, folderPath.lastIndexOf("\\"));
-            folder = {
-                path: folderPath,
-                name: folderName
-            };
-
-        } else { // 폴더를 지정해서 여는 경우
-            resetData();
-            addPath(storageFolder.name, storageFolder.path);
-            // TODO: 데이터를 실제 데이터로 바꿉니다.
-            // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
-            folder = storageFolder;
-
-            folder.getItemsAsync().done(addItems);
-        }
-        */
+        folder.getItemsAsync().done(function (items) {
+            Data.items = items;
+        });
     }
     function addPath(dirName, path) {
         var found = false;
@@ -181,85 +182,21 @@
         //}
         //return path;
     }
-    function resetData() {
-        list.forEach(function () { list.shift() });
-    }
     function resetPath() {
         currentPath = [];
     }
     function getParentFolderFromPath(pathString) {
         return pathString.substring(0, pathString.lastIndexOf("\\"));
     }
-    function addItems(storageObjects) {
-        storageObjects.forEach(function (o) {
-
-            var item;
-
-            // 아이템이 폴더인 경우
-            if (o.isOfType(Windows.Storage.StorageItemTypes.folder)) {
-                item = {
-                    group: {
-                        key: "_folders",
-                        title: "Folders",
-                        folder: folder
-                    },
-                    key: o.name,
-                    title: o.name,
-                    path: o.path,
-                    storageItem: o,
-                    thumbnail: "/images/loading.png",
-                };
-                list.push(item);
-            } else {
-                if (o.fileType.toLowerCase() == ".jpg" || o.fileType.toLowerCase() == ".png" || o.fileType.toLowerCase() == ".jpeg") {
-                    item = {
-                        group: {
-                            key: "files",
-                            title: "Files",
-                            folder: folder
-                        },
-                        key: o.name,
-                        title: o.name,
-                        path: o.path,
-                        image: URL.createObjectURL(o),
-                        storageItem: o,
-                        thumbnail: "/images/loading.png",
-                    };
-                    list.push(item);
+    function getItemFromFile(file) {
+        for (var i = 0; i < Data.items.length; i++) {
+            if (Data.items[i].name === file.name) {
+                return {
+                    index: i,
+                    data: file
                 }
             }
-        });
-        if (list.length > 0) {
-            list.sort(function (f, s) {
-                if (f == s) return 0;
-                else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
-                    return 1;
-                else return -1;
-            });
-            getNextThumbnail();
         }
-    }
-    var thumbnailCount = 0;
-    function getNextThumbnail() {
-        var item = list.getAt(thumbnailCount++);
-
-        item.storageItem.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
-            if (thumbnail) {
-                item.thumbnail = URL.createObjectURL(thumbnail);
-
-                var query = ".item-image[alt=\"" + item.title + "\"]";
-                var img = document.querySelector(query)
-                if (img) img.src = item.thumbnail;
-
-                // crash when too many getThumbnailAsync in a short time(>160)
-                if (thumbnailCount < list.length) {
-                    if (thumbnail > 100) return;
-                    getNextThumbnail();
-                } else {
-                    thumbnailCount = 0;
-                }
-            }
-        });
-
+        return false;
     }
 })();

@@ -31,35 +31,27 @@
                 if (options.resetPath) Data.resetPath();
             }
             if (param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
-            var listView = loadListViewControl(param);
-            
-            // 기본 모드에 있지 않을 때 현재 그룹으로 이동할 바로 가기 키(ctrl + alt + g)를
-            // 설정합니다.
-            listView.addEventListener("keydown", function (e) {
-                if (appView.value !== appViewState.snapped && e.ctrlKey && e.keyCode === WinJS.Utilities.Key.g && e.altKey) {
-                    var data = listView.itemDataSource.list.getAt(listView.currentItem.index);
-                    this.navigateToGroup(data.group.key);
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                }
-            }.bind(this), true);
 
+            Data.setFolder(param);
+
+            // 지정한 파일이 있는 경우
+
+            //if (options && options.file) {
+            //    var temp = nav.history.current.state.file;
+            //    // 뒤로가기로 돌아올 경우를 대비해서 네비게이션 히스토리의 options 값에 file을 제거
+            //    nav.history.current.state.file = false;
+
+            //    nav.navigate("/pages/itemDetail/itemDetail.html", { item: { index: 5 } });
+            //    //return nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemFromFile(temp) });
+            //}
+
+
+            var listView = loadListViewControl();
+            
             this._initializeLayout(listView, appView.value);
             listView.element.focus();
 
-
             this.updatePageTitle();
-            //var _this = this;
-            //document.getElementById("up").addEventListener("click", function () {
-            //    Data.goUp();
-            //    _this.updatePageTitle();
-            //});
-
-            if (options && options.item) {
-                var temp = nav.history.current.state.item;
-                nav.history.current.state.item = false;
-                return nav.navigate("/pages/itemDetail/itemDetail.html", { item: temp });
-            }
 
             document.getElementById("del").disabled = true;
             listView.onselectionchanged = function () {
@@ -69,13 +61,19 @@
             }
             document.getElementById("del").addEventListener("click", function () {
                 var indices = listView.selection.getIndices();
-                var item;
+                var promiseArray = [];
+                var items = [];
                 for (var i = 0 ; i < indices.length; i++) {
-                    item = listView.itemDataSource.list.getAt(indices[i]);
-                    item.storageItem.deleteAsync().then(function () {
-                        Data.items.splice(Data.items.indexOf(item), 1);
-                    });
+                    promiseArray.push(listView.itemDataSource.itemFromIndex(indices[i]).done(function (item) {
+                        items.push(item);
+                    }));
                 }
+                // 모든 파일을 다 가져오고 나서 한번에 삭제
+                WinJS.Promise.join(promiseArray).done(function () {
+                    for (var i = 0; i < items.length; i++) {
+                        items[i].data.deleteAsync();
+                    }
+                });
             });
             document.getElementById("copy").addEventListener("click", function () {
                 var dp = new Windows.ApplicationModel.DataTransfer.DataPackage();
@@ -123,7 +121,7 @@
         updateLayout: function (element, viewState, lastViewState) {
             /// <param name="element" domElement="true" />
 
-            var listView = element.querySelector(".groupeditemslist").winControl;
+            var listView = document.getElementById("listviewDiv").winControl;
             if (lastViewState !== viewState) {
                 if (lastViewState === appViewState.snapped || viewState === appViewState.snapped) {
                     var handler = function (e) {
@@ -150,13 +148,11 @@
             }
         },
     });
-    function loadListViewControl(storageFolder) {
+    function loadListViewControl() {
         // Build datasource from the pictures library
-        Data.setFolder(storageFolder);
-
         var container = document.getElementById("listviewDiv");
         var listViewOptions = {
-            itemDataSource: Data.itemsDataSource,
+            itemDataSource: Data.filesDataSource,
             itemTemplate: storageRenderer,
             oniteminvoked : _itemInvoked,
             layout: new WinJS.UI.GridLayout(),
