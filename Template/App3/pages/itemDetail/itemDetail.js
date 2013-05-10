@@ -10,22 +10,20 @@
                 Data.setFolder(options.files);
                 document.getElementById("cmd").style.visibility = "hidden";
             }
-            var item = options && options.item ? Data.resolveItemReference(options.item) : Data.items.getAt(0);
-            //element.querySelector(".titlearea .pagetitle").textContent = item.group.title;
-            //element.querySelector("article .item-image").src = item.backgroundImage;
-            //element.querySelector("article .item-image").alt = item.subtitle;
-            //element.querySelector(".content").focus();
 
-            var flipView = element.querySelector("#imageFlipView").winControl;
-            var items = Data.getItemsFromGroup(Data.resolveGroupReference("files"));
+            if( options && options.item ) var item = options.item;
+            else return;
+            
+            var flipView = loadFlipViewControl();
+            var listBinding = Data.filesDataSource.createListBinding();
 
-            flipView.itemDataSource = items.dataSource;
-            flipView.itemTemplate = itemTemplate;
-            flipView.currentPage = items.indexOf(item);
+            flipView.currentPage = item.index - Data.foldersTotal;
+
             flipView.onpageselected = function () {
-                item = items.getAt(flipView.currentPage);
-                document.querySelector(".appbar_filename").innerText = item.storageItem.path;
-                document.getElementById("copy").disabled = false;
+                // 패스 업데이트
+                //item = items.getAt(flipView.currentPage);
+                //document.querySelector(".appbar_filename").innerText = item.storageItem.path;
+                //document.getElementById("copy").disabled = false;
             }
             flipView.onpagecompleted = function () {
                 document.getElementById("del").disabled = false;
@@ -90,4 +88,25 @@
             });
         }
     });
+    function loadFlipViewControl() {
+        var container = document.getElementById("flipviewDiv");
+        var flipViewOptions = {
+            itemDataSource: Data.filesDataSource,
+            itemTemplate: storageRenderer,
+        };
+
+        var flipViewControl = new WinJS.UI.FlipView(container, flipViewOptions);
+        return flipViewControl;
+    }
+    function storageRenderer(itemPromise) {
+        return itemPromise.then(function (item) {
+            var div = document.createElement("div");
+            div.className = "item-container";
+            var img = document.createElement("img");
+            img.src = URL.createObjectURL(item.data);
+            img.className = "item-image";
+            div.appendChild(img);
+            return div;
+        });
+    }
 })();

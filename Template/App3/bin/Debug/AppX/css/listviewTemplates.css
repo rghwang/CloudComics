@@ -16,6 +16,9 @@
     direction: ltr;
 }
 
+.folderImg {
+    visibility:hidden;
+}
     /*-------------------------------------------------------------------------------------------*/
     /* medium image template
 /* image-gallery - used in Picker gallery

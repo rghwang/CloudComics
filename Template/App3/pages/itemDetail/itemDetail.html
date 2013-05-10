@@ -16,16 +16,8 @@
     <script src="/pages/itemDetail/itemDetail.js"></script>
 </head>
 <body>
-    <div id="itemTemplate" data-win-control="WinJS.Binding.Template">
-        <div id="zoomElement" class="item-container">
-            <img class="item-image" src="/images/loading.png" data-win-bind="src: image" />
-        </div>
-    </div>
     <!-- 로드되어 표시되는 콘텐츠입니다. -->
-    <div id="imageFlipView"
-        data-win-control="WinJS.UI.FlipView"
-        data-win-options="{  }">
-    </div>
+    <div id="flipviewDiv" class="imageView"></div>
     <div id="appbar" data-win-control="WinJS.UI.AppBar" data-win-options="{layout:'custom', placement:'top'}">
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmd', label:'Back', icon:'back', section:'selection'}" type="button"></button>
 

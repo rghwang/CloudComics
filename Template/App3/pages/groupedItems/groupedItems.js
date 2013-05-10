@@ -5,7 +5,6 @@
     var appViewState = Windows.UI.ViewManagement.ApplicationViewState;
     var nav = WinJS.Navigation;
     var ui = WinJS.UI;
-    var currentFolder;
     var dataSource;
 
     ui.Pages.define("/pages/groupedItems/groupedItems.html", {
@@ -19,28 +18,21 @@
         // 이 함수는 사용자가 이 페이지로 이동할 때마다 호출되어
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
         ready: function (element, options) {
-            var listView = loadListViewControl();
-            /*
+
+
             var param;
             if (options) {
                 if (options.files) { // 파일을 선택해서 실행한 경우
                     param = options.files;
-                } else if( options.folder ) { // 앱을 직접 실행하거나, 앱 실행 중에 폴더로 진입하는 경우
+                } else if (options.folder) { // 앱을 직접 실행하거나, 앱 실행 중에 폴더로 진입하는 경우
                     param = options.folder;
                 }
 
                 if (options.resetPath) Data.resetPath();
-            } 
-            if( param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
-            Data.setFolder(param);
-
-            var listView = element.querySelector(".groupeditemslist").winControl;
-            listView.groupHeaderTemplate = element.querySelector(".headertemplate");
-            listView.itemTemplate = element.querySelector(".itemtemplate");
-            listView.oniteminvoked = this._itemInvoked.bind(this);
-            document.querySelector(".appbar_filename").innerText = Data.getPath(true);
+            }
+            if (param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
+            var listView = loadListViewControl(param);
             
-            */
             // 기본 모드에 있지 않을 때 현재 그룹으로 이동할 바로 가기 키(ctrl + alt + g)를
             // 설정합니다.
             listView.addEventListener("keydown", function (e) {
@@ -88,7 +80,7 @@
             document.getElementById("copy").addEventListener("click", function () {
                 var dp = new Windows.ApplicationModel.DataTransfer.DataPackage();
                 dp.requestedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.copy;
-                var txt = getPath();
+                var txt = Data.getPath();
                 dp.setText(txt);
                 Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dp);
                 document.getElementById("copy").disabled = true;
@@ -144,58 +136,48 @@
             }
         },
         updatePageTitle: function () {
-            document.querySelector(".pagetitle").innerText = getPath();
+            document.querySelector(".pagetitle").innerText = Data.getPath();
         },
         // 이 함수는 ListView를 새 레이아웃으로 업데이트합니다.
         _initializeLayout: function (listView, viewState) {
             /// <param name="listView" value="WinJS.UI.ListView.prototype" />
 
             if (viewState === appViewState.snapped) {
-                //listView.itemDataSource = Data.groups.dataSource;
-                //listView.groupDataSource = null;
-                //listView.itemDataSource = Data.items.dataSource;
-                //listView.groupDataSource = Data.groups.dataSource;
                 listView.layout = new ui.ListLayout();
             } else {
-                //listView.itemDataSource = Data.items.dataSource;
-                //listView.groupDataSource = Data.groups.dataSource;
-
                 listView.layout = new ui.GridLayout({ groupHeaderPosition: "top" });
 
             }
         },
     });
-    function loadListViewControl() {
+    function loadListViewControl(storageFolder) {
         // Build datasource from the pictures library
-        var library = Windows.Storage.KnownFolders.picturesLibrary;
-        Data.setFolder(library);
-        // An equivalent datasource can be created with all the default options above by simply calling
-        // var dataSource = new WinJS.UI.StorageDataSource("Pictures");
+        Data.setFolder(storageFolder);
 
         var container = document.getElementById("listviewDiv");
         var listViewOptions = {
-            itemDataSource: Data.dataSource,
+            itemDataSource: Data.itemsDataSource,
             itemTemplate: storageRenderer,
             oniteminvoked : _itemInvoked,
             layout: new WinJS.UI.GridLayout(),
-            selectionMode: "single"
+            selectionMode: "multi"
         };
 
-        currentFolder = library;
-        document.querySelector(".appbar_filename").innerText = getPath();
+        document.querySelector(".appbar_filename").innerText = Data.getPath();
 
         var listViewControl = new WinJS.UI.ListView(container, listViewOptions);
         return listViewControl;
     };
     function storageRenderer(itemPromise, element) {
-        var img, itemStatus;
+        var img, overlay, overlayText;
         if (element === null) {
             // dom is not recycled, so create inital structure
             element = document.createElement("div");
-            element.className = "FileTemplate";
-            element.appendChild(document.createElement("img"));
+            element.innerHTML = "<img /><div class='overlay'><div class='overlayText'></div></div>";
         }
         img = element.querySelector("img");
+        overlay = element.querySelector(".overlay");
+        overlayText = element.querySelector(".overlayText");
         img.style.opacity = 0;
 
         return {
@@ -203,13 +185,17 @@
             element: element,
             // and a promise that will complete when the item is fully rendered
             renderComplete: itemPromise.then(function (item) {
-                // now do cheap work (none here, so we return item ready)
+                // now do easy work
+                if (item.data.isOfType(Windows.Storage.StorageItemTypes.folder)) {
+                    overlay.style.visibility = "visible";
+                    overlayText.innerText = item.data.name;
+                } else {
+                    overlay.style.visibility = "hidden";
+                }
                 return item.ready;
             }).then(function (item) {
                 // wait until item.ready before doing expensive work
-                return WinJS.UI.StorageDataSource.loadThumbnail(item, img).then(function (image) {
-                    // perform any operation that requires the thumbnail to be available
-                });
+                return WinJS.UI.StorageDataSource.loadThumbnail(item, img);
             })
         };
     }
@@ -224,24 +210,15 @@
             // 페이지가 맞춰지지 않은 경우 사용자가 항목을 호출했습니다.
         }
 
-        Data.dataSource.itemFromIndex(args.detail.itemIndex).done(function (item) {
-
+        Data.itemsDataSource.itemFromIndex(args.detail.itemIndex).done(function (item) {
             // 폴더를 선택한 경우
             if (item.data.isOfType(Windows.Storage.StorageItemTypes.folder)) {
-                nav.navigate("/pages/groupedItems/groupedItems.html", { folder: item.storageItem });
+                nav.navigate("/pages/groupedItems/groupedItems.html", { folder: item.data });
             }
             else {
-                nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
+                nav.navigate("/pages/itemDetail/itemDetail.html", { item: item });
             }
         });
     }
-    function getPath() {
-        var path;
-        if (currentFolder.path == "") {
-            path = "Pictures";
-        } else {
-            path =  currentFolder.path;
-        }
-        return path;
-    }
+
 })();

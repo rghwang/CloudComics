@@ -2,23 +2,14 @@
     "use strict";
 
     var PATH_SELECTION = "My Selection";
-    var list = new WinJS.Binding.List();
-    var groupedItems = list.createGrouped(
-        function groupKeySelector(item) { return item.group.key; },
-        function groupDataSelector(item) { return item.group; }
-    );
-    //list.onitemmutated = function (e) {
-    //    e;
-    //}
     var folder;
     var events = {};
     var options = {
         accessList: new WinJS.Binding.List(),
     };
-
+    
+    // 로컬 저장소의 accessList를 가져옴
     var s = Windows.Storage.ApplicationData.current.localSettings.values["accessList"];
-    var dataSource;
-
     if (s === undefined) s = "";
     else {
         var a = s.split("|");
@@ -29,12 +20,6 @@
         }
     }
     WinJS.Namespace.define("Data", {
-        items: groupedItems,
-        groups: groupedItems.groups,
-        getItemReference: getItemReference,
-        getItemsFromGroup: getItemsFromGroup,
-        resolveGroupReference: resolveGroupReference,
-        resolveItemReference: resolveItemReference,
         setFolder: setFolder,
         getPath: getPath,
         dbg: dbg,
@@ -45,7 +30,9 @@
         removeAccessList: removeAccessList,
         clearAccessList: clearAccessList,
         checkAccess: checkAccess,
-        dataSource: dataSource,
+        itemsDataSource: null,
+        filesDataSource: null,
+        foldersTotal:0,
     });
     var currentPath = [];
     function dbg(msg) {
@@ -106,19 +93,32 @@
         return found;
     }
     function setFolder(storageFolder) {
-
-        var queryOptions = new Windows.Storage.Search.QueryOptions;
+        addPath(storageFolder.name, storageFolder.path);
+        var fileTypeFilter = [".jpg", ".jpeg", ".png"];
+        var queryOptions = new Windows.Storage.Search.QueryOptions(Windows.Storage.Search.CommonFileQuery.defaultQuery, fileTypeFilter);
         queryOptions.folderDepth = Windows.Storage.Search.FolderDepth.shallow;
         queryOptions.indexerOption = Windows.Storage.Search.IndexerOption.useIndexerWhenAvailable;
+        queryOptions.sortOrder.clear();
+        // Order items by type so folders come first
+        queryOptions.sortOrder.append({ ascendingOrder: false, propertyName: "System.IsFolder" });
+        queryOptions.sortOrder.append({ ascendingOrder: true, propertyName: "System.ItemName" });
 
-        var fileQuery = storageFolder.createItemQueryWithOptions(queryOptions);
+        var itemQuery = storageFolder.createItemQueryWithOptions(queryOptions);
+        var fileQuery = storageFolder.createFileQueryWithOptions(queryOptions);
+        var folderQuery = storageFolder.createFolderQueryWithOptions(queryOptions);
         var dataSourceOptions = {
             mode: Windows.Storage.FileProperties.ThumbnailMode.picturesView,
             requestedThumbnailSize: 190,
             thumbnailOptions: Windows.Storage.FileProperties.ThumbnailOptions.none
         };
 
-        Data.dataSource = new WinJS.UI.StorageDataSource(fileQuery, dataSourceOptions);
+        Data.itemsDataSource = new WinJS.UI.StorageDataSource(itemQuery, dataSourceOptions);
+        Data.filesDataSource = new WinJS.UI.StorageDataSource(fileQuery, dataSourceOptions);
+        Data.foldersDataSource = new WinJS.UI.StorageDataSource(folderQuery, dataSourceOptions);
+
+        Data.foldersDataSource.getCount().done(function (n) {
+            Data.foldersTotal = n;
+        });
 
         /*
 
@@ -262,37 +262,4 @@
         });
 
     }
-
-    // 그룹 키와 항목 제목을 손쉽게 serialize할 수 있는 고유 참조로 사용하여
-    // 항목에 대한 참조를 가져옵니다.
-    function getItemReference(item) {
-        return [item.group.key, item.title];
-    }
-
-    // 이 함수는 제공된 그룹에 속한 항목만 포함된
-    // WinJS.Binding.List를 반환합니다.
-    function getItemsFromGroup(group) {
-        return list.createFiltered(function (item) { return item.group.key === group.key; });
-    }
-
-    // 제공된 그룹 키에 해당되는 고유 그룹을 가져옵니다.
-    function resolveGroupReference(key) {
-        for (var i = 0; i < groupedItems.groups.length; i++) {
-            if (groupedItems.groups.getAt(i).key === key) {
-                return groupedItems.groups.getAt(i);
-            }
-        }
-    }
-
-    // 그룹 키 및 항목 제목을 포함하는 제공된 문자열 배열에서 고유한 항목을
-    // 가져옵니다.
-    function resolveItemReference(reference) {
-        for (var i = 0; i < groupedItems.length; i++) {
-            var item = groupedItems.getAt(i);
-            if (item.group.key === reference[0] && item.title === reference[1]) {
-                return item;
-            }
-        }
-    }
-
 })();
