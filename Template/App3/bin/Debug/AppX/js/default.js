@@ -36,6 +36,9 @@
     // option.js 에서 사용
 
     function navigateToPath(folderPath, fileName) {
+        var parentFolder = folderPath.substring(0, folderPath.indexOf("\\") + 1);
+        if (parentFolder === "") parentFolder = folderPath = folderPath + "\\";
+
         if (Data.checkAccess(folderPath)) { // getFolderFromPathAsync를 실행해서 access denied 오류 나는 것을 피하기 위한 목적. 
             Windows.Storage.StorageFolder.getFolderFromPathAsync(folderPath).done(function (f) {
                 if (f && Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.checkAccess(f)) { // 실제 futureAccessList에 있는지 여부 2차 체크
@@ -45,7 +48,6 @@
 
         } else {
             // 권한이 없을 시
-            var parentFolder = folderPath.substring(0, folderPath.indexOf("\\") + 1);
             var msg = [
                 "To view other images in the same folder, you should pick and add a parent folder to the accessible folders. In this case, " + parentFolder + " is recommended."
                 , "Add \"" + parentFolder + "\" to Accessble Folders"
