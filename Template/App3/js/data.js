@@ -10,8 +10,9 @@
 
     // 로컬 저장소의 accessList를 가져옴
     var s = Windows.Storage.ApplicationData.current.localSettings.values["accessList"];
-    if (s === undefined) s = "";
-    else {
+    if (s === undefined) {
+        s = "";
+    }else {
         var a = s.split("|");
         var b;
         for (var i = 0; i < a.length; i++) {

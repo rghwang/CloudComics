@@ -85,12 +85,58 @@
 
                     // TEST: 폴더 지정해서 로딩하는 것 테스트
                     //App.navigateToPath("E:\\My Pictures\\2013-03-29 Images", "");
+                    
+                    // TEST2: 폴더 지정 및 직접 가져와서 테스트
+                    Windows.Storage.StorageFolder.getFolderFromPathAsync("E:\\My Pictures\\2013-03-29 Images").done(function (f) {
+                        return nav.navigate(Application.navigator.home, { folder:f, resetPath: true });
+                    });
 
-                    //Windows.Storage.KnownFolders.picturesLibrary.getFolderAsync("2013-03-29 Images").done(function (f) {
-                    //    return nav.navigate(Application.navigator.home, { folder:f, resetPath: true });
+                    //// TEST3 : getFolderAsync로 테스트 : 문제는 getFolderFromPathAsync와 getFolderAsync의 차이인 듯.
+                    //Windows.Storage.KnownFolders.picturesLibrary.getFolderAsync("2013-03-29 Images").then(function (f) {
+                    //    return nav.navigate(Application.navigator.home, { folder: f, resetPath: true });
                     //});
 
-                    return nav.navigate(Application.navigator.home, { resetPath: true });
+
+                    // TEST4 : 폴더 차이 비교. 차이는 dateCreated와 properties인데 별 차이 없는 듯?
+                    //var f1, f2;
+                    //var ar2 = [];
+                    //var p1 = Windows.Storage.StorageFolder.getFolderFromPathAsync("E:\\My Pictures\\2013-03-29 Images").then(function (f) {
+                    //    f1 = f;
+                    //    ar2.push(
+                    //        f1.properties.retrievePropertiesAsync(["System.FileOwner"]).then(function(pp){
+                    //            pp["System.FileOwner"]
+                    //        })
+                    //        );
+                    //    //return nav.navigate(Application.navigator.home, { folder:f, resetPath: true });
+                    //});
+
+                    //var p2 = Windows.Storage.KnownFolders.picturesLibrary.getFolderAsync("2013-03-29 Images").then(function (f) {
+                    //    f2 = f;
+                    //    //return nav.navigate(Application.navigator.home, { folder:f, resetPath: true });
+                    //});
+                    //var ar = [p1, p2];
+                    
+                    //WinJS.Promise.join(ar).done(function () {
+                    //    var diff = [];
+
+                    //    var ss;
+                    //    for (var i in f1) {
+                    //        diff[i] = f1[i] === f2[i];
+                    //        if (!diff[i] && i != "dateCreated") {
+                    //            diff[i] = [];
+                    //            for (var j in f1[i]) {
+                    //                diff[i][j] = f1[i][j] === f2[i][j];
+                    //            }
+                    //            diff[i][j];
+                    //        }
+                    //    }
+                    //    var bb = f1 === f2;
+                    //    if (bb) return nav.navigate(Application.navigator.home, { resetPath: true });
+                    //});
+
+                    // 일반 실행 문
+                    //return nav.navigate(Application.navigator.home, { resetPath: true });
+
                 }
             }));
         } else if (args.detail.kind == activation.ActivationKind.file) {
