@@ -48,14 +48,20 @@
                     if (folder) {
                         // Application now has read/write access to all contents in the picked folder (including sub-folder contents)
                         // Cache folder so the contents can be accessed at a later time
+
                         Data.addAccessList(folder);
-                        if (options && options.folderPath && options.folderPath.indexOf(folder.path) !== -1) {
-                            document.getElementById("OK").style.visibility = "visible";
-                            document.getElementById("OK_msg").innerText = "Okay, SelectView app can view images in \"" + options.folderPath +"\".";
-                            document.getElementById("OK_btn").addEventListener("click", function () {
-                                WinJS.Navigation.history = {};
-                                SelectView.navigateToPath(options.folderPath, options.fileName);
-                            });
+                        if (options && options.folderPath) {
+
+                            var path = Data.addRootSlash(options.folderPath);
+
+                            if (path.indexOf(folder.path) !== -1) {
+                                document.getElementById("OK").style.visibility = "visible";
+                                document.getElementById("OK_msg").innerText = "Okay, SelectView app can view images in \"" + options.folderPath + "\".";
+                                document.getElementById("OK_btn").addEventListener("click", function () {
+                                    WinJS.Navigation.history = {};
+                                    SelectView.navigateToPath(path, options.fileName);
+                                });
+                            }
                         }
                     } else {
                         // The picker was dismissed with no selected file

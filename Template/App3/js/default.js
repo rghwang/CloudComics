@@ -34,11 +34,23 @@
         e.request.applicationCommands.append(privacyCommand);
     }
     function navigateToPath(folderPath, fileName) { // filename은 특정 이미지를 바로 보여주기 원할 경우
-        Windows.Storage.StorageFolder.getFolderFromPathAsync(folderPath).done(function (f) {
-            if (f && Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.checkAccess(f)) {
-                return nav.navigate(Application.navigator.home, { folder: f, item: ["files", fileName], resetPath: true });
-            }
-        });
+        var parentFolder = folderPath.substring(0, folderPath.indexOf("\\") + 1);
+        if (parentFolder === "") parentFolder = folderPath;
+
+        if (Data.checkAccess(folderPath)) {
+            // 파일을 하나만 선택했을 시 진입점
+            Windows.Storage.StorageFolder.getFolderFromPathAsync(folderPath).done(function (f) {
+                if (f && Windows.Storage.AccessCache.StorageApplicationPermissions.futureAccessList.checkAccess(f)) {
+                    return nav.navigate(Application.navigator.home, { folder: f, item: ["files", fileName], resetPath: true });
+                }
+            });
+        } else {
+            var msg = [
+                "To view other images in the same folder, you should pick and add a parent folder to the accessible folders. In this case, " + parentFolder + " is recommended."
+                , "Add \"" + parentFolder + "\" to Accessble Folders"
+            ];
+            nav.navigate("/pages/options/options.html", { folderPath: folderPath, fileName: fileName, msg: msg });
+        }
     }
     WinJS.Namespace.define("SelectView", {
         navigateToPath: navigateToPath,
@@ -80,21 +92,8 @@
                     if (args.detail.files.length === 1) {
                         var folderPath = args.detail.files[0].path.substring(0, args.detail.files[0].path.lastIndexOf("\\"));
 
-                        // BUG: 등록된 폴더가 아닌 경우 에러남(Access Failed)
-                        // TODO: FAL에서 getFoldersAync를 이용해서 허용된 폴더 리스트를 가져온 후, folderpath에서 각각의 path를 검색해서 일치하는 문자열이 있을 경우에 액세스 가능하다고 판단하여 폴더를 가져옴.
-                        var found = false;
-
-                        if (Data.checkAccess(folderPath)) {
-                            // 파일을 하나만 선택했을 시 진입점
-                            navigateToPath(folderPath, args.detail.files[0].name);
-                        } else {
-                            var parentFolder = folderPath.substring(0, folderPath.indexOf("\\") + 1);
-                            var msg = [
-                                "To view other images in the same folder, you should pick and add a parent folder to the accessible folders. In this case, " + parentFolder + " is recommended."
-                                , "Add \"" + parentFolder + "\" to Accessble Folders"
-                            ];
-                            nav.navigate("/pages/options/options.html", { folderPath: folderPath, fileName: args.detail.files[0].name, msg:msg });
-                        }
+                        var path = Data.addRootSlash(folderPath);
+                        navigateToPath(path, args.detail.files[0].name);
                     } else return nav.navigate(Application.navigator.home, { files: args.detail.files, resetPath: true }); // 파일을 여러개 선택했을 시의 진입점
                 }));
             }

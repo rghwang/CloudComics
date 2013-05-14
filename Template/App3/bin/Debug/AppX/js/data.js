@@ -44,6 +44,7 @@
         removeAccessList: removeAccessList,
         clearAccessList: clearAccessList,
         checkAccess: checkAccess,
+        addRootSlash: addRootSlash,
     });
     var currentPath = [];
     function dbg(msg) {
@@ -102,6 +103,14 @@
             }
         }
         return found;
+    }
+    function addRootSlash(folderPath) {
+        var path = folderPath;
+
+        if (path.length === 2 && path.charAt(1) === ":") {
+            path += "\\";
+        }
+        return path;
     }
     function setFolder(storageFolder) {
         if (storageFolder.length >= 1) { // 선택한 파일이 있는 경우
