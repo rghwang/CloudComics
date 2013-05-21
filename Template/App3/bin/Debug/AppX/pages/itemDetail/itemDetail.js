@@ -17,7 +17,8 @@
             //element.querySelector(".content").focus();
 
             var flipView = element.querySelector("#imageFlipView").winControl;
-            var items = Data.getItemsFromGroup(Data.resolveGroupReference("files"));
+            var group = Data.resolveGroupReference("files");
+            var items = Data.getItemsFromGroup(group);
 
             flipView.itemDataSource = items.dataSource;
             flipView.itemTemplate = itemTemplate;

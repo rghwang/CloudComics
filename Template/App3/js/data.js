@@ -132,8 +132,9 @@
             // TODO: 데이터를 실제 데이터로 바꿉니다.
             // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
             folder = storageFolder;
-
-            folder.getItemsAsync().done(addItems);
+            var dataPromise = folder.getItemsAsync();
+            dataPromise.done(addItems);
+            return dataPromise;
         }
     }
     function addPath(dirName, path) {

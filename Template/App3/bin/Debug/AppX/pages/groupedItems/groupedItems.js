@@ -28,7 +28,8 @@
                 if (options.resetPath) Data.resetPath();
             } 
             if( param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
-            Data.setFolder(param);
+            var dataPromise = Data.setFolder(param);
+
 
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
@@ -58,11 +59,14 @@
             //    Data.goUp();
             //    _this.updatePageTitle();
             //});
-
-            if (options && options.item) {
-                var temp = nav.history.current.state.item;
-                nav.history.current.state.item = false;
-                return nav.navigate("/pages/itemDetail/itemDetail.html", { item: temp });
+            if (dataPromise) {
+                dataPromise.done(function () {
+                    if (options && options.item) {
+                        var temp = nav.history.current.state.item;
+                        nav.history.current.state.item = false;
+                        return nav.navigate("/pages/itemDetail/itemDetail.html", { item: temp });
+                    }
+                });
             }
 
             document.getElementById("del").disabled = true;
