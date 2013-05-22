@@ -154,7 +154,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2013-05-22T01:46:32.460</Modified>
+      <Modified>2013-05-22T01:52:26.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

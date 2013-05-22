@@ -33,7 +33,8 @@
 
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
-            listView.itemTemplate = element.querySelector(".itemtemplate");
+            //          listView.itemTemplate = element.querySelector(".itemtemplate");
+            listView.itemTemplate = this.storageRenderer;
             listView.oniteminvoked = this._itemInvoked.bind(this);
 
             document.querySelector(".appbar_filename").innerText = Data.getPath(true);
@@ -164,6 +165,38 @@
 
             }
         },
+        storageRenderer: function(itemPromise, element) {
+            var img, overlay, overlayText;
+            if (element === null) {
+                // dom is not recycled, so create inital structure
+                element = document.createElement("div");
+                element.innerHTML = "<img /><div class='overlay'><div class='overlayText'></div></div>";
+            }
+            img = element.querySelector("img");
+            overlay = element.querySelector(".overlay");
+            overlayText = element.querySelector(".overlayText");
+            img.style.opacity = 0;
+
+
+            return {
+                // returns the placeholder
+                element: element,
+                // and a promise that will complete when the item is fully rendered
+                renderComplete: itemPromise.then(function (item) {
+                    // now do easy work
+                    if (item.data.isOfType(Windows.Storage.StorageItemTypes.folder)) {
+                        overlay.style.visibility = "visible";
+                        overlayText.innerText = item.data.name;
+                    } else {
+                        overlay.style.visibility = "hidden";
+                    }
+                    return item.ready;
+                }).then(function (item) {
+                    // wait until item.ready before doing expensive work
+                    return WinJS.UI.StorageDataSource.loadThumbnail(item, img);
+                })
+            };
+        },
 
         _itemInvoked: function (args) {
             if (appView.value === appViewState.snapped) {
@@ -186,5 +219,5 @@
                 nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
             }
         }
-    });
+});
 })();
