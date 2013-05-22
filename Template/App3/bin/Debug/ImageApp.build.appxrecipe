@@ -32,17 +32,61 @@
       <PackagePath>images\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\Logo.scale-140.png">
+      <PackagePath>images\Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\Logo.scale-180.png">
+      <PackagePath>images\Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\smalllogo.scale-100.png">
       <PackagePath>images\smalllogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\SmallLogo.scale-140.png">
+      <PackagePath>images\SmallLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\SmallLogo.scale-180.png">
+      <PackagePath>images\SmallLogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\splashscreen.scale-100.png">
       <PackagePath>images\splashscreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\SplashScreen.scale-140.png">
+      <PackagePath>images\SplashScreen.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\SplashScreen.scale-180.png">
+      <PackagePath>images\SplashScreen.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\storelogo.scale-100.png">
       <PackagePath>images\storelogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\StoreLogo.scale-140.png">
+      <PackagePath>images\StoreLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\StoreLogo.scale-180.png">
+      <PackagePath>images\StoreLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\WideLogo.scale-100.png">
+      <PackagePath>images\WideLogo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\WideLogo.scale-140.png">
+      <PackagePath>images\WideLogo.scale-140.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\WideLogo.scale-180.png">
+      <PackagePath>images\WideLogo.scale-180.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\Splash Screen background color  #FFFFFFFF">
+      <PackagePath>images\Splash Screen background color  #FFFFFFFF</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\options\options.html">
       <PackagePath>pages\options\options.html</PackagePath>

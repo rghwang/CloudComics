@@ -15,9 +15,9 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="SelectView" Logo="images\Logo.png" SmallLogo="images\smalllogo.png" Description="Select &amp; View" ForegroundText="light" BackgroundColor="#ED1C24">
-        <DefaultTile ShowName="allLogos" ShortName="SelectView" />
-        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#ED1C24" />
+      <VisualElements DisplayName="Viewing" Logo="images\Logo.png" SmallLogo="images\smalllogo.png" Description="Viewing" ForegroundText="light" BackgroundColor="#ED1C24">
+        <DefaultTile ShowName="allLogos" ShortName="Viewing" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#FFFFFF" />
       </VisualElements>
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">
