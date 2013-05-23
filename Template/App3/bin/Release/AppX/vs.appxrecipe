@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>KRRGHWANG09</Machine>
+    <Machine>KRRGHWANG0426</Machine>
     <WindowsUser>rghwang</WindowsUser>
     <SolutionConfiguration>Release|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>370C513012EDF294E3D3FB00DAA452508A5D238FD68F46BD030C886C6FC8A9C8</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>9AA12DE1392DBDC27405247C2C326D714A083EBCDD51403D19F3D8A8069B85F0</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>37110UXFactory.2_1.0.0.8_neutral__5kf09x396saqr</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>37110UXFactory.2_5kf09x396saqr!App</RegisteredUserModeAppID>
     <RegisteredPackageID>37110UXFactory.2</RegisteredPackageID>
@@ -13,112 +13,520 @@
     <RegisteredVersion>1.0.0.8</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\bin\Release\AppxManifest.xml">
+    <AppXManifest Include="E:\GitHub\CloudComics\Template\App3\bin\Release\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-10-11T09:57:59.727</Modified>
+      <Modified>2013-05-23T07:13:29.942</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\css\default.css">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2012-09-24T05:56:26.351</Modified>
+      <Modified>2013-05-23T07:07:21.780</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\pages\loading\loading.css">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\loading\loading.css">
       <PackagePath>pages\loading\loading.css</PackagePath>
-      <Modified>2012-10-04T05:00:40.946</Modified>
+      <Modified>2013-05-23T07:07:22.240</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\pages\itemDetail\itemDetail.css">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.css">
       <PackagePath>pages\itemDetail\itemDetail.css</PackagePath>
-      <Modified>2012-09-26T11:13:13.605</Modified>
+      <Modified>2013-05-23T07:07:22.239</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\pages\groupedItems\groupedItems.css">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.css">
       <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
-      <Modified>2012-09-20T10:16:47.119</Modified>
+      <Modified>2013-05-23T07:07:22.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\pages\loading\loading.html">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\loading\loading.html">
       <PackagePath>pages\loading\loading.html</PackagePath>
-      <Modified>2012-10-04T05:01:17.106</Modified>
+      <Modified>2013-05-23T07:07:22.240</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\pages\itemDetail\itemDetail.html">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.html">
       <PackagePath>pages\itemDetail\itemDetail.html</PackagePath>
-      <Modified>2012-09-26T11:09:21.145</Modified>
+      <Modified>2013-05-23T07:07:22.239</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\pages\groupedItems\groupedItems.html">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.html">
       <PackagePath>pages\groupedItems\groupedItems.html</PackagePath>
-      <Modified>2012-09-20T10:12:19.930</Modified>
+      <Modified>2013-05-23T07:07:22.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\default.html">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2012-10-04T04:59:54.154</Modified>
+      <Modified>2013-05-23T07:07:22.232</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\pages\loading\loading.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\loading\loading.js">
       <PackagePath>pages\loading\loading.js</PackagePath>
-      <Modified>2012-10-04T05:00:40.759</Modified>
+      <Modified>2013-05-23T07:07:22.240</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\js\data.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\data.js">
       <PackagePath>js\data.js</PackagePath>
-      <Modified>2012-10-04T05:35:28.602</Modified>
+      <Modified>2013-05-23T07:07:22.235</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\js\default.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2012-09-08T07:46:04.000</Modified>
+      <Modified>2013-05-23T07:07:22.236</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\js\navigator.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
-      <Modified>2012-09-12T10:29:04.217</Modified>
+      <Modified>2013-05-23T07:07:22.236</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\pages\itemDetail\itemDetail.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.js">
       <PackagePath>pages\itemDetail\itemDetail.js</PackagePath>
-      <Modified>2012-10-04T04:52:48.281</Modified>
+      <Modified>2013-05-23T07:07:22.239</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\pages\groupedItems\groupedItems.js">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2012-09-20T10:06:41.944</Modified>
+      <Modified>2013-05-23T07:07:22.238</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\data\클라우드 만화책 2탄\catoon_001.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_001.png">
       <PackagePath>data\클라우드 만화책 2탄\catoon_001.png</PackagePath>
-      <Modified>2012-09-26T11:15:39.416</Modified>
+      <Modified>2013-05-23T07:07:21.787</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\data\클라우드 만화책 2탄\catoon_002.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_002.png">
       <PackagePath>data\클라우드 만화책 2탄\catoon_002.png</PackagePath>
-      <Modified>2012-09-26T11:15:39.696</Modified>
+      <Modified>2013-05-23T07:07:21.791</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\data\클라우드 만화책 2탄\catoon_003.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_003.png">
       <PackagePath>data\클라우드 만화책 2탄\catoon_003.png</PackagePath>
-      <Modified>2012-09-26T11:15:39.753</Modified>
+      <Modified>2013-05-23T07:07:21.791</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\images\logo.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_004.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_004.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.795</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_005.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_005.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.798</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_006.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_006.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.801</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_007.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_007.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.805</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_008.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_008.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.809</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_009.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_009.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.812</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_010.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_010.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.815</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_011.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_011.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.820</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_012.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_012.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.823</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_013.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_013.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.827</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_014.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_014.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.830</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_015.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_015.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.834</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_016.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_016.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.838</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_017.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_017.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.842</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_018.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_018.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.846</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_019.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_019.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.850</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_020.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_020.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.853</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_021.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_021.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.857</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_022.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_022.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.862</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_023.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_023.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.866</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_024.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_024.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.870</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_025.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_025.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.873</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_026.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_026.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.877</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_027.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_027.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.881</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_028.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_028.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.887</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_029.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_029.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.891</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_030.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_030.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.895</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_031.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_031.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.898</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_032.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_032.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.902</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_033.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_033.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.906</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_034.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_034.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.910</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_035.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_035.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.917</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_036.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_036.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.921</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_037.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_037.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.926</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_038.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_038.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.930</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_039.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_039.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.934</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_040.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_040.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.939</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_041.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_041.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.942</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_042.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_042.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.946</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_043.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_043.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.951</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_044.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_044.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.956</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_045.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_045.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.960</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_046.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_046.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.964</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_047.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_047.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.968</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_048.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_048.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.972</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_049.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_049.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.977</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_050.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_050.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.982</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_051.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_051.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.986</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_052.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_052.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.991</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_053.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_053.png</PackagePath>
+      <Modified>2013-05-23T07:07:21.996</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_054.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_054.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.001</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_055.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_055.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.005</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_056.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_056.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.011</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_057.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_057.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.014</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_058.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_058.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.019</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_059.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_059.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.024</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_060.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_060.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.028</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_061.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_061.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.028</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_062.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_062.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.034</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_063.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_063.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.039</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_064.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_064.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.042</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_065.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_065.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.047</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_066.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_066.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.052</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_067.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_067.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.056</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_068.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_068.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.061</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_069.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_069.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.066</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_070.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_070.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.071</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_071.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_071.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.076</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_072.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_072.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.081</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_073.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_073.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.086</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_074.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_074.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.090</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_075.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_075.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.094</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_076.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_076.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.098</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_077.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_077.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.103</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_078.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_078.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.108</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_079.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_079.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.113</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_080.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_080.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.117</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_081.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_081.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.122</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_082.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_082.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.126</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_083.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_083.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.130</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_084.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_084.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.136</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_085.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_085.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.141</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_086.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_086.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.146</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_087.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_087.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.151</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_088.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_088.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.156</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_089.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_089.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.161</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_090.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_090.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.167</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_091.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_091.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.172</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_092.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_092.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.177</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_093.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_093.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.181</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_094.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_094.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.185</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_095.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_095.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.190</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_096.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_096.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.195</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_097.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_097.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.200</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_098.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_098.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.204</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_099.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_099.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.209</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_100.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_100.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.214</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_101.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_101.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.218</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_102.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_102.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.222</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_103.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_103.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.225</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_104.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_104.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.230</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\클라우드 만화책 2탄\catoon_105.png">
+      <PackagePath>data\클라우드 만화책 2탄\catoon_105.png</PackagePath>
+      <Modified>2013-05-23T07:07:22.231</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\logo.png">
       <PackagePath>images\logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-26T11:21:42.860</Modified>
+      <Modified>2013-05-23T07:07:22.232</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\images\smalllogo.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\smalllogo.png">
       <PackagePath>images\smalllogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-26T11:22:08.874</Modified>
+      <Modified>2013-05-23T07:07:22.233</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\images\splashscreen.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\splashscreen.png">
       <PackagePath>images\splashscreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-26T11:19:00.523</Modified>
+      <Modified>2013-05-23T07:07:22.234</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\images\storelogo.png">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\storelogo.png">
       <PackagePath>images\storelogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-09-26T11:21:57.025</Modified>
+      <Modified>2013-05-23T07:07:22.235</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rghwang\SkyDrive\공개\Image App\Template\App3\bin\Release\resources.pri">
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\bin\Release\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-10-11T09:57:59.617</Modified>
+      <Modified>2013-05-23T07:13:29.889</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\">
       <Name>Microsoft.WinJS.1.0</Name>
-      <Version>1.0.8514.0</Version>
+      <Version>1.0.9200.20602</Version>
       <Architecture>Neutral</Architecture>
-      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.8514.0</FrameworkIdentity>
+      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.9200.20602</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\Microsoft.WinJS.1.0.appx</AppxLocation>
     </ResolvedSDKReference>
   </ItemGroup>
