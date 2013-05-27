@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Viewing" Logo="images\Logo.png" SmallLogo="images\smalllogo.png" Description="Viewing" ForegroundText="light" BackgroundColor="#ED1C24">
+      <VisualElements DisplayName="Viewing" Logo="images\Logo.png" SmallLogo="images\smalllogo.png" Description="Viewing" ForegroundText="dark" BackgroundColor="#FFFFFF">
         <DefaultTile ShowName="allLogos" ShortName="Viewing" />
         <SplashScreen Image="images\splashscreen.png" BackgroundColor="#FFFFFF" />
       </VisualElements>

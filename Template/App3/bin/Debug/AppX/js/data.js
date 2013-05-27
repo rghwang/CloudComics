@@ -227,7 +227,7 @@
                     return 1;
                 else return -1;
             });
-            getNextThumbnail();
+            //getNextThumbnail();
         }
     }
     var thumbnailCount = 0;
