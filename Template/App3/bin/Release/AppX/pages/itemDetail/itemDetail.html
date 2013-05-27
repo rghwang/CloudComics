@@ -16,19 +16,18 @@
     <script src="/pages/itemDetail/itemDetail.js"></script>
 </head>
 <body>
-    <div id="itemTemplate" data-win-control="WinJS.Binding.Template">
-        <div id="zoomElement" class="item-container" >
-            <img class="item-image" src="#" data-win-bind="src: image" />
-        </div>
-    </div>
     <!-- 로드되어 표시되는 콘텐츠입니다. -->
-    <div id="imageFlipView"
-        data-win-control="WinJS.UI.FlipView"
-        data-win-options="{  }">
+    <div id="flipviewDiv" class="imageView"></div>
+    <div id="appbar" data-win-control="WinJS.UI.AppBar" data-win-options="{layout:'custom', placement:'top'}">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmd', label:'Back', icon:'back', section:'selection'}" type="button"></button>
+
+        <div id="path" class="appbar_filename">File Path</div>
+
+        <button class="appbar_right" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'select', label:'Select', icon:'openlocal'}" type="button"></button>
+        <button class="appbar_right" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'copy', label:'Copy Path', icon:'copy'}" type="button"></button>
     </div>
-    <div id="appbar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement:'top'}">
-        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'up', label:'상위 폴더', icon:'', section:'selection'}" type="button"></button>
-        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmd', label:'전체 보기', icon:'', section:'selection'}" type="button"></button>
+    <div id="appbar_bottom" data-win-control="WinJS.UI.AppBar" data-win-options="{layout:'custom', placement:'bottom'}">
+        <button class="appbar_del" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'del', label:'Delete', icon:'delete'}" type="button"></button>
     </div>
 </body>
 </html>

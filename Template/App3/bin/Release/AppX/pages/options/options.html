@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>options</title>
+
+    <!-- WinJS 참조 -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="options.css" rel="stylesheet" />
+    <script src="options.js"></script>
+</head>
+<body>
+    <div id="folderListTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="item-template">
+            <h4 class="option-title" data-win-bind="innerText : title"></h4>
+        </div>
+    </div>
+    <div class="options fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Options</span>
+            </h1>
+        </header>
+        <section class="optionmain" aria-label="Main content" role="main">
+            <h2 class="option-label">Accessilble Folders</h2>
+            <h4 class="option-desc">Allow SelectView app to view image files in these folders. For Windows 8 File Access, you should pick the folders to allow.</h4>
+            <div class="folder-list" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'multi', swipeBehavior: 'none', tapBehavior: 'toggleSelect' }"></div>
+            <button id="add" type="button">Add</button>
+            <button id="remove" type="button" disabled>Remove</button>
+            <button id="clear" type="button">Clear</button>
+            <div id="OK">
+                <h2 class="option-label">Ready to view</h2>
+                <h4 class="option-desc" id="OK_msg"></h4>
+                <button id="OK_btn" type="button">View the images</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

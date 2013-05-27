@@ -1,0 +1,34 @@
+﻿.options p {
+    margin-left: 120px;
+}
+
+.optionmain {
+	margin-left: 120px;
+}
+
+.folder-list {
+	width: 600px;
+	height:160px;
+	margin-bottom:10px;
+}
+
+.item-template {
+	height:40px;
+	margin: 0px;
+}
+
+.option-label {
+    margin-top:20px;
+	margin-bottom:10px;
+}
+
+.option-desc {
+	margin-bottom:10px;
+}
+
+.option-title {
+	font-size:x-large;
+}
+#OK {
+    visibility: hidden;
+}
