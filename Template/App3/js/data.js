@@ -240,7 +240,9 @@
 
                 var query = ".item-image[alt=\"" + item.title + "\"]";
                 var img = document.querySelector(query)
-                if (img) img.src = item.thumbnail;
+                if (img) {
+                    img.src = item.thumbnail;
+                }
 
                 // crash when too many getThumbnailAsync in a short time(>160)
                 if (thumbnailCount < list.length) {

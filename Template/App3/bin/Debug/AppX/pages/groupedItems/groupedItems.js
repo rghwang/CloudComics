@@ -33,7 +33,8 @@
 
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
-            listView.itemTemplate = element.querySelector(".itemtemplate");
+            //listView.itemTemplate = element.querySelector(".itemtemplate");
+            listView.itemTemplate = this.storageRenderer.bind(this);
             listView.oniteminvoked = this._itemInvoked.bind(this);
 
             document.querySelector(".appbar_filename").innerText = Data.getPath(true);
@@ -164,7 +165,37 @@
 
             }
         },
+        storageRenderer: function (itemPromise, element) {
+            var img, overlay, overlayText;
+            if (element === null) {
+                // dom is not recycled, so create inital structure
+                element = document.createElement("div");
+                element.className = "item";
+                element.innerHTML = "<img class=\"item-image\"/><div class='item-overlay'><div class='item-title'></div></div>";
+            }
+            img = element.querySelector("img");
+            img.src = "/images/loading.png";
+            overlay = element.querySelector(".item-overlay");
+            overlayText = element.querySelector(".item-title");
+            
+            return {
+                // returns the placeholder
+                element: element,
+                // and a promise that will complete when the item is fully rendered
+                renderComplete: itemPromise.then(function (item) {
 
+                    img.src = item.data.thumbnail;
+                    img.alt = item.data.title;
+                    if (item.data.storageItem.isOfType(Windows.Storage.StorageItemTypes.folder)) {
+                        overlay.style.visibility = "visible";
+                        overlayText.innerText = item.data.key;
+                    } else {
+                        overlay.style.visibility = "hidden";
+                    }
+                    return item.ready;
+                })
+            };
+        },
         _itemInvoked: function (args) {
             if (appView.value === appViewState.snapped) {
                 // 페이지가 맞춰진 경우 사용자가 그룹을 호출했습니다.
