@@ -227,14 +227,14 @@
                     return 1;
                 else return -1;
             });
-            //getNextThumbnail();
+            getNextThumbnail();
         }
     }
     var thumbnailCount = 0;
     function getNextThumbnail() {
         var item = list.getAt(thumbnailCount++);
 
-        item.storageItem.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.singleItem).done(function (thumbnail) {
+        item.storageItem.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
             if (thumbnail) {
                 item.thumbnail = URL.createObjectURL(thumbnail);
 

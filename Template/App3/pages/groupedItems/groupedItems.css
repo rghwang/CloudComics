@@ -61,30 +61,24 @@
         -ms-grid-columns: 1fr;
         -ms-grid-rows: 1fr 30px;
         display: -ms-grid;
-        width: 256px;
-        height: 256px;
+        width: 190px;
+        height: 130px;
     }
-
         .groupeditemspage .groupeditemslist .item .item-image {
+            position:absolute;
+            top:0px;
         }
-
         .groupeditemspage .groupeditemslist .item .item-overlay {
-            -ms-grid-row: 2;
-            -ms-grid-rows: 1fr;
-            display: -ms-grid;
-            padding: 6px 15px 2px 15px;
-        }
 
+            padding: 5px;
+            position:absolute;
+            top:100px;
+        }
             .groupeditemspage .groupeditemslist .item .item-overlay .item-title {
-                -ms-grid-row: 1;
                 overflow: hidden;
                 width: 220px;
             }
 
-            .groupeditemspage .groupeditemslist .item .item-overlay .item-subtitle {
-                -ms-grid-row: 2;
-                width: 220px;
-            }
 
 .appbar_filename {
     font-size: x-large;
