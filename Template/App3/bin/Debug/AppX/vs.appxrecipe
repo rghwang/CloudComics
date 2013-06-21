@@ -43,78 +43,78 @@
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\Logo.scale-100.png">
       <PackagePath>images\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.934</Modified>
+      <Modified>2013-06-21T08:35:18.818</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\Logo.scale-140.png">
       <PackagePath>images\Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.934</Modified>
+      <Modified>2013-06-21T08:35:18.823</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\Logo.scale-180.png">
       <PackagePath>images\Logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.935</Modified>
+      <Modified>2013-06-21T08:35:18.830</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\smalllogo.scale-100.png">
       <PackagePath>images\smalllogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.935</Modified>
+      <Modified>2013-06-21T08:35:18.836</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\SmallLogo.scale-140.png">
       <PackagePath>images\SmallLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.935</Modified>
+      <Modified>2013-06-21T08:35:18.837</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\SmallLogo.scale-180.png">
       <PackagePath>images\SmallLogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.936</Modified>
+      <Modified>2013-06-21T08:35:18.838</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\splashscreen.scale-100.png">
       <PackagePath>images\splashscreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.937</Modified>
+      <Modified>2013-06-21T08:35:18.666</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\SplashScreen.scale-140.png">
       <PackagePath>images\SplashScreen.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.937</Modified>
+      <Modified>2013-06-21T08:35:18.751</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\SplashScreen.scale-180.png">
       <PackagePath>images\SplashScreen.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.937</Modified>
+      <Modified>2013-06-21T08:35:18.815</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\storelogo.scale-100.png">
       <PackagePath>images\storelogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.938</Modified>
+      <Modified>2013-06-21T08:35:18.832</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\StoreLogo.scale-140.png">
       <PackagePath>images\StoreLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.938</Modified>
+      <Modified>2013-06-21T08:35:18.833</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\StoreLogo.scale-180.png">
       <PackagePath>images\StoreLogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-05-30T06:31:18.939</Modified>
+      <Modified>2013-06-21T08:35:18.835</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\WideLogo.scale-100.png">
       <PackagePath>images\WideLogo.scale-100.png</PackagePath>
-      <Modified>2013-05-30T06:31:18.943</Modified>
+      <Modified>2013-06-21T08:35:18.558</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\WideLogo.scale-140.png">
       <PackagePath>images\WideLogo.scale-140.png</PackagePath>
-      <Modified>2013-05-30T06:31:18.943</Modified>
+      <Modified>2013-06-21T08:35:18.581</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\WideLogo.scale-180.png">
       <PackagePath>images\WideLogo.scale-180.png</PackagePath>
-      <Modified>2013-05-30T06:31:18.944</Modified>
+      <Modified>2013-06-21T08:35:18.618</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\Splash Screen background color  #FFFFFFFF">
       <PackagePath>images\Splash Screen background color  #FFFFFFFF</PackagePath>
-      <Modified>2013-05-30T06:31:18.936</Modified>
+      <Modified>2013-06-21T08:35:18.839</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\options\options.html">
       <PackagePath>pages\options\options.html</PackagePath>
