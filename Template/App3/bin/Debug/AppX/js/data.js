@@ -97,7 +97,7 @@
     function checkAccess(folderPath) {
         var found = false;
         for (var i = 0; i < options.accessList.length; i++) {
-            if (folderPath.indexOf(options.accessList.getAt(i).title) !== -1 ) {
+            if (folderPath.indexOf(options.accessList.getAt(i).title) !== -1) {
                 found = true;
                 break;
             }
@@ -223,16 +223,22 @@
         if (list.length > 0) {
             list.sort(function (f, s) {
                 if (f == s) return 0;
-                else if (f.group.title > s.group.title || (f.group.title == s.group.title && f.title > s.title))
+                else if (f.group.title < s.group.title || (f.group.title == s.group.title && f.title > s.title))
                     return 1;
                 else return -1;
             });
             getNextThumbnail();
         }
     }
+    var index = 0;
     var thumbnailCount = 0;
     function getNextThumbnail() {
-        var item = list.getAt(thumbnailCount++);
+        if (index < list.length) var item = list.getAt(index++);
+        else {
+            index = 0;
+            thumbnailCount = 0;
+            return;
+        }
 
         item.storageItem.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
             if (thumbnail) {
@@ -244,12 +250,12 @@
                     img.src = item.thumbnail;
                 }
 
-                // crash when too many getThumbnailAsync in a short time(>160)
-                if (thumbnailCount < list.length) {
-                    if (thumbnail > 100) return;
-                    getNextThumbnail();
-                } else {
+                if (++thumbnailCount > 100) {
+                    setTimeout(getNextThumbnail, 1000);
                     thumbnailCount = 0;
+                    return;
+                } else {
+                    getNextThumbnail();
                 }
             }
         });
