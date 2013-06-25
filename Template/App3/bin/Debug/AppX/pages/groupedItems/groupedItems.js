@@ -79,12 +79,16 @@
             document.getElementById("del").addEventListener("click", function () {
                 var indices = listView.selection.getIndices();
                 var item;
+                var promiseArray = [];
                 for (var i = 0 ; i < indices.length; i++) {
                     item = listView.itemDataSource.list.getAt(indices[i]);
-                    item.storageItem.deleteAsync().then(function () {
-                        Data.items.splice(Data.items.indexOf(item), 1);
-                    });
+                    promiseArray.push(item.storageItem.deleteAsync());
                 }
+                WinJS.Promise.join(promiseArray).done(function () {
+                    for (var i = indices.length - 1; i >= 0; i--) {
+                        Data.items.splice(indices[i], 1);
+                    }
+                });
             });
             document.getElementById("copy").addEventListener("click", function () {
                 var dp = new Windows.ApplicationModel.DataTransfer.DataPackage();

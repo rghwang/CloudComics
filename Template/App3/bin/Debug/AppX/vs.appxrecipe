@@ -34,7 +34,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.css">
       <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
-      <Modified>2013-05-30T06:34:50.984</Modified>
+      <Modified>2013-06-25T05:05:46.046</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\loading.png">
       <PackagePath>images\loading.png</PackagePath>
@@ -154,7 +154,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2013-05-30T08:11:20.742</Modified>
+      <Modified>2013-06-25T05:27:27.735</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

@@ -95,6 +95,11 @@
     float: right;
 }
 
+.win-selectionstylefilled.win-listview .win-selectioncheckmarkbackground {
+    border-top-color: black;
+    border-right-color: black;
+}
+
 @media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
     .groupeditemspage .groupeditemslist .item .item-image {
         position: absolute;
