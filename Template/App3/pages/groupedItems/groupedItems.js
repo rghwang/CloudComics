@@ -13,7 +13,7 @@
         navigateToGroup: function (key) {
             nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(Data.getItemsFromGroup(Data.resolveGroupReference(key)).getItem(0).data) });
         },
-        
+
         // 이 함수는 사용자가 이 페이지로 이동할 때마다 호출되어
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
         ready: function (element, options) {
@@ -21,13 +21,13 @@
             if (options) {
                 if (options.files) { // 파일을 선택해서 실행한 경우
                     param = options.files;
-                } else if( options.folder ) { // 앱을 직접 실행하거나, 앱 실행 중에 폴더로 진입하는 경우
+                } else if (options.folder) { // 앱을 직접 실행하거나, 앱 실행 중에 폴더로 진입하는 경우
                     param = options.folder;
                 }
 
                 if (options.resetPath) Data.resetPath();
-            } 
-            if( param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
+            }
+            if (param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
             var dataPromise = Data.setFolder(param);
 
 
@@ -90,17 +90,17 @@
                     }
                 });
             });
-            document.getElementById("copy").addEventListener("click", function () {
-                var dp = new Windows.ApplicationModel.DataTransfer.DataPackage();
-                dp.requestedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.copy;
-                var txt = Data.getPath(true);
-                dp.setText(txt);
-                Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dp);
-                document.getElementById("copy").disabled = true;
-                Windows.ApplicationModel.DataTransfer.Clipboard.oncontentchanged = function () {
-                    document.getElementById("copy").disabled = false;
-                }
-            });
+            //document.getElementById("copy").addEventListener("click", function () {
+            //    var dp = new Windows.ApplicationModel.DataTransfer.DataPackage();
+            //    dp.requestedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.copy;
+            //    var txt = Data.getPath(true);
+            //    dp.setText(txt);
+            //    Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dp);
+            //    document.getElementById("copy").disabled = true;
+            //    Windows.ApplicationModel.DataTransfer.Clipboard.oncontentchanged = function () {
+            //        document.getElementById("copy").disabled = false;
+            //    }
+            //});
             document.getElementById("select").addEventListener("click", function () {
                 // Verify that we are currently not snapped, or that we can unsnap to open the picker
                 var currentState = Windows.UI.ViewManagement.ApplicationView.value;
@@ -111,7 +111,7 @@
                 }
 
                 // Create the picker object and set options
-                var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+                var openPicker = new Windows.Storage.Pickers.FolderPicker();
                 openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
                 openPicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.desktop;
                 // Users expect to have a filtered view of their folders depending on the scenario.
@@ -119,9 +119,9 @@
                 openPicker.fileTypeFilter.replaceAll([".png", ".jpg", ".jpeg"]);
 
                 // Open the picker for the user to pick a file
-                openPicker.pickMultipleFilesAsync().then(function (files) {
-                    if (files.size > 0) {
-                        WinJS.Navigation.navigate(Application.navigator.home, { files: files , resetPath:true});
+                openPicker.pickSingleFolderAsync().then(function (folder) {
+                    if (folder) {
+                        WinJS.Navigation.navigate(Application.navigator.home, { folder: folder, resetPath: true });
                     } else {
                         // The picker was dismissed with no selected file
                         WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
@@ -181,21 +181,16 @@
             img.src = "/images/loading.png";
             overlay = element.querySelector(".item-overlay");
             overlayText = element.querySelector(".item-title");
-            
+
             return {
                 // returns the placeholder
                 element: element,
                 // and a promise that will complete when the item is fully rendered
                 renderComplete: itemPromise.then(function (item) {
-
-                    img.src = item.data.thumbnail;
+                    if( item.data.thumbnail != "/images/loading.png" ) img.src = item.data.thumbnail;
                     img.alt = item.data.title;
-                    if (item.data.storageItem.isOfType(Windows.Storage.StorageItemTypes.folder)) {
-                        overlay.style.visibility = "visible";
-                        overlayText.innerText = item.data.key;
-                    } else {
-                        overlay.style.visibility = "hidden";
-                    }
+                    overlay.style.visibility = "visible";
+                    overlayText.innerText = item.data.key;
                     return item.ready;
                 })
             };

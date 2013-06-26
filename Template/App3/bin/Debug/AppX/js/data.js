@@ -241,22 +241,20 @@
         }
 
         item.storageItem.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
-            if (thumbnail) {
-                item.thumbnail = URL.createObjectURL(thumbnail);
+            if (thumbnail) item.thumbnail = URL.createObjectURL(thumbnail);
 
-                var query = ".item-image[alt=\"" + item.title + "\"]";
-                var img = document.querySelector(query)
-                if (img) {
-                    img.src = item.thumbnail;
-                }
+            var query = ".item-image[alt=\"" + item.title + "\"]";
+            var img = document.querySelector(query)
+            if (img) {
+                img.src = item.thumbnail;
+            }
 
-                if (++thumbnailCount > 100) {
-                    setTimeout(getNextThumbnail, 1000);
-                    thumbnailCount = 0;
-                    return;
-                } else {
-                    getNextThumbnail();
-                }
+            if (++thumbnailCount > 100) {
+                setTimeout(getNextThumbnail, 1000);
+                thumbnailCount = 0;
+                return;
+            } else {
+                getNextThumbnail();
             }
         });
 

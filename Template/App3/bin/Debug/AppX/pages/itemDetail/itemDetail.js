@@ -26,14 +26,54 @@
             flipView.onpageselected = function () {
                 item = items.getAt(flipView.currentPage);
                 document.querySelector(".appbar_filename").innerText = item.storageItem.path;
-                document.getElementById("copy").disabled = false;
+                //document.getElementById("copy").disabled = false;
+            }
+
+            function getCurrentByClass(c) {
+                return document.querySelector("div.win-template[aria-selected=true] ."+c);
             }
             flipView.onpagecompleted = function () {
                 document.getElementById("del").disabled = false;
+
+
+                var drag = false;
+                var prevX, prevY;
+
+                var con = getCurrentByClass("item-container");
+                var img = getCurrentByClass("item-image");
+                img.addEventListener("dragstart", function (e) {
+                    e.preventDefault();
+                });
+
+                con.onmspointerdown = function (e) {
+                    drag = true;
+                    prevX = e.clientX;
+                    prevY = e.clientY;
+                }
+                con.onmspointermove = function (e) {
+                    if (drag) {
+                        con.scrollLeft += prevX - e.clientX;
+                        con.scrollTop += prevY - e.clientY;
+                        prevX = e.clientX;
+                        prevY = e.clientY;
+                    }
+                }
+                con.onmspointerup = con.onmspointerout = function (e) {
+                    drag = false;
+                }
             }
 
             document.getElementById("cmd").addEventListener("click", function () {
                 WinJS.Navigation.back();
+            });
+            // TODO: 현재 선택된 item-container를 제대로 선택
+            document.getElementById("zoomin").addEventListener("click", function () {
+                var con = getCurrentByClass("item-container");
+                con.msContentZoomFactor *= 2;
+            });
+            document.getElementById("zoomout").addEventListener("click", function () {
+                var con = getCurrentByClass("item-container");
+                con.msContentZoomFactor *= 0.5;
             });
             document.getElementById("del").addEventListener("click", function () {
                 item.storageItem.deleteAsync().then(function () {
@@ -43,51 +83,11 @@
 
                         document.getElementById("del").disabled = true;
 
-                    }else{
+                    } else {
                         WinJS.Navigation.back();
                         return false;
                     }
                 });
-            });
-            document.getElementById("copy").addEventListener("click", function () {
-                var dp = new Windows.ApplicationModel.DataTransfer.DataPackage();
-                dp.requestedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.copy;
-                var txt = item.storageItem.path.substring(0, item.storageItem.path.lastIndexOf("\\"));
-                dp.setText(txt);
-                Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dp);
-                document.getElementById("copy").disabled = true;
-                Windows.ApplicationModel.DataTransfer.Clipboard.oncontentchanged = function () {
-                    document.getElementById("copy").disabled = false;
-                }
-            });
-            document.getElementById("select").addEventListener("click", function () {
-                // Verify that we are currently not snapped, or that we can unsnap to open the picker
-                var currentState = Windows.UI.ViewManagement.ApplicationView.value;
-                if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&
-                    !Windows.UI.ViewManagement.ApplicationView.tryUnsnap()) {
-                    // Fail silently if we can't unsnap
-                    return;
-                }
-
-
-                // Create the picker object and set options
-                var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
-                openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
-                openPicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.desktop;
-                // Users expect to have a filtered view of their folders depending on the scenario.
-                // For example, when choosing a documents folder, restrict the filetypes to documents for your application.
-                openPicker.fileTypeFilter.replaceAll([".png", ".jpg", ".jpeg"]);
-
-                // Open the picker for the user to pick a file
-                openPicker.pickMultipleFilesAsync().then(function (files) {
-                    if (files.size > 0) {
-                        WinJS.Navigation.navigate(Application.navigator.home, { files: files });
-                    } else {
-                        // The picker was dismissed with no selected file
-                        WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
-                    }
-                });
-
             });
         }
     });

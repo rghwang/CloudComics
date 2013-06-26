@@ -1,4 +1,7 @@
-﻿#contenthost {
+﻿body {
+    font-family :'Segoe UI', 'Malgun Gothic';
+}
+#contenthost {
     height: 100%;
     width: 100%;
 }
