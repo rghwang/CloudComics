@@ -221,12 +221,14 @@
             }
         });
         if (list.length > 0) {
+            /*
             list.sort(function (f, s) {
                 if (f == s) return 0;
                 else if (f.group.title < s.group.title || (f.group.title == s.group.title && f.title > s.title))
                     return 1;
                 else return -1;
             });
+            */
             getNextThumbnail();
         }
     }

@@ -30,7 +30,6 @@
             if (param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
             var dataPromise = Data.setFolder(param);
 
-
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
             //listView.itemTemplate = element.querySelector(".itemtemplate");
