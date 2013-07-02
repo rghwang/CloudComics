@@ -49,7 +49,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>ImageApp_StoreKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <PackageCertificateThumbprint>2B23BAA140851703E489AA8D3407C60F1C9DCF5A</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>4187D099567FBAAD85EC773E143007A8DBD4A036</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">

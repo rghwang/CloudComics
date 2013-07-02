@@ -18,6 +18,8 @@
             listView.itemTemplate = document.getElementById("folderListTemplate");
             listView.layout = new WinJS.UI.ListLayout();
 
+
+
             listView.onselectionchanged = function () {
                 if (listView.selection.count() > 0) document.getElementById("remove").removeAttribute("disabled");
                 else document.getElementById("remove").setAttribute("disabled");
@@ -55,8 +57,9 @@
                             var path = Data.addRootSlash(options.folderPath);
 
                             if (path.indexOf(folder.path) !== -1) {
-                                document.getElementById("OK").style.visibility = "visible";
-                                document.getElementById("OK_msg").innerText = "Okay, SelectView app can view images in \"" + options.folderPath + "\".";
+                                document.getElementById("OK_btn").style.visibility = "visible";
+                                document.getElementById("OK_label").innerText = "Ready to view";
+                                document.getElementById("OK_msg").innerText = "Okay, ready to view all images in \"" + options.folderPath + "\".";
                                 document.getElementById("OK_btn").addEventListener("click", function () {
                                     WinJS.Navigation.history = {};
                                     SelectView.navigateToPath(path, options.fileName);
@@ -69,8 +72,16 @@
                     }
                 });
             });
-            if (options && options.msg) {
-                new Windows.UI.Popups.MessageDialog(options.msg[0], options.msg[1]).showAsync();
+            if (showOK) {
+                var msg = [
+                    "If you add a parent folder, you don't need to add each folders to the list. In this case, " + options.parentFolder + " is recommended."
+                    , "Add the image folder to Image Folders list"
+                ];
+                document.getElementById("OK").style.visibility = "visible";
+                document.getElementById("OK_label").innerText = msg[1];
+                document.getElementById("OK_btn").style.visibility = "hidden";
+                document.getElementById("OK_msg").innerText = msg[0];
+                new Windows.UI.Popups.MessageDialog(msg[0], msg[1]).showAsync();
             }
         },
 

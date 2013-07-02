@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StoreAssociation xmlns="http://schemas.microsoft.com/appx/2010/storeassociation">
-  <Publisher>CN=51E88703-C551-47A3-AAF0-D0DE66B090BF</Publisher>
-  <NamespacePrefix>37110UXFactory</NamespacePrefix>
-  <PublisherDisplayName>UXFactory</PublisherDisplayName>
+  <Publisher>CN=073F0D1D-E43D-4165-9C5D-616E64746447</Publisher>
+  <NamespacePrefix>57382HRG</NamespacePrefix>
+  <PublisherDisplayName>HRG</PublisherDisplayName>
   <GeneratePackageHash>http://www.w3.org/2001/04/xmlenc#sha256</GeneratePackageHash>
   <SupportedLocales>
     <Language Code="af" InMinimumRequirementSet="false" />
@@ -337,30 +337,18 @@
     <Language Code="zu-za" InMinimumRequirementSet="false" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>37110UXFactory.SelectView</MainPackageIdentityName>
+    <MainPackageIdentityName>57382HRG.Viewing</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>SelectView</ReservedName>
-      <ReservedName>셀렉트뷰</ReservedName>
+      <ReservedName>Viewing</ReservedName>
+      <ReservedName>뷰잉</ReservedName>
+      <ReservedName>ビューイング</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
-  <AccountPackageIdentityNames>
-    <MainPackageIdentityName>37110UXFactory.LEGO5763</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.LEGO2507</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.LEGO10188</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.47403BE5A31E3</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.LOL</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.8229CD6857B6</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.UnityTutorials</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.Windows8</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.57644ED84D49B</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.428512AB18A21</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.4614974169243</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.60710EE3DC620</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.10296C76C1489</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.12643F0D1D1F1</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.156156288A9EA</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.1</MainPackageIdentityName>
-    <MainPackageIdentityName>37110UXFactory.2</MainPackageIdentityName>
-  </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://appdev.microsoft.com:443/StorePortals/Developer/Catalog/ReleaseAnchor/ebf0aa3e-f67b-4ba2-b0e6-62b3e4ccf854" />
+  <AccountPackageIdentityNames />
+  <PackageInfoList LandingUrl="https://appdev.microsoft.com:443/StorePortals/Developer/Catalog/ReleaseAnchor/bf6c75f0-b42c-4a9c-85c1-d693af77510c">
+    <PackageInfo>
+      <PackageArchitecture>neutral</PackageArchitecture>
+      <PackageMaxArchitectureVersion>1.0.0.10</PackageMaxArchitectureVersion>
+    </PackageInfo>
+  </PackageInfoList>
 </StoreAssociation>

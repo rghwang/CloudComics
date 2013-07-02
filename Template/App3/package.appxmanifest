@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="37110UXFactory.SelectView" Version="1.0.0.9" Publisher="CN=51E88703-C551-47A3-AAF0-D0DE66B090BF" />
+  <Identity Name="57382HRG.Viewing" Version="1.0.0.11" Publisher="CN=073F0D1D-E43D-4165-9C5D-616E64746447" />
   <Properties>
-    <DisplayName>SelectView</DisplayName>
-    <PublisherDisplayName>UXFactory</PublisherDisplayName>
+    <DisplayName>Viewing</DisplayName>
+    <PublisherDisplayName>HRG</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
   <Prerequisites>

@@ -169,16 +169,15 @@
             }
         },
         storageRenderer: function (itemPromise, element) {
-            var img, overlay, overlayText;
+            var img, overlayText;
             if (element === null) {
                 // dom is not recycled, so create inital structure
                 element = document.createElement("div");
                 element.className = "item";
-                element.innerHTML = "<img class=\"item-image\"/><div class='item-overlay'><div class='item-title'></div></div>";
+                element.innerHTML = "<img class=\"item-image\"/><div class='item-title'></div>";
             }
             img = element.querySelector("img");
             img.src = "/images/loading.png";
-            overlay = element.querySelector(".item-overlay");
             overlayText = element.querySelector(".item-title");
 
             return {
@@ -188,7 +187,6 @@
                 renderComplete: itemPromise.then(function (item) {
                     if( item.data.thumbnail != "/images/loading.png" ) img.src = item.data.thumbnail;
                     img.alt = item.data.title;
-                    overlay.style.visibility = "visible";
                     overlayText.innerText = item.data.key;
                     return item.ready;
                 })

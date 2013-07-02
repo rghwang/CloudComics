@@ -45,11 +45,7 @@
                 }
             });
         } else {
-            var msg = [
-                "To view other images in the same folder, you should pick and add a parent folder to the accessible folders. In this case, " + parentFolder + " is recommended."
-                , "Add \"" + parentFolder + "\" to Accessble Folders"
-            ];
-            nav.navigate("/pages/options/options.html", { folderPath: folderPath, fileName: fileName, msg: msg });
+            nav.navigate("/pages/options/options.html", { folderPath: folderPath, fileName: fileName, parentFolder: parentFolder });
         }
     }
     WinJS.Namespace.define("SelectView", {

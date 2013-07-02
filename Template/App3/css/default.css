@@ -1,5 +1,9 @@
 ﻿body {
     font-family :'Segoe UI', 'Malgun Gothic';
+    background-color:black;
+}
+.win-listview .win-container:not(.win-footprint) {
+    background-color: black;
 }
 #contenthost {
     height: 100%;
