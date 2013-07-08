@@ -63,3 +63,4 @@ D:\GitHub\CloudComics\Template\App3\bld\Debug\resources.resfiles
 D:\GitHub\CloudComics\Template\App3\bld\Debug\pri.resfiles
 D:\GitHub\CloudComics\Template\App3\bld\Debug\LanguageQualifiers.txt
 D:\GitHub\CloudComics\Template\App3\bld\Debug\ProjectArchitectures.txt
+E:\GitHub\CloudComics\Template\App3\bin\Debug\MicrosoftAdvertising.winmd

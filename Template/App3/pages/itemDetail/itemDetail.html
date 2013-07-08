@@ -14,6 +14,12 @@
     <link href="/pages/itemDetail/itemDetail.css" rel="stylesheet" />
     <script src="/js/data.js"></script>
     <script src="/pages/itemDetail/itemDetail.js"></script>
+
+    
+    <!-- Microsoft Advertising required references -->
+    <script src="/MSAdvertisingJS/ads/ad.js"></script>
+    
+
 </head>
 <body>
     <div id="itemTemplate" data-win-control="WinJS.Binding.Template">
@@ -38,6 +44,11 @@
         <button class="appbar_del" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'del', label:'Delete', icon:'delete'}" type="button"></button>
         <button class="appbar_zoomin" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'zoomin', label:'Zoom In', icon:'zoomin'}" type="button"></button>
         <button class="appbar_zoomout" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'zoomout', label:'Zoom Out', icon:'zoomout'}" type="button"></button>
+    </div>
+    
+    <div id="myAd" style="position: absolute; top: 0px; left: 0px; width: 728px; height: 90px; z-index: 1"
+        data-win-control="MicrosoftNSJS.Advertising.AdControl"
+        data-win-options="{applicationId: '73938e58-ffe3-4988-9947-8efef8407381', adUnitId: '135510'}">
     </div>
 </body>
 </html>

@@ -3,6 +3,7 @@
 (function () {
     "use strict";
     var showOK = false;
+    var app = Windows.ApplicationModel.Store.CurrentAppSimulator;
 
     WinJS.UI.Pages.define("/pages/options/options.html", {
         // 이 함수는 사용자가 이 페이지로 이동할 때마다 호출되어
@@ -11,6 +12,24 @@
             // TODO: 페이지를 초기화합니다.
             if (options && options.folderPath) showOK = true;
             else showOK = false;
+
+            if (app.licenseInformation.isTrial) {
+                app.loadListingInformationAsync().then(function (listing) {
+                    document.querySelector("#trial_txt").textContent = "Will be expired after " + app.licenseInformation.expirationDate.toLocaleDateString()
+                    + ". Upgrade to the Full Version for " + listing.formattedPrice + ".";
+                });
+                document.querySelector("#purchase").onclick = function () {
+                    app.requestAppPurchaseAsync(false).then(
+                        function () {
+                            if (!app.licenseInformation.isTrial) {
+                                updateVersionInfo();
+                            }
+                        }
+                    );
+                }
+            } else {
+                updateVersionInfo();
+            }
 
 
             var listView = element.querySelector(".folder-list").winControl;
@@ -95,4 +114,10 @@
             // TODO: viewState의 변경 내용에 응답합니다.
         }
     });
+    function updateVersionInfo() {
+        document.querySelector("#trial_info").textContent = "Full version";
+        document.querySelector("#trial_txt").textContent = "Thank you for purchasing Viewing.";
+        document.querySelector("#purchase").textContent = "Purchased";
+        document.querySelector("#purchase").disabled = true;
+    }
 })();

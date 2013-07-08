@@ -9,10 +9,12 @@
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;
     var hasSettingPane = false;
-
+    var appmodel = Windows.ApplicationModel;
+    var storage = Windows.Storage;
 
     function onPrivacyCommand(e) {
-        var uri = Windows.Foundation.Uri("http://uxfactory.tistory.com/3");
+        // Privacy Policy page URL
+        var uri = Windows.Foundation.Uri("http://uxfactory.tistory.com/97");
         Windows.System.Launcher.launchUriAsync(uri).then(
             function (success) {
                 if (success) {
@@ -58,6 +60,12 @@
             settingsPane.addEventListener("commandsrequested", onCommandsRequested);
             hasSettingPane = true;
         }
+
+        appmodel.Package.current.installedLocation.getFileAsync("data\\WindowsStoreProxy.xml").done(
+            function (file) {
+                appmodel.Store.CurrentAppSimulator.reloadSimulatorAsync(file);
+            }
+        );
 
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {

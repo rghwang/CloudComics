@@ -13,6 +13,33 @@
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingJS\6.1\References\CommonConfiguration\neutral\MicrosoftAdvertising.winmd">
+      <PackagePath>MicrosoftAdvertising.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingJS\6.1\Redist\debug\neutral\MSAdvertisingJS\ads\ad.js">
+      <PackagePath>MSAdvertisingJS\ads\ad.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingJS\6.1\Redist\CommonConfiguration\neutral\MSAdvertisingJS\ads\bootstrap.js">
+      <PackagePath>MSAdvertisingJS\ads\bootstrap.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingJS\6.1\Redist\CommonConfiguration\neutral\MSAdvertisingJS\ads\ormma.js">
+      <PackagePath>MSAdvertisingJS\ads\ormma.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingJS\6.1\Redist\CommonConfiguration\neutral\MSAdvertisingJS\ads\bootstrap.html">
+      <PackagePath>MSAdvertisingJS\ads\bootstrap.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingJS\6.1\Redist\CommonConfiguration\neutral\MSAdvertisingJS\ads\MSASettingsPanel.html">
+      <PackagePath>MSAdvertisingJS\ads\MSASettingsPanel.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingJS\6.1\Redist\debug\neutral\MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol.icon.12x12.png">
+      <PackagePath>MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol.icon.12x12.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingJS\6.1\Redist\debug\neutral\MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol.icon.16x16.png">
+      <PackagePath>MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol.icon.16x16.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingJS\6.1\Redist\debug\neutral\MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol_oam.xml">
+      <PackagePath>MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol_oam.xml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\css\default.css">
       <PackagePath>css\default.css</PackagePath>
     </AppxPackagedFile>
@@ -24,6 +51,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.css">
       <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\WindowsStoreProxy.xml">
+      <PackagePath>data\WindowsStoreProxy.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\images\loading.png">
       <PackagePath>images\loading.png</PackagePath>
