@@ -29,6 +29,9 @@
         WinJS.Navigation.navigate("/pages/options/options.html", {});
     }
     function onCommandsRequested(e) {
+        if (!appmodel.Store.CurrentAppSimulator.licenseInformation.isTrial) {
+            e.request.applicationCommands.removeAt(0);
+        }
         var optionsCommand = new Windows.UI.ApplicationSettings.SettingsCommand("option", "Options", onOptionsCommand);
         e.request.applicationCommands.append(optionsCommand);
 

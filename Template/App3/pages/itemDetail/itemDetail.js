@@ -6,6 +6,13 @@
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
         ready: function (element, options) {
             // 파일 한개 선택해서 들어올 때에 대한 처리(old version)
+
+
+            if (Windows.ApplicationModel.Store.CurrentAppSimulator.licenseInformation.isTrial) {
+                var adDiv = document.querySelector("#ads");
+                var adCon = new MicrosoftNSJS.Advertising.AdControl(adDiv, { applicationId: '73938e58-ffe3-4988-9947-8efef8407381', adUnitId: '135510' });
+            } 
+
             if (options && options.files) {
                 Data.setFolder(options.files);
                 document.getElementById("cmd").style.visibility = "hidden";
