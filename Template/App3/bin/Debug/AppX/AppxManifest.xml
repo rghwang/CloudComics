@@ -7,7 +7,7 @@
 
     패키지 매니페스트 파일에 대한 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=241727을 참조하십시오.
   -->
-  <Identity Name="57382HRG.Viewing" Version="1.0.0.10" Publisher="CN=073F0D1D-E43D-4165-9C5D-616E64746447" ProcessorArchitecture="neutral" />
+  <Identity Name="57382HRG.Viewing" Version="1.0.0.12" Publisher="CN=073F0D1D-E43D-4165-9C5D-616E64746447" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>Viewing</DisplayName>
     <PublisherDisplayName>HRG</PublisherDisplayName>

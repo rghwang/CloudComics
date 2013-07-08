@@ -12,7 +12,8 @@
 
 
     function onPrivacyCommand(e) {
-        var uri = Windows.Foundation.Uri("http://uxfactory.tistory.com/3");
+        // Privacy Policy page URL
+        var uri = Windows.Foundation.Uri("http://uxfactory.tistory.com/97");
         Windows.System.Launcher.launchUriAsync(uri).then(
             function (success) {
                 if (success) {

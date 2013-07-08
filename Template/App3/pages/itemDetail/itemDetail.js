@@ -10,11 +10,12 @@
                 Data.setFolder(options.files);
                 document.getElementById("cmd").style.visibility = "hidden";
             }
+            function resizeCanvas() {
+                itemTemplate.innerHTML = itemTemplate.innerHTML.replace("<div class=\"canvas\">", "<div class=\"canvas\" style=\"width=" + window.innerWidth + "px; height=" + window.innerHeight + "px\">");
+            }
+            //window.addEventListener("resize", resizeCanvas);
+            resizeCanvas();
             var item = options && options.item ? Data.resolveItemReference(options.item) : Data.items.getAt(0);
-            //element.querySelector(".titlearea .pagetitle").textContent = item.group.title;
-            //element.querySelector("article .item-image").src = item.backgroundImage;
-            //element.querySelector("article .item-image").alt = item.subtitle;
-            //element.querySelector(".content").focus();
 
             var flipView = element.querySelector("#imageFlipView").winControl;
             var group = Data.resolveGroupReference("files");
@@ -23,10 +24,14 @@
             flipView.itemDataSource = items.dataSource;
             flipView.itemTemplate = itemTemplate;
             flipView.currentPage = items.indexOf(item);
+
             flipView.onpageselected = function () {
                 item = items.getAt(flipView.currentPage);
                 document.querySelector(".appbar_filename").innerText = item.storageItem.path;
+
                 //document.getElementById("copy").disabled = false;
+
+
             }
 
             function getCurrentByClass(c) {
@@ -61,6 +66,7 @@
                 con.onmspointerup = con.onmspointerout = function (e) {
                     drag = false;
                 }
+
             }
 
             document.getElementById("cmd").addEventListener("click", function () {

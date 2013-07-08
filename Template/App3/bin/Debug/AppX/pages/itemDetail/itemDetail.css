@@ -4,12 +4,16 @@
     height: 100%;
     overflow: auto;
     -ms-content-zooming: zoom;
-    -ms-scroll-rails: none;    
+    -ms-scroll-rails: none;
 }
+    .item-container .canvas {
+        display:table-cell; 
+        vertical-align:middle; 
+        text-align:center;
+    }
     .item-container .item-image {
         max-width: 100%;
         max-height: 100%;
-        margin:auto;
     }
 
 #imageFlipView {

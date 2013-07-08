@@ -244,9 +244,9 @@
 
         item.storageItem.getThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.picturesView).done(function (thumbnail) {
             if (thumbnail) item.thumbnail = URL.createObjectURL(thumbnail);
-
+            
             var query = ".item-image[alt=\"" + item.title + "\"]";
-            var img = document.querySelector(query)
+            var img = document.querySelector(query);
             if (img) {
                 img.src = item.thumbnail;
             }
