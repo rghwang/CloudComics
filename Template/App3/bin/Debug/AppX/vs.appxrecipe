@@ -5,7 +5,7 @@
     <WindowsUser>rghwang</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>9C0AB10EE14CD653EBB7C0BF69D1404447CAD76D19E21391F78A773897372842</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>51740551728D492311ECE53895998EA58398EE6671A962B61871A6D6B8AB8E6C</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>57382HRG.Viewing_1.0.0.15_neutral__t6hnbjyeammt4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>57382HRG.Viewing_t6hnbjyeammt4!App</RegisteredUserModeAppID>
     <RegisteredPackageID>57382HRG.Viewing</RegisteredPackageID>
@@ -16,7 +16,7 @@
     <AppXManifest Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-10T02:27:31.481</Modified>
+      <Modified>2013-07-10T05:19:39.776</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -194,11 +194,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2013-07-10T01:57:19.629</Modified>
+      <Modified>2013-07-10T05:18:27.174</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-07-10T02:27:31.251</Modified>
+      <Modified>2013-07-10T05:19:39.710</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

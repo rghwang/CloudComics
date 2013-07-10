@@ -42,6 +42,9 @@
     </Application>
   </Applications>
   <Capabilities>
+    <Capability Name="documentsLibrary" />
+    <Capability Name="musicLibrary" />
+    <Capability Name="videosLibrary" />
     <Capability Name="internetClient" />
     <Capability Name="removableStorage" />
     <Capability Name="picturesLibrary" />

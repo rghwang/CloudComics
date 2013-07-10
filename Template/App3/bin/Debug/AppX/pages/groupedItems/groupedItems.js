@@ -27,7 +27,7 @@
 
                 if (options.resetPath) Data.resetPath();
             }
-            if (param === undefined) param = Windows.Storage.KnownFolders.picturesLibrary;
+            if (param === undefined) param = Windows.Storage.KnownFolders.documentsLibrary;
             var dataPromise = Data.setFolder(param);
 
             var listView = element.querySelector(".groupeditemslist").winControl;
