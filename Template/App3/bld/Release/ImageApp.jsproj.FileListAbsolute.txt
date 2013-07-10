@@ -89,3 +89,4 @@ E:\GitHub\CloudComics\Template\App3\bld\Release\resources.resfiles
 E:\GitHub\CloudComics\Template\App3\bld\Release\pri.resfiles
 E:\GitHub\CloudComics\Template\App3\bld\Release\LanguageQualifiers.txt
 E:\GitHub\CloudComics\Template\App3\bld\Release\ProjectArchitectures.txt
+E:\GitHub\CloudComics\Template\App3\bin\Release\MicrosoftAdvertising.winmd

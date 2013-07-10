@@ -9,6 +9,11 @@
     width: 100%;
     z-index: 0;
 }
+#msg {
+    position:absolute;
+    top:120px;
+    left:120px;
+}
 
     /* 이 선택기는 ui-dark/light.css가 .win-surface의 변경 내용을 덮어쓰지
       못하도록 하는 데 사용됩니다. */

@@ -60,12 +60,14 @@
             //    _this.updatePageTitle();
             //});
             if (dataPromise) {
-                dataPromise.done(function () {
+                dataPromise.then(function () {
                     if (options && options.item) {
                         var temp = nav.history.current.state.item;
                         nav.history.current.state.item = false;
                         return nav.navigate("/pages/itemDetail/itemDetail.html", { item: temp });
                     }
+                }, function () {
+                    document.getElementById("msg").textContent = "There is no folders or files in this view. Please select another folder from the appbar.";
                 });
             }
 

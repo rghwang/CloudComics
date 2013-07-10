@@ -5,18 +5,18 @@
     <WindowsUser>rghwang</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>FD0EFEC8D5E932991B975E70C3617B3A6179778FE30CEFDC508D841675BB7520</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>57382HRG.Viewing_1.0.0.12_neutral__t6hnbjyeammt4</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>373B147549C7EC7DF02D784C051F1D90CD97AB243F02D3DB87CEE6428DFFC260</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>57382HRG.Viewing_1.0.0.13_neutral__t6hnbjyeammt4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>57382HRG.Viewing_t6hnbjyeammt4!App</RegisteredUserModeAppID>
     <RegisteredPackageID>57382HRG.Viewing</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=073F0D1D-E43D-4165-9C5D-616E64746447</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.12</RegisteredVersion>
+    <RegisteredVersion>1.0.0.13</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-08T06:37:20.951</Modified>
+      <Modified>2013-07-09T09:42:11.610</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -70,7 +70,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.css">
       <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
-      <Modified>2013-07-08T05:40:22.137</Modified>
+      <Modified>2013-07-10T01:51:12.837</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\data\WindowsStoreProxy.xml">
       <PackagePath>data\WindowsStoreProxy.xml</PackagePath>
@@ -158,7 +158,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\options\options.html">
       <PackagePath>pages\options\options.html</PackagePath>
-      <Modified>2013-07-08T06:50:11.310</Modified>
+      <Modified>2013-07-08T08:28:36.873</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.html">
       <PackagePath>pages\itemDetail\itemDetail.html</PackagePath>
@@ -166,7 +166,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.html">
       <PackagePath>pages\groupedItems\groupedItems.html</PackagePath>
-      <Modified>2013-07-08T05:42:03.447</Modified>
+      <Modified>2013-07-10T01:51:26.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\default.html">
       <PackagePath>default.html</PackagePath>
@@ -174,15 +174,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\options\options.js">
       <PackagePath>pages\options\options.js</PackagePath>
-      <Modified>2013-07-08T07:10:12.484</Modified>
+      <Modified>2013-07-08T08:31:09.840</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\data.js">
       <PackagePath>js\data.js</PackagePath>
-      <Modified>2013-07-04T04:30:31.051</Modified>
+      <Modified>2013-07-10T01:52:55.318</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2013-07-08T07:30:29.905</Modified>
+      <Modified>2013-07-08T08:22:53.795</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
@@ -190,15 +190,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\itemDetail\itemDetail.js">
       <PackagePath>pages\itemDetail\itemDetail.js</PackagePath>
-      <Modified>2013-07-08T07:28:57.379</Modified>
+      <Modified>2013-07-08T08:56:03.041</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\pages\groupedItems\groupedItems.js">
       <PackagePath>pages\groupedItems\groupedItems.js</PackagePath>
-      <Modified>2013-07-01T07:10:36.697</Modified>
+      <Modified>2013-07-10T01:53:16.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GitHub\CloudComics\Template\App3\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-07-08T06:37:20.789</Modified>
+      <Modified>2013-07-09T09:42:11.324</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

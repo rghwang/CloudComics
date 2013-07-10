@@ -28,6 +28,10 @@
         }
     }
     WinJS.Namespace.define("Data", {
+        // For real service
+        //currentApp: Windows.ApplicationModel.Store.CurrentApp,
+        // For test app purchase
+        currentApp: Windows.ApplicationModel.Store.CurrentAppSimulator,
         items: groupedItems,
         groups: groupedItems.groups,
         getItemReference: getItemReference,
@@ -133,7 +137,7 @@
             // 사용할 수 있는 경우 언제든지 비동기 소스로부터 데이터를 추가할 수 있습니다.
             folder = storageFolder;
             var dataPromise = folder.getItemsAsync();
-            dataPromise.done(addItems);
+            dataPromise.then(addItems);
             return dataPromise;
         }
     }
@@ -230,6 +234,8 @@
             });
             */
             getNextThumbnail();
+        } else {
+            document.getElementById("msg").textContent = "There is no folders or images in this view. Please select another folder from the appbar.";
         }
     }
     var index = 0;

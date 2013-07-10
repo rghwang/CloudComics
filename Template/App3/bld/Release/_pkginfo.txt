@@ -1,1 +1,1 @@
-E:\GitHub\CloudComics\Template\App3\AppPackages\ImageApp_1.0.0.12_AnyCPU_Test\ImageApp_1.0.0.12_AnyCPU.appx
+E:\GitHub\CloudComics\Template\App3\AppPackages\ImageApp_1.0.0.13_AnyCPU_Test\ImageApp_1.0.0.13_AnyCPU.appx

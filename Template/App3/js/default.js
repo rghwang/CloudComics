@@ -29,7 +29,7 @@
         WinJS.Navigation.navigate("/pages/options/options.html", {});
     }
     function onCommandsRequested(e) {
-        if (!appmodel.Store.CurrentAppSimulator.licenseInformation.isTrial) {
+        if (!Data.currentApp.licenseInformation.isTrial) {
             e.request.applicationCommands.removeAt(0);
         }
         var optionsCommand = new Windows.UI.ApplicationSettings.SettingsCommand("option", "Options", onOptionsCommand);
@@ -64,11 +64,15 @@
             hasSettingPane = true;
         }
 
-        appmodel.Package.current.installedLocation.getFileAsync("data\\WindowsStoreProxy.xml").done(
-            function (file) {
-                appmodel.Store.CurrentAppSimulator.reloadSimulatorAsync(file);
-            }
-        );
+
+        // Trial license test code
+        if (Data.currentApp === appmodel.Store.CurrentAppSimulator) {
+            appmodel.Package.current.installedLocation.getFileAsync("data\\WindowsStoreProxy.xml").done(
+                function (file) {
+                    appmodel.Store.CurrentAppSimulator.reloadSimulatorAsync(file);
+                }
+            );
+        }
 
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
