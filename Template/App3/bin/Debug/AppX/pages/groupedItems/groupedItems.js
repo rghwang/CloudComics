@@ -67,7 +67,7 @@
                         return nav.navigate("/pages/itemDetail/itemDetail.html", { item: temp });
                     }
                 }, function () {
-                    document.getElementById("msg").textContent = "There is no folders or images in this view. Please select another folder from the appbar.";
+                    document.getElementById("msg").textContent = "There are no folders or files in this view. Please select another folder from the appbar.";
                 });
             }
 
